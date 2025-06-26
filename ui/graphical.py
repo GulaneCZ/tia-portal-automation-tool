@@ -58,7 +58,10 @@ class MainWindow(QMainWindow):
         import Siemens.Engineering as SE
 
         imports = Portals.Imports(SE, DirectoryInfo, FileInfo)
-        self.logger.info(f"Creating project: {self.project_json['name']}")
+
+        self.logger.info(f"Creation of project {self.project_json['name']} started")
+
+        self.project_json['libraries'] = [{"path": self.library_filepath}]
         core.execute(imports, self.project_json, self.settings)
 
     def import_file(self):
