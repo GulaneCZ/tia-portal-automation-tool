@@ -2,9 +2,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 import xml.etree.ElementTree as ET
+import logging
 
+from src.core import logs
 from src.modules.XML.Documents import PlcStruct, import_xml
 from src.modules.XML.Softwares import Software
+
+logs.setup(logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 @dataclass
 class PlcDataType:
@@ -38,22 +43,21 @@ class XML(Software):
 
 
 def create(imports: Imports, plc_software: Siemens.Engineering.HW.Software, data: PlcDataType):
-    # logging.info(f"Generating {len(data)} User Data Types")
-    # logging.debug(f"PlcStruct: {plcstruct}")
+    logger.info(f"Generating of {len(data)} User Data Types started")
 
     if not data.Name or not data.Types:
-        # logging.debug(f"Skipping this PlcStruct...")
         return
 
-    # logging.info(f"Generating UDT {plcstruct.Name}")
-    # logging.debug(f"Tags: {plcstruct.Types}")
+    logger.info(f"Generating of User Data Type {plcstruct.Name} started")
 
     xml = XML(data)
     filename: Path = xml.write()
     
-    # logging.info(f"Written UDT {plcstruct.Name} XML to: {filename}")
+    logger.info(f"Written User Data Type {plcstruct.Name} XML to: {filename}")
 
     import_xml(imports, plc_software, filename)
+
+    logger.info(f"Importing User Data Type {plcstruct.Name} started")
 
     if filename.exists():
         filename.unlink()

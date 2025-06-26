@@ -1,5 +1,11 @@
 from __future__ import annotations
 from dataclasses import dataclass
+import logging
+
+from src.core import logs
+
+logs.setup(logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 @dataclass
 class Imports:
@@ -18,9 +24,6 @@ def get_process_ids(imports: Imports) -> list[int]:
 def connect(imports: Imports, config: dict[Any, Any], settings: dict[str, Any]) -> Siemens.Engineering.TiaPortal:
     SE: Siemens.Engineering = imports.DLL
 
-    # logging.debug(f"config data: {config}")
-    # logging.debug(f"settings: {settings}")
-
     connection_method: dict = settings.get('connection_method', {'mode': 'new'})
 
     if connection_method.get('mode') == 'attach':
@@ -29,7 +32,7 @@ def connect(imports: Imports, config: dict[Any, Any], settings: dict[str, Any]) 
             process = SE.TiaPortal.GetProcess(process_id)
             TIA = SE.TiaPortalProcess.Attach(process)
 
-            # logging.info(f"Attached TIA Portal Openness ({process.Id}) {process.Mode} at {process.AcquisitionTime}")
+            logger.info(f"Attached TIA Portal Openness ({process.Id}) {process.Mode} at {process.AcquisitionTime}")
 
             return TIA
 
@@ -40,6 +43,6 @@ def connect(imports: Imports, config: dict[Any, Any], settings: dict[str, Any]) 
 
     process = TIA.GetCurrentProcess()
 
-    # logging.info(f"Started TIA Portal Openness ({process.Id}) {process.Mode} at {process.AcquisitionTime}")
+    logger.info(f"Started TIA Portal Openness ({process.Id}) {process.Mode} at {process.AcquisitionTime}")
 
     return TIA

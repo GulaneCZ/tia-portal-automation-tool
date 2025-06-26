@@ -2,16 +2,24 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog
 from pathlib import Path
 from ui.qt6.app import Ui_MainWindow
 import json
+import logging
 
 from src.core import core
+from src.core import logs
 from src.schemas import configuration
 import src.modules.Portals as Portals
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        logs.setup(logging.INFO, textbox=self.ui.textbrowser_logs)
+
+        self.logger = logging.getLogger(__name__)
+        self.logger.info("Application started.")
 
         self.project_json: dict = {}
         self.library_filepath: Path = Path()
@@ -22,7 +30,7 @@ class MainWindow(QMainWindow):
 
         self._generate_dlls()
         self.version: str = self.ui.combobox_dll_versions.currentText()
-        self.update_logs(f"Current version selected: {self.version}")
+        self.logger.info(f"Current version selected: {self.version}")
 
 
         # Butons
@@ -38,19 +46,19 @@ class MainWindow(QMainWindow):
         
     def execute(self):
         if not self.project_json:
-            self.update_logs(f"[ERROR] Invalid project")
+            self.logger.error(f"Invalid project")
             return
         import clr
         from System.IO import DirectoryInfo, FileInfo
         dll = self.dlls.get(self.version)
         if not dll:
-            self.update_logs(f"[ERROR] Invalid version selected")
+            self.logger.error(f"Invalid version selected")
             return
         clr.AddReference(dll.as_posix())
         import Siemens.Engineering as SE
 
         imports = Portals.Imports(SE, DirectoryInfo, FileInfo)
-        self.update_logs(f"[*] Creating project: {self.project_json['name']}")
+        self.logger.info(f"Creating project: {self.project_json['name']}")
         core.execute(imports, self.project_json, self.settings)
 
     def import_file(self):
@@ -65,14 +73,14 @@ class MainWindow(QMainWindow):
                     self.project_json['directory'] = file_path.absolute().parent
                     self.project_json['name'] = file_path.stem
                     self.project_json['overwrite'] = self.ui.checkbox_allow_overwrite.isChecked()
-                    self.update_logs(f"[!] Imported Json Config: {file_path}")
+                    self.logger.info(f"Imported Json Config: {file_path}")
                 except:
-                    self.update_logs(f"[ERROR] Invalid project config! Did not validate: {file_path}")
+                    self.logger.error(f"Invalid project config! Did not validate: {file_path}")
                     self.ui.label_json_filepath.setText("INVALID CONFIG!")
 
     def change_version(self, text: str):
         self.version = text
-        self.update_logs(f"[!] Current version selected: {self.version}")
+        self.logger.info(f"Current version selected: {self.version}")
 
 
     def select_library(self):
@@ -83,14 +91,14 @@ class MainWindow(QMainWindow):
             if not self.project_json: return
             self.ui.label_library_path.setText(self.library_filepath.stem)
             self.project_json['libraries'] = [{"path": self.library_filepath}]
-            self.update_logs(f"[!] Selected Global Library: {self.library_filepath}")
+            self.logger.info(f"Selected Global Library: {self.library_filepath}")
 
     def toggle_enable_ui(self, checked: bool):
         self.settings['enable_ui'] = checked
         if checked:
-            self.update_logs(f"[!] TIA Portal will show User Interface.")
+            self.logger.info(f"TIA Portal will show User Interface.")
         else:
-            self.update_logs(f"[!] TIA Portal will now run in the background.")
+            self.logger.info(f"TIA Portal will now run in the background.")
 
     def toggle_overwrite(self, checked: bool):
         if not self.project_json:
@@ -98,17 +106,14 @@ class MainWindow(QMainWindow):
 
         self.project_json['overwrite'] = checked
         if checked:
-            self.update_logs(f"[!] TIA Portal will OVERWRITE exsting project.")
+            self.logger.info(f"TIA Portal will OVERWRITE exsting project.")
         else:
-            self.update_logs(f"[!] TIA Portal will NOT OVERWRITE existing project.")
-
-    def update_logs(self, message: str):
-        self.ui.textbrowser_logs.append(message)
+            self.logger.info(f"TIA Portal will NOT OVERWRITE existing project.")
 
     def _generate_dlls(self):
         for dll_name in self.dlls:
             self.ui.combobox_dll_versions.addItem(dll_name)
-            self.update_logs(f"[!] Finished compiling API: {self.dlls[dll_name]}")
+            self.logger.info(f"Finished compiling API: {self.dlls[dll_name]}")
 
 
 app = QApplication()

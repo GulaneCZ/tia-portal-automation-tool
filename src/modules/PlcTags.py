@@ -1,5 +1,11 @@
 from __future__ import annotations
 from dataclasses import dataclass
+import logging
+
+from src.core import logs
+
+logs.setup(logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 @dataclass
 class PlcTag:
@@ -21,8 +27,7 @@ def new(data: PlcTagTable, plc_software: Siemens.Engineering.HW.Software) -> Opt
     for tag in data.Tags:
         add_tag(table, tag)
 
-    # logging.info(f"Created Tag Table: {name} ({plc_software.Name} Software)")
-    # logging.debug(f"PLC Tag Table: {tag_table.Name}")
+    logger.info(f"Created Tag Table: {table.Name} ({plc_software.Name} Software)")
 
     return table
 
@@ -42,24 +47,21 @@ def enumerate_tags(table: Siemens.Engineering.SW.Tags.PlcTagTable) -> list[PlcTa
 def find_table(imports: Imports, name: str, plc_software: Siemens.Engineering.HW.Software) -> Siemens.Engineering.SW.Tags.PlcTagTable | None:
     SE: Siemens.Engineering = imports.DLL
 
-    # logging.info(f"Searching Tag Table: {name} in Software {plc_software.Name}...")
+    logging.info(f"Search for Tag Table {name} in Software {plc_software.Name} started")
 
     tag_table: Siemens.Engineering.SW.Tags.PlcTagTable = plc_software.TagTableGroup.TagTables.Find(name)
 
     if not isinstance(tag_table, SE.SW.Tags.PlcTagTable):
         return
 
-    # logging.info(f"Found Tag Table: {name} in {plc_software.Name} Software")
-    # logging.debug(f"PLC Tag Table: {tag_table.Name}")
+    logger.info(f"Found Tag Table {tag_table.Name} in {plc_software.Name} Software")
 
     return tag_table
 
 
 def add_tag(tag_table: Siemens.Engineering.SW.Tags.PlcTagTable, data: PlcTag) -> Siemens.Engineering.SW.Tags.PlcTag:
-    # logging.info(f"Creating Tag: {data.Name} ({tag_table.Name} Table@{data.LogicalAddress} Address)")
-
     tag: Siemens.Engineering.SW.Tags.PlcTag = tag_table.Tags.Create(data.Name, data.DataTypeName, data.LogicalAddress)
 
-    # logging.info(f"Created Tag: {tag.Name} ({tag_table.Name} Table@{tag.LogicalAddress})")
+    logger.info(f"Created Tag {tag.Name} on Table {tag_table.Name} @ {tag.LogicalAddress})")
 
     return tag
