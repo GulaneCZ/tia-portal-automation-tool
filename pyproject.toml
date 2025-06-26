@@ -1,6 +1,6 @@
 [project]
 name = "tia-portal-automation-tool"
-version = "0.2.0"
+version = "0.3.0"
 description = "An internal automation tooling for Titus Global Tech PLC engineers."
 readme = "README.md"
 requires-python = ">=3.13"
