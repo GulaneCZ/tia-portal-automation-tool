@@ -1,4 +1,5 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog
+from PySide6.QtCore import QThread, Signal, QObject
 from pathlib import Path
 from ui.qt6.app import Ui_MainWindow
 import json
@@ -9,6 +10,35 @@ from src.core import logs
 from src.schemas import configuration
 import src.modules.Portals as Portals
 
+
+class PortalWorker(QThread):
+    finished = Signal()
+    error = Signal(str)
+
+    def __init__(self, dll, project_json, settings):
+        super().__init__()
+        self.dll = dll
+        self.project_json = project_json
+        self.settings = settings
+
+        self.logger = logging.getLogger(__name__)
+
+    def run(self):
+        try:
+            import clr
+            from System.IO import DirectoryInfo, FileInfo
+            clr.AddReference(self.dll.as_posix())
+
+            import Siemens.Engineering as SE
+            import src.modules.Portals as Portals
+
+            imports = Portals.Imports(SE, DirectoryInfo, FileInfo)
+            self.logger.info(f"Creating project: {self.project_json['name']}")
+            core.execute(imports, self.project_json, self.settings)
+            self.finished.emit()
+        except Exception as e:
+            self.logger.exception("Exception in TIA Portal execution")
+            self.error.emit(str(e))
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -48,21 +78,28 @@ class MainWindow(QMainWindow):
         if not self.project_json:
             self.logger.error(f"Invalid project")
             return
-        import clr
-        from System.IO import DirectoryInfo, FileInfo
         dll = self.dlls.get(self.version)
         if not dll:
             self.logger.error(f"Invalid version selected")
             return
-        clr.AddReference(dll.as_posix())
-        import Siemens.Engineering as SE
-
-        imports = Portals.Imports(SE, DirectoryInfo, FileInfo)
-
-        self.logger.info(f"Creation of project {self.project_json['name']} started")
 
         self.project_json['libraries'] = [{"path": self.library_filepath}]
-        core.execute(imports, self.project_json, self.settings)
+
+        self.ui.button_execute_portal.setEnabled(False)
+        self.worker = PortalWorker(dll, self.project_json, self.settings)
+        self.worker.finished.connect(self._on_execute_finished)
+        self.worker.error.connect(self._on_execute_error)
+        self.worker.start()
+        self.logger.info("TIA Portal process started.")
+
+    def _on_execute_finished(self):
+        self.logger.info("Project creation completed.")
+        self.ui.button_execute_portal.setEnabled(True)
+
+    def _on_execute_error(self):
+        self.logger.error(f"Error: {msg}")
+        self.ui.button_execute_portal.setEnabled(True)
+
 
     def import_file(self):
         file_path, _ = QFileDialog.getOpenFileName(self, "Import JSON Config", "", "JSON Files (*.json)")
@@ -90,9 +127,9 @@ class MainWindow(QMainWindow):
         file_path, _ = QFileDialog.getOpenFileName(self, "Select Library", "", "Global library (*.al*)|*.al*")
         if file_path:
             self.library_filepath = Path(file_path)
+            self.ui.label_library_path.setText(self.library_filepath.stem)
 
             if not self.project_json: return
-            self.ui.label_library_path.setText(self.library_filepath.stem)
             self.project_json['libraries'] = [{"path": self.library_filepath}]
             self.logger.info(f"Selected Global Library: {self.library_filepath}")
 
