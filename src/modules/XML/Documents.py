@@ -16,13 +16,13 @@ class XMLNS(Enum):
     FLGNET = "http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4"
 
 class Base:
-    NAME = None
+    DOCUMENT = None
     def __init__(self, name: str):
         self.root = ET.fromstring("<Document />") 
 
-        if not self.NAME: raise ValueError("Section Name not set.")
+        if not self.DOCUMENT: raise ValueError("Section Name not set.")
 
-        self.SWDoc = ET.SubElement(self.root, self.NAME, attrib={'ID': str(0)})
+        self.SWDoc = ET.SubElement(self.root, self.DOCUMENT, attrib={'ID': str(0)})
         self.AttributeList = ET.SubElement(self.SWDoc, "AttributeList")
         ET.SubElement(self.AttributeList, "Name").text = name
 

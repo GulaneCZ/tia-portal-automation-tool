@@ -1,0 +1,6029 @@
+{
+  "devices": [
+    {
+      "id": 1,
+      "p_typeIdentifier": "OrderNumber:6ES7 512-1DK01-0AB0/V2.6",
+      "slots_required": 1,
+      "network_interface": {
+        "Address": "192.168.88.211",
+        "RouterAddress": "192.168.88.1",
+        "UseRouter": true,
+        "io_controller": "PNIO",
+        "subnet_name": "PN/IE_1"
+      },
+      "p_deviceName": "PLC_12",
+      "p_name": "PLC_12"
+    },
+    {
+      "id": 2,
+      "p_typeIdentifier": "OrderNumber:6ES7 512-1DK01-0AB0/V2.6",
+      "slots_required": 1,
+      "network_interface": {
+        "Address": "192.168.88.212",
+        "RouterAddress": "192.168.88.1",
+        "UseRouter": true,
+        "io_controller": "PNIO",
+        "subnet_name": "PN/IE_2"
+      },
+      "p_deviceName": "PLC_1",
+      "p_name": "PLC_1"
+    },
+    {
+      "id": 3,
+      "p_typeIdentifier": "OrderNumber:6ES7 512-1DK01-0AB0/V2.6",
+      "slots_required": 1,
+      "network_interface": {
+        "Address": "192.168.88.213",
+        "RouterAddress": "192.168.88.1",
+        "UseRouter": true,
+        "io_controller": "PNIO",
+        "subnet_name": "Profinet"
+      },
+      "p_deviceName": "PLC_2",
+      "p_name": "PLC_2"
+    }
+  ],
+  "Local modules": [
+    {
+      "typeIdentifier": "OrderNumber:6ES7 193-6PA00-0AA0/V1.1",
+      "DeviceID": 1,
+      "positionNumber": 2,
+      "name": "Server module_1"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 3,
+      "name": "DI 16x24VDC ST_1"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 4,
+      "name": "DI 16x24VDC ST_2"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 5,
+      "name": "DI 16x24VDC ST_3"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 6,
+      "name": "DI 16x24VDC ST_4"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 7,
+      "name": "DI 16x24VDC ST_5"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 8,
+      "name": "DI 16x24VDC ST_6"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 9,
+      "name": "DI 16x24VDC ST_7"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 10,
+      "name": "DI 16x24VDC ST_8"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 11,
+      "name": "DI 16x24VDC ST_9"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 12,
+      "name": "DI 16x24VDC ST_10"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 13,
+      "name": "DI 16x24VDC ST_11"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 14,
+      "name": "DI 16x24VDC ST_12"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 15,
+      "name": "DI 16x24VDC ST_13"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 16,
+      "name": "DI 16x24VDC ST_14"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 1,
+      "positionNumber": 27,
+      "name": "DI 16x24VDC ST_157"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 193-6PA00-0AA0/V1.1",
+      "DeviceID": 2,
+      "positionNumber": 2,
+      "name": "Server module_1"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 2,
+      "positionNumber": 3,
+      "name": "DI 16x24VDC ST_1"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 2,
+      "positionNumber": 4,
+      "name": "DI 16x24VDC ST_2"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 2,
+      "positionNumber": 5,
+      "name": "DI 16x24VDC ST_3"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 193-6PA00-0AA0/V1.1",
+      "DeviceID": 3,
+      "positionNumber": 2,
+      "name": "Server module_1"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 3,
+      "positionNumber": 3,
+      "name": "DI 16x24VDC ST_1"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 3,
+      "positionNumber": 4,
+      "name": "DI 16x24VDC ST_2"
+    },
+    {
+      "typeIdentifier": "OrderNumber:6ES7 131-6BH01-0BA0/V0.0",
+      "DeviceID": 3,
+      "positionNumber": 25,
+      "name": "DI 16x24VDC ST_325"
+    }
+  ],
+  "PLC tags": [
+    {
+      "DeviceID": 1,
+      "Name": "Global",
+      "Tags": [
+        {
+          "Name": "Global_Event_Counters",
+          "DataTypeName": "Word",
+          "LogicalAddress": "%MW110"
+        },
+        {
+          "Name": "Global_PLC_Queue_Cnt",
+          "DataTypeName": "Int",
+          "LogicalAddress": "%MW102"
+        },
+        {
+          "Name": "Global_Time2",
+          "DataTypeName": "DWord",
+          "LogicalAddress": "%MD112"
+        },
+        {
+          "Name": "Global_Time1",
+          "DataTypeName": "Word",
+          "LogicalAddress": "%MW116"
+        }
+      ]
+    },
+    {
+      "DeviceID": 1,
+      "Name": "SMC",
+      "Tags": [
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD1_%I0.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I0.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD1_%I0.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I0.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD1_%I0.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I0.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD1_%I0.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I0.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD1_%I0.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I0.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD1_%I0.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I0.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD1_%I0.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I0.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD1_%I0.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I0.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD1_%I1.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I1.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD1_%I1.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I1.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD1_%I1.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I1.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD1_%I1.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I1.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD1_%I1.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I1.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD1_%I1.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I1.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD1_%I1.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I1.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD1_%I1.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I1.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD2_%I2.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I2.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD2_%I2.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I2.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD2_%I2.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I2.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD2_%I2.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I2.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD2_%I2.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I2.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD2_%I2.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I2.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD2_%I2.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I2.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD2_%I2.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I2.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD2_%I3.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I3.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD2_%I3.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I3.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD2_%I3.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I3.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD2_%I3.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I3.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD2_%I3.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I3.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD2_%I3.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I3.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD2_%I3.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I3.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD2_%I3.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I3.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD3_%I4.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I4.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD3_%I4.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I4.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD3_%I4.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I4.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD3_%I4.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I4.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD3_%I4.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I4.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD3_%I4.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I4.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD3_%I4.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I4.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD3_%I4.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I4.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD3_%I5.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I5.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD3_%I5.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I5.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD3_%I5.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I5.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD3_%I5.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I5.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD3_%I5.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I5.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD3_%I5.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I5.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD3_%I5.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I5.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD3_%I5.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I5.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD4_%I6.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I6.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD4_%I6.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I6.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD4_%I6.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I6.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD4_%I6.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I6.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD4_%I6.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I6.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD4_%I6.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I6.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD4_%I6.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I6.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD4_%I6.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I6.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD4_%I7.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I7.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD4_%I7.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I7.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD4_%I7.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I7.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD4_%I7.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I7.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD4_%I7.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I7.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD4_%I7.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I7.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD4_%I7.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I7.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD4_%I7.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I7.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD5_%I8.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I8.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD5_%I8.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I8.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD5_%I8.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I8.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD5_%I8.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I8.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD5_%I8.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I8.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD5_%I8.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I8.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD5_%I8.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I8.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD5_%I8.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I8.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD5_%I9.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I9.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD5_%I9.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I9.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD5_%I9.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I9.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD5_%I9.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I9.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD5_%I9.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I9.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD5_%I9.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I9.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD5_%I9.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I9.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD5_%I9.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I9.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD6_%I10.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I10.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD6_%I10.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I10.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD6_%I10.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I10.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD6_%I10.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I10.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD6_%I10.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I10.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD6_%I10.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I10.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD6_%I10.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I10.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD6_%I10.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I10.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD6_%I11.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I11.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD6_%I11.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I11.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD6_%I11.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I11.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD6_%I11.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I11.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD6_%I11.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I11.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD6_%I11.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I11.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD6_%I11.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I11.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD6_%I11.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I11.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD7_%I12.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I12.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD7_%I12.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I12.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD7_%I12.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I12.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD7_%I12.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I12.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD7_%I12.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I12.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD7_%I12.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I12.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD7_%I12.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I12.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD7_%I12.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I12.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD7_%I13.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I13.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD7_%I13.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I13.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD7_%I13.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I13.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD7_%I13.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I13.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD7_%I13.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I13.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD7_%I13.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I13.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD7_%I13.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I13.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD7_%I13.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I13.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD8_%I14.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I14.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD8_%I14.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I14.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD8_%I14.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I14.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD8_%I14.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I14.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD8_%I14.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I14.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD8_%I14.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I14.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD8_%I14.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I14.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD8_%I14.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I14.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD8_%I15.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I15.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD8_%I15.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I15.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD8_%I15.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I15.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD8_%I15.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I15.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD8_%I15.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I15.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD8_%I15.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I15.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD8_%I15.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I15.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD8_%I15.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I15.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD9_%I16.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I16.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD9_%I16.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I16.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD9_%I16.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I16.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD9_%I16.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I16.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD9_%I16.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I16.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD9_%I16.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I16.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD9_%I16.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I16.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD9_%I16.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I16.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD9_%I17.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I17.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD9_%I17.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I17.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD9_%I17.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I17.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD9_%I17.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I17.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD9_%I17.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I17.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD9_%I17.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I17.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD9_%I17.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I17.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD9_%I17.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I17.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD10_%I18.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I18.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD10_%I18.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I18.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD10_%I18.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I18.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD10_%I18.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I18.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD10_%I18.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I18.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD10_%I18.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I18.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD10_%I18.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I18.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD10_%I18.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I18.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD10_%I19.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I19.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD10_%I19.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I19.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD10_%I19.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I19.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD10_%I19.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I19.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD10_%I19.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I19.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD10_%I19.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I19.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD10_%I19.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I19.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD10_%I19.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I19.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD11_%I20.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I20.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD11_%I20.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I20.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD11_%I20.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I20.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD11_%I20.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I20.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD11_%I20.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I20.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD11_%I20.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I20.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD11_%I20.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I20.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD11_%I20.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I20.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD11_%I21.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I21.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD11_%I21.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I21.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD11_%I21.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I21.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD11_%I21.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I21.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD11_%I21.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I21.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD11_%I21.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I21.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD11_%I21.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I21.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD11_%I21.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I21.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD12_%I22.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I22.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD12_%I22.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I22.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD12_%I22.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I22.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD12_%I22.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I22.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD12_%I22.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I22.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD12_%I22.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I22.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD12_%I22.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I22.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD12_%I22.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I22.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD12_%I23.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I23.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD12_%I23.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I23.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD12_%I23.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I23.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD12_%I23.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I23.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD12_%I23.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I23.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD12_%I23.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I23.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD12_%I23.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I23.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD12_%I23.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I23.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD13_%I24.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I24.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD13_%I24.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I24.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD13_%I24.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I24.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD13_%I24.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I24.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD13_%I24.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I24.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD13_%I24.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I24.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD13_%I24.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I24.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD13_%I24.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I24.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD13_%I25.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I25.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD13_%I25.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I25.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD13_%I25.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I25.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD13_%I25.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I25.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD13_%I25.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I25.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD13_%I25.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I25.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD13_%I25.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I25.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD13_%I25.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I25.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD14_%I26.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I26.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD14_%I26.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I26.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD14_%I26.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I26.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD14_%I26.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I26.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD14_%I26.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I26.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD14_%I26.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I26.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD14_%I26.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I26.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD14_%I26.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I26.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD14_%I27.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I27.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD14_%I27.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I27.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD14_%I27.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I27.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD14_%I27.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I27.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD14_%I27.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I27.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD14_%I27.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I27.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD14_%I27.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I27.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD14_%I27.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I27.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD15_%I28.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I28.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD15_%I28.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I28.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD15_%I28.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I28.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD15_%I28.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I28.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD15_%I28.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I28.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD15_%I28.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I28.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD15_%I28.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I28.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD15_%I28.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I28.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD15_%I29.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I29.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD15_%I29.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I29.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD15_%I29.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I29.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD15_%I29.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I29.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD15_%I29.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I29.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD15_%I29.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I29.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD15_%I29.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I29.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD15_%I29.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I29.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD16_%I30.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I30.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD16_%I30.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I30.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD16_%I30.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I30.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD16_%I30.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I30.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD16_%I30.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I30.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD16_%I30.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I30.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD16_%I30.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I30.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD16_%I30.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I30.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD16_%I31.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I31.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD16_%I31.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I31.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD16_%I31.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I31.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD16_%I31.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I31.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD16_%I31.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I31.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD16_%I31.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I31.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD16_%I31.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I31.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD16_%I31.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%I31.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD17_%Q0.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q0.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD17_%Q0.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q0.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD17_%Q0.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q0.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD17_%Q0.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q0.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD17_%Q0.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q0.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD17_%Q0.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q0.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD17_%Q0.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q0.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD17_%Q0.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q0.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD17_%Q1.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q1.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD17_%Q1.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q1.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD17_%Q1.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q1.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD17_%Q1.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q1.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD17_%Q1.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q1.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD17_%Q1.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q1.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD17_%Q1.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q1.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD17_%Q1.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q1.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD18_%Q2.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q2.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD18_%Q2.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q2.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD18_%Q2.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q2.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD18_%Q2.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q2.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD18_%Q2.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q2.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD18_%Q2.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q2.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD18_%Q2.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q2.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD18_%Q2.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q2.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD18_%Q3.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q3.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD18_%Q3.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q3.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD18_%Q3.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q3.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD18_%Q3.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q3.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD18_%Q3.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q3.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD18_%Q3.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q3.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD18_%Q3.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q3.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD18_%Q3.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q3.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD19_%Q4.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q4.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD19_%Q4.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q4.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD19_%Q4.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q4.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD19_%Q4.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q4.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD19_%Q4.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q4.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD19_%Q4.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q4.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD19_%Q4.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q4.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD19_%Q4.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q4.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD19_%Q5.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q5.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD19_%Q5.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q5.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD19_%Q5.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q5.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD19_%Q5.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q5.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD19_%Q5.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q5.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD19_%Q5.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q5.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD19_%Q5.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q5.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD19_%Q5.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q5.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.0_CARD20_%Q6.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q6.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.1_CARD20_%Q6.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q6.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.2_CARD20_%Q6.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q6.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.3_CARD20_%Q6.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q6.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.4_CARD20_%Q6.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q6.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.5_CARD20_%Q6.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q6.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.6_CARD20_%Q6.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q6.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIA.7_CARD20_%Q6.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q6.7"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.0_CARD20_%Q7.0",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q7.0"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.1_CARD20_%Q7.1",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q7.1"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.2_CARD20_%Q7.2",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q7.2"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.3_CARD20_%Q7.3",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q7.3"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.4_CARD20_%Q7.4",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q7.4"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.5_CARD20_%Q7.5",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q7.5"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.6_CARD20_%Q7.6",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q7.6"
+        },
+        {
+          "Name": "MCC1_RACK1_DIB.7_CARD20_%Q7.7",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%Q7.7"
+        }
+      ]
+    },
+    {
+      "DeviceID": 1,
+      "Name": "Default tag table",
+      "Tags": [
+        {
+          "Name": "Clock_Byte",
+          "DataTypeName": "Byte",
+          "LogicalAddress": "%MB0"
+        },
+        {
+          "Name": "Clock_10Hz",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%M0.0"
+        },
+        {
+          "Name": "Clock_5Hz",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%M0.1"
+        },
+        {
+          "Name": "Clock_2.5Hz",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%M0.2"
+        },
+        {
+          "Name": "Clock_2Hz",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%M0.3"
+        },
+        {
+          "Name": "Clock_1.25Hz",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%M0.4"
+        },
+        {
+          "Name": "Clock_1Hz",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%M0.5"
+        },
+        {
+          "Name": "Clock_0.625Hz",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%M0.6"
+        },
+        {
+          "Name": "Clock_0.5Hz",
+          "DataTypeName": "Bool",
+          "LogicalAddress": "%M0.7"
+        }
+      ]
+    }
+  ],
+  "PLC data types": [
+    {
+      "Name": "A_Drives",
+      "types": [
+        {
+          "Name": "Selected",
+          "Datatype": "Bool"
+        },
+        {
+          "Name": "Icons",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Status",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Warning",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Fault",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Cmd_Bits",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "General_Flag",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Slot_ID",
+          "Datatype": "Array[0..5] of Int"
+        },
+        {
+          "Name": "Attribute_1",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Attribute_2",
+          "Datatype": "Int"
+        }
+      ]
+    },
+    {
+      "Name": "A_Path_Drive_Control",
+      "types": [
+        {
+          "Name": "Drive_Control",
+          "Datatype": "Array[0..50] of \"path_drive_control\""
+        }
+      ]
+    },
+    {
+      "Name": "A_Path_Drive_Control_1",
+      "types": [
+        {
+          "Name": "Drive_Control",
+          "Datatype": "Array[0..50] of \"path_drive_control\""
+        }
+      ]
+    },
+    {
+      "Name": "Bins",
+      "types": [
+        {
+          "Name": "Src_Selected",
+          "Datatype": "Bool"
+        },
+        {
+          "Name": "Des_Selected",
+          "Datatype": "Bool"
+        },
+        {
+          "Name": "Icons",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Status",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Warning",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Fault",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Cmd_Bits",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "General_Flags",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Stock_Value",
+          "Datatype": "Real"
+        },
+        {
+          "Name": "Src_Slot_ID",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Des_Slot_ID",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Grade",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "CommoditySeason",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Commodity",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Fum_Status",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Fum_For_x_Days",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Fum_Next_Treat",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Fum_Treat_overd",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Sample_Mass",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Aer_Hours_PV",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Aer_Hours_SP",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Aer_WB_Temp",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Aer_Moisture_SP",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Aer_Temper_SP",
+          "Datatype": "Int"
+        }
+      ]
+    },
+    {
+      "Name": "Drive_Stat",
+      "types": [
+        {
+          "Name": "Warning",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Fault",
+          "Datatype": "Word"
+        }
+      ]
+    },
+    {
+      "Name": "Event_Pool",
+      "types": [
+        {
+          "Name": "Offset",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Counter",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Type",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Subtype",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Time1",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Time2",
+          "Datatype": "DWord"
+        },
+        {
+          "Name": "Data1",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Data2",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Data3",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Data4",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Data5",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Data6",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Data7",
+          "Datatype": "Word"
+        }
+      ]
+    },
+    {
+      "Name": "Feed",
+      "types": [
+        {
+          "Name": "ID",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "TPH_Rate",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Blend",
+          "Datatype": "Real"
+        },
+        {
+          "Name": "CC",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Time",
+          "Datatype": "Time"
+        },
+        {
+          "Name": "Open",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Blend_At_Belt",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Error",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "General",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "SO_Weight",
+          "Datatype": "Real"
+        },
+        {
+          "Name": "Status",
+          "Datatype": "Word"
+        }
+      ]
+    },
+    {
+      "Name": "Grain_Bits",
+      "types": [
+        {
+          "Name": "Total_Capacity",
+          "Datatype": "DInt"
+        },
+        {
+          "Name": "Kg_per_minute",
+          "Datatype": "DInt"
+        },
+        {
+          "Name": "Segment_Time",
+          "Datatype": "DInt"
+        }
+      ]
+    },
+    {
+      "Name": "Network",
+      "types": [
+        {
+          "Name": "NETWORK_PROFINET",
+          "Datatype": "Array[0..8] of Bool"
+        },
+        {
+          "Name": "NETWORK_PROFIBUS",
+          "Datatype": "Array[0..32] of Bool"
+        }
+      ]
+    },
+    {
+      "Name": "path_drive_control",
+      "types": [
+        {
+          "Name": "ID",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Type",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Att",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Sys_Crash",
+          "Datatype": "Bool"
+        },
+        {
+          "Name": "Upstream_Run",
+          "Datatype": "Bool"
+        }
+      ]
+    },
+    {
+      "Name": "Slots",
+      "types": [
+        {
+          "Name": "Slot_ID",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Drive_Control",
+          "Datatype": "Array[0..50] of \"path_drive_control\""
+        },
+        {
+          "Name": "GUI_Command",
+          "Datatype": "Int",
+          "attributes": {
+            "SetPoint": "true"
+          }
+        },
+        {
+          "Name": "Internal_Command",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Path_Length",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Current_Path_ID",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Path_Status",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "General_Flags_2",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "General_Flags_1",
+          "Datatype": "Word"
+        },
+        {
+          "Name": "Active_Time",
+          "Datatype": "Time"
+        },
+        {
+          "Name": "Reset_All_Drive",
+          "Datatype": "Bool"
+        },
+        {
+          "Name": "Active",
+          "Datatype": "Bool"
+        },
+        {
+          "Name": "Sources",
+          "Datatype": "Array[0..10] of Int"
+        },
+        {
+          "Name": "Destination",
+          "Datatype": "Array[0..15] of Int"
+        },
+        {
+          "Name": "Feed",
+          "Datatype": "Array[1..6] of \"Feed\""
+        },
+        {
+          "Name": "New_Path_ID",
+          "Datatype": "Int"
+        },
+        {
+          "Name": "Paths",
+          "Datatype": "Array[0..15] of Int"
+        }
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "path": "C:/Users/USER/Documents/Automation/TGTLibrary/TGTLibrary.al18"
+    }
+  ],
+  "Program blocks": [
+    {
+      "id": 1,
+      "DeviceID": 1,
+      "type": "SW.Blocks.OB",
+      "name": "Main",
+      "programming_language": "FBD",
+      "number": 69
+    },
+    {
+      "id": 2,
+      "DeviceID": 1,
+      "name": "DB_Event_Queue",
+      "blockgroup_folder": "/DB",
+      "structs": [
+        {
+          "name": "Event_Pool",
+          "datatype": "Array[0..999] of \"Event_Pool\""
+        }
+      ],
+      "attributes": {
+        "MemoryLayout": "Optimized"
+      }
+    },
+    {
+      "id": 3,
+      "DeviceID": 1,
+      "name": "DB_General_Utils",
+      "blockgroup_folder": "/DB",
+      "structs": [
+        {
+          "name": "Third_Scan",
+          "datatype": "Bool",
+          "start_value": "true"
+        },
+        {
+          "name": "First_Scan",
+          "datatype": "Bool",
+          "start_value": "true"
+        },
+        {
+          "name": "Network_Status",
+          "datatype": "\"Network\""
+        }
+      ],
+      "attributes": {
+        "MemoryLayout": "Optimized"
+      }
+    },
+    {
+      "id": 4,
+      "DeviceID": 1,
+      "name": "DB_GeneralInputs",
+      "blockgroup_folder": "/DB",
+      "structs": [
+        {
+          "name": "T_Run",
+          "datatype": "Time",
+          "start_value": "T#5s"
+        },
+        {
+          "name": "Inhibit_Hooter",
+          "datatype": "Bool",
+          "start_value": "true"
+        },
+        {
+          "name": "Water_Tank_HL",
+          "datatype": "Bool",
+          "start_value": "true"
+        },
+        {
+          "name": "Water_Tank_LL",
+          "datatype": "Bool",
+          "start_value": "true"
+        },
+        {
+          "name": "Screening_Running",
+          "datatype": "Bool"
+        },
+        {
+          "name": "Estop",
+          "datatype": "Bool"
+        },
+        {
+          "name": "First_CL_Pump_Fault",
+          "datatype": "Bool"
+        },
+        {
+          "name": "Second_Damp_Pump_Fault",
+          "datatype": "Bool"
+        }
+      ],
+      "attributes": {
+        "MemoryLayout": "Optimized"
+      }
+    },
+    {
+      "id": 5,
+      "DeviceID": 1,
+      "name": "DB_Master",
+      "blockgroup_folder": "/DB",
+      "structs": [
+        {
+          "name": "All_Slots",
+          "datatype": "Array[0..30] of \"Slots\""
+        },
+        {
+          "name": "All_Drives",
+          "datatype": "Array[0..910] of \"A_Drives\""
+        },
+        {
+          "name": "All_Bins",
+          "datatype": "Array[0..65] of \"Bins\""
+        }
+      ],
+      "attributes": {
+        "MemoryLayout": "Standard"
+      }
+    },
+    {
+      "id": 6,
+      "DeviceID": 1,
+      "name": "DB_Stat",
+      "blockgroup_folder": "/DB",
+      "structs": [
+        {
+          "name": "Drive_ID",
+          "datatype": "Array[0..910] of \"Drive_Stat\""
+        }
+      ],
+      "attributes": {
+        "MemoryLayout": "Standard"
+      }
+    },
+    {
+      "id": 7,
+      "DeviceID": 1,
+      "name": "IO",
+      "blockgroup_folder": "/DB",
+      "structs": [
+        {
+          "name": "CC1_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC1_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC1_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC1_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC1_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC1_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC1_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC1_SLACK_CHAIN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC1_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_SLACK_CHAIN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_SLACK_CHAIN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_SLACK_CHAIN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_SLACK_CHAIN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_BELT_DRIFT_BOTTOM_LEFT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_BELT_DRIFT_BOTTOM_RIGHT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_BELT_DRIFT_TOP_LEFT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_BELT_DRIFT_TOP_RIGHT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "FV1_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "FV1_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "FV1_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "FV1_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "FV1_POSITION_1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "FV1_POSITION_2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "FV1_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2A_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2A_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2A_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2A_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2A_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2A_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2A_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2B_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2B_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2B_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2B_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2B_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2B_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2B_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG3A_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG3A_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG3A_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG3A_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG3A_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG3A_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG3A_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG4A_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG4A_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG4A_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG4A_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG4A_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG4A_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG4A_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG5A_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG5A_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG5A_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG5A_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG5A_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG5A_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG5A_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1A_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1A_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1A_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1A_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1A_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1A_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1A_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1B_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1B_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1B_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1B_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1B_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1B_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1B_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1C_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1C_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1C_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1C_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1C_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1C_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1C_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1D_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1D_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1D_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1D_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1D_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1D_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1D_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2A_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2A_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2A_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2A_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2A_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2A_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2A_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2B_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2B_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2B_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2B_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2B_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2B_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2B_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2C_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2C_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2C_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2C_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2C_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2C_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2C_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2D_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2D_FULLY_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2D_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2D_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2D_FULLY_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2D_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2D_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1A_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1A_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1A_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1A_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1A_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1A_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1A_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1A_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1B_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1B_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1B_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1B_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1B_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1B_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1B_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1B_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2A_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2A_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2A_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2A_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2A_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2A_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2A_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2A_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2B_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2B_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2B_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2B_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2B_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2B_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2B_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2B_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA1_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA1_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA1_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA1_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA1_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA1_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA1_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA1_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA2_AUTO",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA2_BLOCKED_CHUTE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA2_EMERGENCY_STOP",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA2_HAND",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA2_OVERLOAD_FAULT",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA2_POWER_OK",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA2_RUNNING",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA2_UNDERSPEED",
+          "datatype": "Bool"
+        },
+        {
+          "name": "HL_S1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "HL_S2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I25.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I25.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I25.7",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I26.0",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I26.1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I26.2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I26.3",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I26.4",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I26.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I26.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I26.7",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I27.0",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I27.1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I27.2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I27.3",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I27.4",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I27.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I27.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I27.7",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I28.0",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I28.1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I28.2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I28.3",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I28.4",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I28.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I28.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I28.7",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I29.0",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I29.1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I29.2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I29.3",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I29.4",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I29.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I29.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I29.7",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I30.0",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I30.1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I30.2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I30.3",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I30.4",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I30.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I30.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I30.7",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I31.0",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I31.1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I31.2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I31.3",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I31.4",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I31.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I31.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DI_%I31.7",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC1_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC2_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC3_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC4_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "CC5_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "BE1_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "FV1_START_POSITION_1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "FV1_START_POSITION_2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2A_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2A_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2B_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG2B_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG3A_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG3A_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG4A_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG4A_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG5A_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "IG5A_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1A_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1A_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1B_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1B_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1C_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1C_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1D_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS1D_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2A_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2A_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2B_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2B_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2C_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2C_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2D_START_OPEN",
+          "datatype": "Bool"
+        },
+        {
+          "name": "EGS2D_START_CLOSE",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1A_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS1B_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2A_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "AFS2B_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA1_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SA2_START",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q5.0",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q5.1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q5.2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q5.3",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q5.4",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q5.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q5.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q5.7",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q6.0",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q6.1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q6.2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q6.3",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q6.4",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q6.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q6.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q6.7",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q7.0",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q7.1",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q7.2",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q7.3",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q7.4",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q7.5",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q7.6",
+          "datatype": "Bool"
+        },
+        {
+          "name": "SPARE_DO_%Q7.7",
+          "datatype": "Bool"
+        }
+      ],
+      "attributes": {
+        "MemoryLayout": "Optimized"
+      }
+    },
+    {
+      "id": 8,
+      "DeviceID": 1,
+      "name": "Kg_in_Flight",
+      "blockgroup_folder": "/DB",
+      "structs": [
+        {
+          "name": "Grain_Bits",
+          "datatype": "Array[0..910] of \"Grain_Bits\""
+        }
+      ],
+      "attributes": {
+        "MemoryLayout": "Optimized"
+      }
+    },
+    {
+      "id": 9,
+      "DeviceID": 1,
+      "network_source_id": 4,
+      "type": "SW.Blocks.FB",
+      "name": "Common_Control Monitor",
+      "programming_language": "FBD",
+      "blockgroup_folder": "/FB"
+    },
+    {
+      "id": 10,
+      "DeviceID": 1,
+      "network_source_id": 13,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ControlMonitor_1",
+      "programming_language": "FBD",
+      "blockgroup_folder": "/TGTLibrary/Drives/ControlMonitor",
+      "is_instance": true
+    },
+    {
+      "id": 11,
+      "DeviceID": 1,
+      "network_source_id": 12,
+      "type": "SW.Blocks.FB",
+      "name": "LastScan",
+      "blockgroup_folder": "/FB",
+      "is_instance": true,
+      "library_source": {
+        "name": "TGTLibrary",
+        "blockgroup_folder": "__"
+      }
+    },
+    {
+      "id": 12,
+      "DeviceID": 1,
+      "network_source_id": 11,
+      "type": "SW.Blocks.FC",
+      "name": "outputMapping",
+      "blockgroup_folder": "/FB",
+      "is_instance": true,
+      "number": 6,
+      "library_source": {
+        "name": "TGTLibrary",
+        "blockgroup_folder": "__"
+      }
+    },
+    {
+      "id": 13,
+      "DeviceID": 1,
+      "network_source_id": 3,
+      "type": "SW.Blocks.FC",
+      "name": "inputMapping",
+      "number": 4,
+      "blockgroup_folder": "/FB",
+      "is_instance": true,
+      "library_source": {
+        "name": "TGTLibrary",
+        "blockgroup_folder": "__"
+      }
+    },
+    {
+      "id": 14,
+      "DeviceID": 1,
+      "network_source_id": 2,
+      "number": 113,
+      "type": "SW.Blocks.FB",
+      "name": "Sim",
+      "is_instance": true,
+      "library_source": {
+        "name": "TGTLibrary",
+        "blockgroup_folder": "__"
+      }
+    },
+    {
+      "id": 15,
+      "DeviceID": 1,
+      "network_source_id": 1,
+      "type": "SW.Blocks.FB",
+      "name": "FirstScan",
+      "number": 10,
+      "blockgroup_folder": "/FB",
+      "is_instance": true,
+      "library_source": {
+        "name": "TGTLibrary",
+        "blockgroup_folder": "__"
+      }
+    },
+    {
+      "id": 16,
+      "DeviceID": 1,
+      "network_source_id": 7,
+      "type": "SW.Blocks.FB",
+      "number": 12,
+      "programming_language": "FBD",
+      "name": "Elevator",
+      "blockgroup_folder": "/FB"
+    },
+    {
+      "id": 17,
+      "DeviceID": 1,
+      "network_source_id": 14,
+      "type": "SW.Blocks.FB",
+      "name": "CN_EL_Type_0",
+      "blockgroup_folder": "/TGTLibrary/Drives/Elevators",
+      "is_instance": true
+    },
+    {
+      "id": 18,
+      "DeviceID": 1,
+      "network_source_id": 10,
+      "type": "SW.Blocks.FB",
+      "number": 20,
+      "name": "Sweeper_Auger",
+      "programming_language": "FBD",
+      "blockgroup_folder": "/FB",
+      "is_instance": false
+    },
+    {
+      "id": 19,
+      "DeviceID": 1,
+      "network_source_id": 15,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor",
+      "is_instance": true
+    },
+    {
+      "id": 20,
+      "DeviceID": 1,
+      "network_source_id": 16,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor",
+      "is_instance": true
+    },
+    {
+      "id": 21,
+      "DeviceID": 1,
+      "network_source_id": 9,
+      "type": "SW.Blocks.FB",
+      "name": "Aeration_Fan",
+      "number": 13,
+      "programming_language": "FBD",
+      "blockgroup_folder": "/FB",
+      "is_instance": false
+    },
+    {
+      "id": 22,
+      "DeviceID": 1,
+      "network_source_id": 17,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor"
+    },
+    {
+      "id": 23,
+      "DeviceID": 1,
+      "network_source_id": 18,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor"
+    },
+    {
+      "id": 24,
+      "DeviceID": 1,
+      "network_source_id": 19,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor"
+    },
+    {
+      "id": 25,
+      "DeviceID": 1,
+      "network_source_id": 20,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor"
+    },
+    {
+      "id": 26,
+      "DeviceID": 1,
+      "network_source_id": 5,
+      "is_instance": false,
+      "type": "SW.Blocks.FB",
+      "name": "Common_Bin",
+      "programming_language": "FBD",
+      "number": 67,
+      "blockgroup_folder": "/FB"
+    },
+    {
+      "id": 27,
+      "DeviceID": 1,
+      "network_source_id": 21,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "Bin_Obj_Type_2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Bins"
+    },
+    {
+      "id": 28,
+      "DeviceID": 1,
+      "network_source_id": 22,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "Bin_Obj_Type_2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Bins"
+    },
+    {
+      "id": 29,
+      "DeviceID": 1,
+      "network_source_id": 23,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "Bin_Obj_Type_6",
+      "blockgroup_folder": "/TGTLibrary/Drives/Bins"
+    },
+    {
+      "id": 30,
+      "DeviceID": 1,
+      "network_source_id": 24,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "Bin_Obj_Type_6",
+      "blockgroup_folder": "/TGTLibrary/Drives/Bins"
+    },
+    {
+      "id": 31,
+      "DeviceID": 1,
+      "network_source_id": 4,
+      "is_instance": false,
+      "type": "SW.Blocks.FB",
+      "name": "Common_Control Monitor",
+      "number": 65,
+      "programming_language": "FBD",
+      "blockgroup_folder": "/FB"
+    },
+    {
+      "id": 32,
+      "DeviceID": 1,
+      "network_source_id": 25,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ControlMonitor_1",
+      "blockgroup_folder": "/TGTLibrary/Drives/ControlMonitor"
+    },
+    {
+      "id": 33,
+      "DeviceID": 1,
+      "network_source_id": 6,
+      "is_instance": false,
+      "type": "SW.Blocks.FB",
+      "name": "Conveyors",
+      "programming_language": "FBD",
+      "number": 11,
+      "blockgroup_folder": "/FB"
+    },
+    {
+      "id": 34,
+      "DeviceID": 1,
+      "network_source_id": 26,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_TripperSilo_1",
+      "blockgroup_folder": "/TGTLibrary/Drives/Tripper"
+    },
+    {
+      "id": 35,
+      "DeviceID": 1,
+      "network_source_id": 27,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_Tripper4V",
+      "blockgroup_folder": "/TGTLibrary/Drives/Tripper"
+    },
+    {
+      "id": 36,
+      "DeviceID": 1,
+      "network_source_id": 28,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_Tripper4V",
+      "blockgroup_folder": "/TGTLibrary/Drives/Tripper"
+    },
+    {
+      "id": 37,
+      "DeviceID": 1,
+      "network_source_id": 29,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor"
+    },
+    {
+      "id": 38,
+      "DeviceID": 1,
+      "network_source_id": 30,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor"
+    },
+    {
+      "id": 39,
+      "DeviceID": 1,
+      "network_source_id": 31,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor"
+    },
+    {
+      "id": 40,
+      "DeviceID": 1,
+      "network_source_id": 32,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor"
+    },
+    {
+      "id": 41,
+      "DeviceID": 1,
+      "network_source_id": 33,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ConveyorType2",
+      "blockgroup_folder": "/TGTLibrary/Drives/Conveyor"
+    },
+    {
+      "id": 42,
+      "DeviceID": 1,
+      "network_source_id": 8,
+      "is_instance": false,
+      "type": "SW.Blocks.FB",
+      "name": "Vavles",
+      "programming_language": "FBD",
+      "number": 23,
+      "blockgroup_folder": "/FB"
+    },
+    {
+      "id": 43,
+      "DeviceID": 1,
+      "network_source_id": 34,
+      "is_instance": true,
+      "type": "SW.Blocks.FB",
+      "name": "TGT_LD_ValveType1",
+      "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+    },
+      {
+        "id": 44,
+        "DeviceID": 1,
+        "network_source_id": 35,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 45,
+        "DeviceID": 1,
+        "network_source_id": 36,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 46,
+        "DeviceID": 1,
+        "network_source_id": 37,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 47,
+        "DeviceID": 1,
+        "network_source_id": 38,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 48,
+        "DeviceID": 1,
+        "network_source_id": 39,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 49,
+        "DeviceID": 1,
+        "network_source_id": 40,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 50,
+        "DeviceID": 1,
+        "network_source_id": 41,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 51,
+        "DeviceID": 1,
+        "network_source_id": 42,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 52,
+        "DeviceID": 1,
+        "network_source_id": 43,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 53,
+        "DeviceID": 1,
+        "network_source_id": 44,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 54,
+        "DeviceID": 1,
+        "network_source_id": 45,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 55,
+        "DeviceID": 1,
+        "network_source_id": 46,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      },
+      {
+        "id": 56,
+        "DeviceID": 1,
+        "network_source_id": 47,
+        "is_instance": true,
+        "type": "SW.Blocks.FB",
+        "name": "TGT_LD_ValveType1",
+        "blockgroup_folder": "/TGTLibrary/Drives/Positionals"
+      }
+  ],
+  "Network sources": [
+    {
+      "id": 1,
+      "plc_block_id": 1,
+      "title": "First Scan",
+      "comment": "USUALLY EMPTY"
+    },
+    {
+      "id": 2,
+      "plc_block_id": 1,
+      "title": "Simulation - DELETE BEFORE DEPLOYMENT"
+    },
+    {
+      "id": 3,
+      "plc_block_id": 1,
+      "title": "Input Mapping"
+    },
+    {
+      "id": 4,
+      "plc_block_id": 1,
+      "title": "Control Monitor",
+      "comment": "must vbe parsted"
+    },
+    {
+      "id": 5,
+      "plc_block_id": 1,
+      "title": "Bins"
+    },
+    {
+      "id": 6,
+      "plc_block_id": 1,
+      "title": "Conveyors"
+    },
+    {
+      "id": 7,
+      "plc_block_id": 1,
+      "title": "Elevators"
+    },
+    {
+      "id": 8,
+      "plc_block_id": 1,
+      "title": "Valves"
+    },
+    {
+      "id": 9,
+      "plc_block_id": 1,
+      "title": "Aeration Fan"
+    },
+    {
+      "id": 10,
+      "plc_block_id": 1,
+      "title": "Sweeper Auger"
+    },
+    {
+      "id": 11,
+      "plc_block_id": 1,
+      "title": "Output Mapping"
+    },
+    {
+      "id": 12,
+      "plc_block_id": 1,
+      "title": "Last Scan",
+      "comment": "usually empty"
+    },
+    {
+      "id": 13,
+      "plc_block_id": 9,
+      "title": "Slot 0"
+    },
+    {
+      "id": 14,
+      "plc_block_id": 16,
+      "title": "BE1"
+    },
+    {
+      "id": 15,
+      "plc_block_id": 18,
+      "title": "SA1"
+    },
+    {
+      "id": 16,
+      "plc_block_id": 18,
+      "title": "SA2"
+    },
+    {
+      "id": 17,
+      "plc_block_id": 21,
+      "title": "AFS1A"
+    },
+    {
+      "id": 18,
+      "plc_block_id": 21,
+      "title": "AFS1B"
+    },
+    {
+      "id": 19,
+      "plc_block_id": 21,
+      "title": "AFS2A"
+    },
+    {
+      "id": 20,
+      "plc_block_id": 21,
+      "title": "AFS2B"
+    },
+    {
+      "id": 21,
+      "plc_block_id": 26,
+      "title": "SL1"
+    },
+    {
+      "id": 22,
+      "plc_block_id": 26,
+      "title": "SL2"
+    },
+    {
+      "id": 23,
+      "plc_block_id": 26,
+      "title": "Truck"
+    },
+    {
+      "id": 24,
+      "plc_block_id": 26,
+      "title": "Des_Truck"
+    },
+    {
+      "id": 25,
+      "plc_block_id": 31,
+      "title": "Slot 0"
+    },
+    {
+      "id": 26,
+      "plc_block_id": 33,
+      "title": "Tripper"
+    },
+    {
+      "id": 27,
+      "plc_block_id": 33,
+      "title": "SRC_s1"
+    },
+    {
+      "id": 28,
+      "plc_block_id": 33,
+      "title": "SRC_S2"
+    },
+    {
+      "id": 29,
+      "plc_block_id": 33,
+      "title": "CC1"
+    },
+    {
+      "id": 30,
+      "plc_block_id": 33,
+      "title": "CC2"
+    },
+    {
+      "id": 31,
+      "plc_block_id": 33,
+      "title": "CC3"
+    },
+    {
+      "id": 32,
+      "plc_block_id": 33,
+      "title": "CC4"
+    },
+    {
+      "id": 33,
+      "plc_block_id": 33,
+      "title": "CC5"
+    },
+    {
+      "id": 34,
+      "plc_block_id": 42,
+      "title": "IG2-A",
+      "comment": "ID: 6"
+    },
+      {
+        "id": 35,
+        "plc_block_id": 42,
+        "title": "IG2-B",
+        "comment": "ID: 7"
+      },
+      {
+        "id": 36,
+        "plc_block_id": 42,
+        "title": "IG3-A",
+        "comment": "ID: 8"
+      },
+      {
+        "id": 37,
+        "plc_block_id": 42,
+        "title": "IG4-A",
+        "comment": "ID: 19"
+      },
+      {
+        "id": 38,
+        "plc_block_id": 42,
+        "title": "IG5-A",
+        "comment": "ID: 20"
+      },
+      {
+        "id": 39,
+        "plc_block_id": 42,
+        "title": "FV1"
+      },
+      {
+        "id": 40,
+        "plc_block_id": 42,
+        "title": "EGS1-A"
+      },
+      {
+        "id": 41,
+        "plc_block_id": 42,
+        "title": "EGS1-B"
+      },
+      {
+        "id": 42,
+        "plc_block_id": 42,
+        "title": "EGS1-C"
+      },
+      {
+        "id": 43,
+        "plc_block_id": 42,
+        "title": "EGS1-D"
+      },
+      {
+        "id": 44,
+        "plc_block_id": 42,
+        "title": "EGS2-A"
+      },
+      {
+        "id": 45,
+        "plc_block_id": 42,
+        "title": "EGS2-B"
+      },
+      {
+        "id": 46,
+        "plc_block_id": 42,
+        "title": "EGS2-C"
+      },
+      {
+        "id": 47,
+        "plc_block_id": 42,
+        "title": "EGS2-D"
+      }
+  ],
+  "Variable sections": [
+    {
+      "plc_block_id": 9,
+      "name": "Static",
+      "data": [
+        {
+          "name": "Slot 11",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot 12",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot 10",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_DB",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance",
+          "datatype": "\"TGT_LD_ControlMonitor_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_1",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_2",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_3",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_4",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_5",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_6",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_7",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_8",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_9",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_13",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_14",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_15",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_16",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_17",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_18",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_19",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_20",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot21",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 16,
+      "name": "Static",
+      "data": [
+         {
+           "name": "BE1",
+           "datatype": "\"CN_EL_Type_0\"",
+           "attributes": {
+             "SetPoint": true
+           }
+         }
+      ]
+    },
+    {
+      "plc_block_id": 18,
+      "name": "Static",
+      "data": [
+        {
+          "name": "SA1",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "SA2",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 21,
+      "name": "Static",
+      "data": [
+        {
+          "name": "AFS1A",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "AFS1B",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "AFS2A",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "AFS2B",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 26,
+      "name": "Static",
+      "data": [
+        {
+          "name": "Silo_1",
+          "datatype": "\"Bin_Obj_Type_2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Silo_2",
+          "datatype": "\"Bin_Obj_Type_2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Truck",
+          "datatype": "\"Bin_Obj_Type_6\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Des_Truck",
+          "datatype": "\"Des_Obj_Type_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Des_S1",
+          "datatype": "\"Des_Obj_Type_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Des_S2",
+          "datatype": "\"Des_Obj_Type_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 27,
+      "name": "Static",
+      "data": [
+        {
+          "name": "Slot 11",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot 12",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot 10",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_DB",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance",
+          "datatype": "\"TGT_LD_ControlMonitor_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_1",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_2",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_3",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_4",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_5",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_6",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_7",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_8",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_9",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_13",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_14",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_15",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_16",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_17",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_18",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_19",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_20",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot21",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 28,
+      "name": "Static",
+      "data": [
+        {
+          "name": "CC1",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "CC2",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "CC3",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "CC4",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "CC5",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "TGT_LD_TripperSilo_Silo",
+          "datatype": "\"TGT_LD_TripperSilo_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "SRC_S1",
+          "datatype": "\"TGT_LD_Tripper4V\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "SRC_S2",
+          "datatype": "\"TGT_LD_Tripper4V\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 42,
+      "name": "Static",
+      "data": [
+        {
+          "name": "IG2-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "IG2-B",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "IG3-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "IG4-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "IG5-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "FV1",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS2-C",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS1-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS1-B",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS1-C",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS1-D",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS2-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS2-B",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS2-D",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    }
+  ],
+  "Instances": [
+    {
+      "id": 1,
+      "plc_block_id": 9,
+      "name": "Common_Control Monitor_DB",
+      "call_option": "Single",
+      "blockgroup_folder": "/DB"
+    },
+    {
+      "id": 2,
+      "plc_block_id": 10,
+      "name": "Control_Monitor_1_Instance",
+      "call_option": "Multi"
+    },
+    {
+      "id": 3,
+      "plc_block_id": 11,
+      "name": "",
+      "call_option": "Single",
+      "number": 19,
+      "blockgroup_folder": "/DB"
+    },
+    {
+      "id": 4,
+      "plc_block_id": 14,
+      "name": "",
+      "call_option": "Single",
+      "number": 494,
+      "blockgroup_folder": "/DB"
+    },
+    {
+      "id": 5,
+      "plc_block_id": 15,
+      "name": "",
+      "call_option": "Single",
+      "number": 15,
+      "blockgroup_folder": "/DB"
+    },
+    {
+      "id": 6,
+      "plc_block_id": 16,
+      "name": "Elevator_DB",
+      "call_option": "Single",
+      "blockgroup_folder": "/DB"
+    },
+    {
+      "id": 7,
+      "plc_block_id": 17,
+      "name": "BE1",
+      "call_option": "Multi"
+    },
+    {
+      "id": 8,
+      "plc_block_id": 18,
+      "name": "Sweeper_Auger_DB",
+      "number": 4,
+      "blockgroup_folder": "/DB",
+      "call_option": "Single"
+    },
+    {
+      "id": 9,
+      "plc_block_id": 19,
+      "name": "SA1",
+      "call_option": "Multi"
+    },
+    {
+      "id": 10,
+      "plc_block_id": 20,
+      "name": "SA2",
+      "call_option": "Multi"
+    },
+    {
+      "id": 11,
+      "plc_block_id": 21,
+      "name": "Aeration_Fan_DB",
+      "number": 3,
+      "call_option": "Single"
+    },
+    {
+      "id": 12,
+      "plc_block_id": 21,
+      "name": "Aeration_Fan_DB",
+      "number": 3,
+      "call_option": "Single"
+    },
+    {
+      "id": 13,
+      "plc_block_id": 22,
+      "name": "AFS1A",
+      "call_option": "Multi"
+    },
+    {
+      "id": 14,
+      "plc_block_id": 23,
+      "name": "AFS1B",
+      "call_option": "Multi"
+    },
+    {
+      "id": 15,
+      "plc_block_id": 24,
+      "name": "AFS2A",
+      "call_option": "Multi"
+    },
+    {
+      "id": 16,
+      "plc_block_id": 25,
+      "name": "AFS2B",
+      "call_option": "Multi"
+    },
+    {
+      "id": 17,
+      "plc_block_id": 26,
+      "call_option": "Single",
+      "name": "Common_Bin_DB",
+      "number": 534,
+      "blockgroup_folder": "/DB"
+    },
+    {
+      "id": 18,
+      "plc_block_id": 27,
+      "call_option": "Multi",
+      "name": "Silo_1"
+    },
+    {
+      "id": 19,
+      "plc_block_id": 28,
+      "call_option": "Multi",
+      "name": "Silo_2"
+    },
+    {
+      "id": 20,
+      "plc_block_id": 29,
+      "call_option": "Multi",
+      "name": "Truck"
+    },
+    {
+      "id": 21,
+      "plc_block_id": 30,
+      "call_option": "Multi",
+      "name": "Des_Truck"
+    },
+    {
+      "id": 22,
+      "plc_block_id": 31,
+      "call_option": "Single",
+      "name": "Common_Control Monitor_DB",
+      "number": 535,
+      "blockgroup_folder": "/DB"
+    },
+    {
+      "id": 23,
+      "plc_block_id": 32,
+      "call_option": "Multi",
+      "name": "Control_Monitor_1_Instance"
+    },
+    {
+      "id": 24,
+      "plc_block_id": 33,
+      "call_option": "Single",
+      "name": "Conveyors_DB",
+      "number": 2,
+      "blockgroup_folder": "/DB"
+    },
+    {
+      "id": 25,
+      "plc_block_id": 34,
+      "call_option": "Multi",
+      "name": "TGT_LD_TripperSilo_Silo"
+    },
+    {
+      "id": 26,
+      "plc_block_id": 35,
+      "call_option": "Multi",
+      "name": "SRC_S1"
+    },
+    {
+      "id": 27,
+      "plc_block_id": 36,
+      "call_option": "Multi",
+      "name": "SRC_S2"
+    },
+    {
+      "id": 28,
+      "plc_block_id": 37,
+      "call_option": "Multi",
+      "name": "CC1"
+    },
+    {
+      "id": 29,
+      "plc_block_id": 38,
+      "call_option": "Multi",
+      "name": "CC2"
+    },
+    {
+      "id": 30,
+      "plc_block_id": 39,
+      "call_option": "Multi",
+      "name": "CC3"
+    },
+    {
+      "id": 31,
+      "plc_block_id": 40,
+      "call_option": "Multi",
+      "name": "CC4"
+    },
+    {
+      "id": 32,
+      "plc_block_id": 41,
+      "call_option": "Multi",
+      "name": "CC5"
+    },
+    {
+      "id": 33,
+      "plc_block_id": 42,
+      "call_option": "Single",
+      "name": "Valves_DB",
+      "number": 1,
+      "blockgroup_folder": "/DB"
+    },
+    {
+      "id": 34,
+      "plc_block_id": 43,
+      "call_option": "Multi",
+      "name": "IG2-A"
+    },
+      {
+        "id": 35,
+        "plc_block_id": 44,
+        "call_option": "Multi",
+        "name": "IG2-B"
+      },
+      {
+        "id": 36,
+        "plc_block_id": 45,
+        "call_option": "Multi",
+        "name": "IG3-A"
+      },
+      {
+        "id": 37,
+        "plc_block_id": 46,
+        "call_option": "Multi",
+        "name": "IG4-A"
+      },
+      {
+        "id": 38,
+        "plc_block_id": 47,
+        "call_option": "Multi",
+        "name": "IG5-A"
+      },
+      {
+        "id": 39,
+        "plc_block_id": 48,
+        "call_option": "Multi",
+        "name": "FV1"
+      },
+      {
+        "id": 40,
+        "plc_block_id": 49,
+        "call_option": "Multi",
+        "name": "EGS1-A"
+      },
+      {
+        "id": 41,
+        "plc_block_id": 50,
+        "call_option": "Multi",
+        "name": "EGS1-B"
+      },
+      {
+        "id": 42,
+        "plc_block_id": 51,
+        "call_option": "Multi",
+        "name": "EGS1-C"
+      },
+      {
+        "id": 43,
+        "plc_block_id": 52,
+        "call_option": "Multi",
+        "name": "EGS1-D"
+      },
+      {
+        "id": 44,
+        "plc_block_id": 53,
+        "call_option": "Multi",
+        "name": "EGS2-A"
+      },
+      {
+        "id": 45,
+        "plc_block_id": 54,
+        "call_option": "Multi",
+        "name": "EGS2-B"
+      },
+      {
+        "id": 46,
+        "plc_block_id": 55,
+        "call_option": "Multi",
+        "name": "EGS2-C"
+      },
+      {
+        "id": 47,
+        "plc_block_id": 56,
+        "call_option": "Multi",
+        "name": "EGS2-D"
+      }
+  ],
+  "Wire parameters": [
+    {
+      "plc_block_id": 10,
+      "parameters": {
+        "Slot_ID": "0",
+        "Slots": "DB_Master.All_Slots[0]"
+      }
+    },
+    {
+      "plc_block_id": 12,
+      "parameters": {
+        "en": "true"
+      }
+    },
+    {
+      "plc_block_id": 13,
+      "parameters": {
+        "en": "true"
+      }
+    },
+    {
+      "plc_block_id": 17,
+      "parameters": {
+        "Offset": "2",
+        "Auto": "IO.BE1_AUTO",
+        "Hand": "IO.BE1_HAND",
+        "Running": "IO.BE1_RUNNING",
+        "BeltDrift_1_Fault": "IO.BE1_BELT_DRIFT_TOP_LEFT",
+        "BeltDrift_1_Warning": "false",
+        "BeltDrift_2_Fault": "IO.BE1_BELT_DRIFT_TOP_RIGHT",
+        "BeltDrift_2_Warning": "false",
+        "BeltDrift_3_Fault": "IO.BE1_BELT_DRIFT_BOTTOM_LEFT",
+        "BeltDrift_3_Warning": "false",
+        "BeltDrift_4_Fault": "IO.BE1_BELT_DRIFT_BOTTOM_RIGHT",
+        "BeltDrift_4_Warning": "false",
+        "Power": "IO.BE1_POWER_OK",
+        "Status1": "false",
+        "Status2": "false",
+        "Status3": "false",
+        "Status4": "false",
+        "Warning1": "false",
+        "Warning2": "false",
+        "Warning3": "false",
+        "Warning4": "false",
+        "NFatal1": "false",
+        "NFatal2": "false",
+        "NFatal3": "false",
+        "NFatal4": "false",
+        "Fatal1": "IO.BE1_OVERLOAD_FAULT",
+        "Fatal2": "false",
+        "Fatal3": "false",
+        "EStop": "IO.BE1_EMERGENCY_STOP",
+        "Fatal4": "false",
+        "T_Run": "T#10S",
+        "UptoSpeed": "IO.BE1_UNDERSPEED",
+        "T_US_Run": "T#1S",
+        "T_Hooter_Period_On": "T#2S",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "T#1S",
+        "T_UptoSpeed": "T#5s",
+        "Ext_Product": "false",
+        "Inhibit_Hooter": "false",
+        "Inhibit_Start": "false",
+        "HeadBlockedChute": "IO.BE1_BLOCKED_CHUTE",
+        "TailBlockedChute": "false",
+        "T_BlockedChute": "T#5S",
+        "Ext_Gob": "false",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "0",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "Pulsing": "false",
+        "BeltDrift_Count": "3",
+        "BeltDrift_Count_Time": "T#5s",
+        "BeltDrift_Continous_Time": "T#5s",
+        "Start": "IO.BE1_START",
+        "Hooter": "",
+        "Purging": ""
+      }
+    },
+    {
+      "plc_block_id": 19,
+      "parameters": {
+        "Offset": "30",
+        "Auto": "IO.SA1_AUTO",
+        "Hand": "IO.SA1_HAND",
+        "Running": "IO.SA1_RUNNING",
+        "Power": "IO.SA1_POWER_OK", 
+        "Fatal1": "IO.SA1_OVERLOAD_FAULT",
+        "EStop": "IO.SA1_EMERGENCY_STOP",
+        "UptoSpeed": "IO.SA1_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.SA1_BLOCKED_CHUTE",
+        "Start": "IO.SA1_START" 
+      }
+    },
+    {
+      "plc_block_id": 20,
+      "parameters": {
+        "Offset": "31",
+        "Auto": "IO.SA2_AUTO",
+        "Hand": "IO.SA2_HAND",
+        "Running": "IO.SA2_RUNNING",
+        "Power": "IO.SA2_POWER_OK", 
+        "Fatal1": "IO.SA2_OVERLOAD_FAULT",
+        "EStop": "IO.SA2_EMERGENCY_STOP",
+        "UptoSpeed": "IO.SA2_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.SA2_BLOCKED_CHUTE",
+        "Start": "IO.SA2_START"       
+      }
+    },
+    {
+      "plc_block_id": 22,
+      "parameters": {
+        "Offset": "26",
+        "Auto": "IO.AFS1A_AUTO",
+        "Hand": "IO.AFS1A_HAND",
+        "Running": "IO.AFS1A_RUNNING",
+        "Power": "IO.AFS1A_POWER_OK", 
+        "Fatal1": "IO.AFS1A_OVERLOAD_FAULT",
+        "EStop": "IO.AFS1A_EMERGENCY_STOP",
+        "UptoSpeed": "IO.AFS1A_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.AFS1A_BLOCKED_CHUTE",
+        "Start": "IO.AFS1A_START" 
+      }
+    },
+    {
+      "plc_block_id": 23,
+      "parameters": {
+        "Offset": "27",
+        "Auto": "IO.AFS1B_AUTO",
+        "Hand": "IO.AFS1B_HAND",
+        "Running": "IO.AFS1B_RUNNING",
+        "Power": "IO.AFS1B_POWER_OK",
+        "Fatal1": "IO.AFS1B_OVERLOAD_FAULT",
+        "EStop": "IO.AFS1B_EMERGENCY_STOP",
+        "UptoSpeed": "IO.AFS1B_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.AFS1B_BLOCKED_CHUTE",
+        "Start": "IO.AFS1B_START"       
+      }
+    },
+    {
+      "plc_block_id": 24,
+      "parameters": {
+        "Offset": "28",
+        "Auto": "IO.AFS2A_AUTO",
+        "Hand": "IO.AFS2A_HAND",
+        "Running": "IO.AFS2A_RUNNING",
+        "Power": "IO.AFS2A_POWER_OK",
+        "Fatal1": "IO.AFS2A_OVERLOAD_FAULT",
+        "EStop": "IO.AFS2A_EMERGENCY_STOP",
+        "UptoSpeed": "IO.AFS2A_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.AFS2A_BLOCKED_CHUTE",
+        "Start": "IO.AFS2A_START" 
+      }
+    },
+    {
+      "plc_block_id": 25,
+      "parameters": {
+        "Offset": "28",
+        "Auto": "IO.AFS2B_AUTO",
+        "Hand": "IO.AFS2B_HAND",
+        "Running": "IO.AFS2B_RUNNING",
+        "Power": "IO.AFS2B_POWER_OK",
+        "Fatal1": "IO.AFS2B_OVERLOAD_FAULT",
+        "EStop": "IO.AFS2B_EMERGENCY_STOP",
+        "UptoSpeed": "IO.AFS2B_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.AFS2B_BLOCKED_CHUTE",
+        "Start": "IO.AFS2B_START"       
+      }
+    },
+    {
+      "plc_block_id": 27,
+      "parameters": {
+        "HI_Level": "IO.HL_S1" ,
+        "Lo_Level": "false",
+        "Bin_ID": "2",
+        "Des_ID": "24",
+        "Destination_Att": "2",
+        "AdjacentBin1": "3",
+        "CenterValve": "11",
+        "sideValve1": "12",
+        "sideValve2": "13",
+        "sideValve3": "14"
+      }
+    },
+    {
+      "plc_block_id": 28,
+      "parameters": {
+        "HI_Level": "IO.HL_S2" ,
+        "Lo_Level": "false",
+        "Bin_ID": "3",
+        "Des_ID": "24",
+        "Destination_Att": "3",
+        "AdjacentBin1": "3",
+        "CenterValve": "15",
+        "sideValve1": "16",
+        "sideValve2": "10",
+        "sideValve3": "18"
+      }
+    },
+    {
+      "plc_block_id": 29,
+      "parameters": {
+        "HI_Level": "false",
+        "Lo_Level": "false",
+        "Bin_ID": "1",
+        "Conv_ID": "1"
+      }
+    },
+    {
+      "plc_block_id": 30,
+      "parameters": {
+        "Bin_ID": "1",
+        "Destination_Att": "1",
+        "Dust_Fan_ID": "0",
+        "Des_ID": "24",
+        "Dust_Fan_Timer_to_Fault": "T#5M"
+      }
+    },
+    {
+      "plc_block_id": 32,
+      "parameters": {
+        "Slot_ID": "0",
+        "Slots": "DB_Master.All_Slots[0]"
+      }
+    },
+    {
+      "plc_block_id": 34,
+      "parameters": {
+        "Conveyor_1":  "DB_Master.All_Drives.[4]"  ,
+        "Valve_1":  "DB_Master.All_Drives[6]"  ,
+        "Conveyor_2":  "DB_Master.All_Drives[5]"  ,
+        "Valve_2":  "DB_Master.All_Drives[7]"  ,
+        "Valve_3":  "DB_Master.All_Drives[8]"  ,
+        "Diverter":  "DB_Master.All_Drives[3]"  ,
+        "A_Path_Drive":  "DB_Master.All_Drives[25]"  
+      }
+    },
+    {
+      "plc_block_id": 35,
+      "parameters": {
+        "en": "FALSE",
+        "U_PosDrv_1_A":  "DB_Master.All_Drives[11]"  ,
+        "U_PosDrv_2_A":  "DB_Master.All_Drives[12]"  ,
+        "U_PosDrv_3_A":  "DB_Master.All_Drives[13]"  ,
+        "U_PosDrv_4_A":  "DB_Master.All_Drives[14]"  ,
+        "A_Path_Drive":  "DB_Master.All_Drives[21]"  
+      }
+    },
+    {
+      "plc_block_id": 36,
+      "parameters": {
+        "en": "FALSE",
+        "U_PosDrv_1_A":  "DB_Master.All_Drives[15]"  ,
+        "U_PosDrv_2_A":  "DB_Master.All_Drives[16]"  ,
+        "U_PosDrv_3_A":  "DB_Master.All_Drives[10]"  ,
+        "U_PosDrv_4_A":  "DB_Master.All_Drives[18]"  ,
+        "A_Path_Drive":  "DB_Master.All_Drives[22]"  
+      }
+    },
+    {
+      "plc_block_id": 37,
+      "parameters": {
+        "Offset": "1",
+        "Auto":  "IO.CC1_AUTO" ,
+        "Hand":  "IO.CC1_HAND" ,
+        "Running":  "IO.CC1_RUNNING" ,
+        "Power":  "IO.CC1_POWER_OK" ,
+        "Fatal1":  "IO.CC1_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC1_SLACK_CHAIN" ,
+        "Fatal3": "false",
+        "Fatal4": "false",
+        "EStop":  "IO.CC1_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC1_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#3s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "t#5s",
+        "Ext_Product": "false",
+        "Inhibit_Hooter": "false",
+        "Inhibit_Start": "false",
+        "HeadBlockedChute":  "IO.CC1_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "false",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "false",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "300000",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#2s",
+        "WarningBit2": "false",
+        "Start":  "IO.CC1_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 38,
+      "parameters": {
+        "Offset": "4",
+        "Auto":  "IO.CC2_AUTO" ,
+        "Hand":  "IO.CC2_HAND" ,
+        "Running":  "IO.CC2_RUNNING" ,
+        "Power":  "IO.CC2_POWER_OK" ,
+        "Fatal1":  "IO.CC2_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC2_SLACK_CHAIN" ,
+        "Fatal3": "",
+        "Fatal4": "",
+        "EStop":  "IO.CC2_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC2_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#1s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "t#5s",
+        "Ext_Product": "",
+        "Inhibit_Hooter": "",
+        "Inhibit_Start": "",
+        "HeadBlockedChute":  "IO.CC2_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "WarningBit2": "",
+        "Start":  "IO.CC2_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 39,
+      "parameters": {
+        "Offset": "5",
+        "Auto":  "IO.CC3_AUTO" ,
+        "Hand":  "IO.CC3_HAND" ,
+        "Running":  "IO.CC3_RUNNING" ,
+        "Power":  "IO.CC3_POWER_OK" ,
+        "Fatal1":  "IO.CC3_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC3_SLACK_CHAIN" ,
+        "Fatal3": "",
+        "Fatal4": "",
+        "EStop":  "IO.CC3_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC3_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#1s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "T#5s",
+        "Ext_Product": "",
+        "Inhibit_Hooter": "",
+        "Inhibit_Start": "",
+        "HeadBlockedChute":  "IO.CC3_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "WarningBit2": "",
+        "Start":  "IO.CC3_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 40,
+      "parameters": {
+        "Offset": "17",
+        "Auto":  "IO.CC4_AUTO" ,
+        "Hand":  "IO.CC4_HAND" ,
+        "Running":  "IO.CC4_RUNNING" ,
+        "Power":  "IO.CC4_POWER_OK" ,
+        "Fatal1":  "IO.CC4_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC4_SLACK_CHAIN" ,
+        "Fatal3": "",
+        "Fatal4": "",
+        "EStop":  "IO.CC4_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC4_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#1s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "T#5s",
+        "Ext_Product": "false",
+        "Inhibit_Hooter": "",
+        "Inhibit_Start": "",
+        "HeadBlockedChute":  "IO.CC4_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "WarningBit2": "",
+        "Start":  "IO.CC4_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 41,
+      "parameters": {
+        "Offset": "9",
+        "Auto":  "IO.CC5_AUTO" ,
+        "Hand":  "IO.CC5_HAND" ,
+        "Running":  "IO.CC5_RUNNING" ,
+        "Power":  "IO.CC5_POWER_OK" ,
+        "Fatal1":  "IO.CC5_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC5_SLACK_CHAIN" ,
+        "Fatal3": "",
+        "Fatal4": "",
+        "EStop":  "IO.CC5_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC5_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#1s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "T#5s",
+        "Ext_Product": "",
+        "Inhibit_Hooter": "",
+        "Inhibit_Start": "",
+        "HeadBlockedChute":  "IO.CC5_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "WarningBit2": "",
+        "Start":  "IO.CC5_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 43,
+      "parameters": {
+        "CrashStop":  "IO.IG2A_EMERGENCY_STOP" ,
+        "Power":  "IO.IG2A_POWER_OK" ,
+        "ThermistorFault":  "IO.IG2A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG2A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG2A_FULLY_CLOSE" ,
+        "Open":  "IO.IG2A_START_OPEN" ,
+        "Close":  "IO.IG2A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[6]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[6]"  
+      }
+    },
+    {
+      "plc_block_id": 44,
+      "parameters": {
+        "CrashStop":  "IO.IG2B_EMERGENCY_STOP" ,
+        "Power":  "IO.IG2B_POWER_OK" ,
+        "ThermistorFault":  "IO.IG2B_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG2B_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG2B_FULLY_CLOSE" ,
+        "Open":  "IO.IG2B_START_OPEN" ,
+        "Close":  "IO.IG2B_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[7]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[7]"  
+      }
+    },
+    {
+      "plc_block_id": 45,
+      "parameters": {
+        "CrashStop":  "IO.IG3A_EMERGENCY_STOP" ,
+        "Power":  "IO.IG3A_POWER_OK" ,
+        "ThermistorFault":  "IO.IG3A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG3A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG3A_FULLY_CLOSE" ,
+        "Open":  "IO.IG3A_START_OPEN" ,
+        "Close":  "IO.IG3A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[8]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[8]"  
+      }
+    },
+    {
+      "plc_block_id": 46,
+      "parameters": {
+        "CrashStop":  "IO.IG4A_EMERGENCY_STOP" ,
+        "Power":  "IO.IG4A_POWER_OK" ,
+        "ThermistorFault":  "IO.IG4A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG4A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG4A_FULLY_CLOSE" ,
+        "Open":  "IO.IG4A_START_OPEN" ,
+        "Close":  "IO.IG4A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[19]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[19]"  
+      }
+    },
+    {
+      "plc_block_id": 47,
+      "parameters": {
+        "CrashStop":  "IO.IG5A_EMERGENCY_STOP" ,
+        "Power":  "IO.IG5A_POWER_OK" ,
+        "ThermistorFault":  "IO.IG5A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG5A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG5A_FULLY_CLOSE" ,
+        "Open":  "IO.IG5A_START_OPEN" ,
+        "Close":  "IO.IG5A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[20]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[20]"  
+      }
+    },
+    {
+      "plc_block_id": 48,
+      "parameters": {
+        "CrashStop":  "IO.FV1_EMERGENCY_STOP" ,
+        "Power":  "IO.FV1_POWER_OK" ,
+        "ThermistorFault": "false",
+        "Fully_Open":  "IO.FV1_POSITION_1" ,
+        "Fully_Closed":  "IO.FV1_POSITION_2" ,
+        "Open":  "IO.FV1_START_POSITION_1" ,
+        "Close":  "IO.FV1_START_POSITION_2" ,
+        "Pos_Drive":  "DB_Master.All_Drives[3]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[3]"  
+      }
+    },
+    {
+      "plc_block_id": 49,
+      "parameters": {
+        "CrashStop":  "IO.EGS1A_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS1A_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS1A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS1A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS1A_FULLY_CLOSE" ,
+        "Open":  "IO.EGS1A_START_OPEN" ,
+        "Close":  "IO.EGS1A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[11]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[11]"  
+      }
+    },
+    {
+      "plc_block_id": 50,
+      "parameters": {
+        "CrashStop":  "IO.EGS1B_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS1B_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS1B_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS1B_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS1B_FULLY_CLOSE" ,
+        "Open":  "IO.EGS1B_START_OPEN" ,
+        "Close":  "IO.EGS1B_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[12]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[12]"  
+      }
+    },
+    {
+      "plc_block_id": 51,
+      "parameters": {
+        "CrashStop":  "IO.EGS1C_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS1C_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS1C_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS1C_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS1C_FULLY_CLOSE" ,
+        "Open":  "IO.EGS1C_START_OPEN" ,
+        "Close":  "IO.EGS1C_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[13]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[13]"  
+      }
+    },
+    {
+      "plc_block_id": 52,
+      "parameters": {
+        "CrashStop":  "IO.EGS1D_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS1D_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS1D_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS1D_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS1D_FULLY_CLOSE" ,
+        "Open":  "IO.EGS1D_START_OPEN" ,
+        "Close":  "IO.EGS1D_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[14]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[14]"  
+      }
+    },
+    {
+      "plc_block_id": 53,
+      "parameters": {
+        "CrashStop":  "IO.EGS2A_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS2A_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS2A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS2A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS2A_FULLY_CLOSE" ,
+        "Open":  "IO.EGS2A_START_OPEN" ,
+        "Close":  "IO.EGS2A_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[15]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[15]"  
+      }
+    },
+    {
+      "plc_block_id": 54,
+      "parameters": {
+        "CrashStop":  "IO.EGS2B_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS2B_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS2B_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS2B_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS2B_FULLY_CLOSE" ,
+        "Open":  "IO.EGS2B_START_OPEN" ,
+        "Close":  "IO.EGS2B_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[16]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[16]"  
+      }
+    },
+    {
+      "plc_block_id": 55,
+      "parameters": {
+        "CrashStop":  "IO.EGS2C_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS2C_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS2C_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS2C_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS2C_FULLY_CLOSE" ,
+        "Open":  "IO.EGS2C_START_OPEN" ,
+        "Close":  "IO.EGS2C_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[10]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[10]"  
+      }
+    },
+    {
+      "plc_block_id": 56,
+      "parameters": {
+        "CrashStop":  "IO.EGS2D_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS2D_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS2D_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS2D_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS2D_FULLY_CLOSE" ,
+        "EN_Cont_Pos": "false",
+        "Open":  "IO.EGS2D_START_OPEN" ,
+        "Close":  "IO.EGS2D_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[18]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[18]"  
+      }
+    }
+  ]
+}

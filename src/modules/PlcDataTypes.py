@@ -18,7 +18,7 @@ class PlcDataType:
 
 
 class XML(Software):
-    NAME = "SW.Types.PlcStruct"
+    DOCUMENT = "SW.Types.PlcStruct"
     def __init__(self, data: PlcDataType):
         super().__init__(data.Name)
 
@@ -43,21 +43,21 @@ class XML(Software):
 
 
 def create(imports: Imports, plc_software: Siemens.Engineering.HW.Software, data: PlcDataType):
-    logger.info(f"Generating of {len(data)} User Data Types started")
+    logger.info(f"Generating of {data.Name} User Data Types started")
 
     if not data.Name or not data.Types:
         return
 
-    logger.info(f"Generating of User Data Type {plcstruct.Name} started")
+    logger.info(f"Generating of User Data Type {data.Name} started")
 
     xml = XML(data)
     filename: Path = xml.write()
     
-    logger.info(f"Written User Data Type {plcstruct.Name} XML to: {filename}")
+    logger.info(f"Written User Data Type {data.Name} XML to: {filename}")
 
     import_xml(imports, plc_software, filename)
 
-    logger.info(f"Importing User Data Type {plcstruct.Name} started")
+    logger.info(f"Importing User Data Type {data.Name} started")
 
     if filename.exists():
         filename.unlink()

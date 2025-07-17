@@ -1,0 +1,22 @@
+from dataclasses import dataclass
+from enum import Enum
+
+from src.modules.XML.ProgramBlocks import Database
+
+class CallOptionEnum(Enum):
+    Single = "Single"
+    Multi = "Multi"
+    Parameter = "Parameter"
+
+
+@dataclass
+class SingleInstance(Database):
+    CallOption: CallOptionEnum
+
+@dataclass
+class MultiInstance(Database):
+    CallOption: CallOptionEnum
+
+@dataclass
+class ParameterInstance(Database):
+    CallOption: CallOptionEnum
