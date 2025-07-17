@@ -1,6 +1,5 @@
 from pathlib import Path
 import json
-import pytest
 
 from src.core import core
 from src.schemas import configuration
@@ -9,20 +8,25 @@ import src.modules.Portals as Portals
 BASE_DIR = Path(__file__).parent
 
 multiple_devices = BASE_DIR / "configs" / "multiple_devices.json"
-multiple_devices_with_libraries = BASE_DIR / "configs" / "multiple_devices_with_libraries.json"
-multiple_devices_with_local_modules = BASE_DIR / "configs" / "multiple_devices_with_local_modules.json"
-multiple_devices_with_plc_data_types = BASE_DIR / "configs" / "multiple_devices_with_plc_data_types.json"
+multiple_devices_with_libraries = BASE_DIR / \
+    "configs" / "multiple_devices_with_libraries.json"
+multiple_devices_with_local_modules = BASE_DIR / \
+    "configs" / "multiple_devices_with_local_modules.json"
+multiple_devices_with_plc_data_types = BASE_DIR / \
+    "configs" / "multiple_devices_with_plc_data_types.json"
 plc_tags = BASE_DIR / "configs" / "plc_tags.json"
+global_dbs = BASE_DIR / "configs" / "global_dbs.json"
+
 
 dlls = core.generate_dlls()
 dll = dlls['V18']
-
-import clr
-from System.IO import DirectoryInfo, FileInfo
+import clr  # noqa: E402
+from System.IO import DirectoryInfo, FileInfo  # noqa: E402
 clr.AddReference(dll.as_posix())
-import Siemens.Engineering as SE
+import Siemens.Engineering as SE  # noqa: E402
 
 imports = Portals.Imports(SE, DirectoryInfo, FileInfo)
+
 
 def test_core():
     config = None
@@ -31,7 +35,8 @@ def test_core():
     config['directory'] = BASE_DIR.parent.parent.parent
     config['name'] = f"test_core.{multiple_devices.stem}"
 
-    TIA = core.execute(imports, config, { "enable_ui": True, })
+    core.execute(imports, config, {"enable_ui": True, })
+
 
 def test_core_local_modules():
     config = None
@@ -40,7 +45,8 @@ def test_core_local_modules():
     config['directory'] = BASE_DIR.parent.parent.parent
     config['name'] = f"test_core.{multiple_devices_with_local_modules.stem}"
 
-    TIA = core.execute(imports, config, { "enable_ui": True, })
+    core.execute(imports, config, {"enable_ui": True, })
+
 
 def test_core_plc_tags():
     config = None
@@ -49,7 +55,8 @@ def test_core_plc_tags():
     config['directory'] = BASE_DIR.parent.parent.parent
     config['name'] = f"test_core.{plc_tags.stem}"
 
-    TIA = core.execute(imports, config, { "enable_ui": True, })
+    core.execute(imports, config, {"enable_ui": True, })
+
 
 def test_core_libraries():
     config = None
@@ -58,7 +65,8 @@ def test_core_libraries():
     config['directory'] = BASE_DIR.parent.parent.parent
     config['name'] = f"test_core.{multiple_devices_with_libraries.stem}"
 
-    TIA = core.execute(imports, config, { "enable_ui": True, })
+    core.execute(imports, config, {"enable_ui": True, })
+
 
 def test_core_plc_data_types():
     config = None
@@ -67,4 +75,14 @@ def test_core_plc_data_types():
     config['directory'] = BASE_DIR.parent.parent.parent
     config['name'] = f"test_core.{multiple_devices_with_plc_data_types.stem}"
 
-    TIA = core.execute(imports, config, { "enable_ui": True, })
+    core.execute(imports, config, {"enable_ui": True, })
+
+
+def test_core_globaldb():
+    config = None
+    with open(global_dbs) as file:
+        config = configuration.validate(json.load(file))
+    config['directory'] = BASE_DIR.parent.parent.parent
+    config['name'] = f"test_core.{global_dbs.stem}"
+
+    core.execute(imports, config, {"enable_ui": True, })

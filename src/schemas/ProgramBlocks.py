@@ -1,3 +1,4 @@
+from pathlib import PurePosixPath
 from schema import Schema, And, Or, Use, Optional, SchemaError
 
 from src.modules.XML.ProgramBlocks import PlcEnum
@@ -22,12 +23,20 @@ PlcBlock = Schema({
     Optional("network_source_id"): int,
     "type": And(str, Use(PlcEnum)),
     "name": str,
-    Optional("blockgroup_folder", default="/"): str,
+    Optional("blockgroup_folder", default=PurePosixPath("/")): And(
+        str,
+        Use(PurePosixPath),
+        lambda p: PurePosixPath(p)
+    ),
     Optional("number", default=1): int,
     Optional("is_instance", default=False): bool,
     Optional("library_source"): Schema({
         "name": str,
-        "blockgroup_folder": str,
+        Optional("blockgroup_folder", default=PurePosixPath("/")): And(
+            str,
+            Use(PurePosixPath),
+            lambda p: PurePosixPath(p)
+        ),
     }),
 })
 
@@ -39,6 +48,10 @@ Parameter = Schema({
 Database = Schema({
     "id": int,
     "name": str,
-    Optional("blockgroup_folder", default="/"): str,
+    Optional("blockgroup_folder", default=PurePosixPath("/")): And(
+        str,
+        Use(PurePosixPath),
+        lambda p: PurePosixPath(p)
+    ),
     Optional("number", default=1): int,
 })

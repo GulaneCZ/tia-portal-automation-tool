@@ -1,6 +1,7 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
-from pathlib import Path
+from pathlib import PurePosixPath
 from typing import Optional
 import xml.etree.ElementTree as ET
 
@@ -15,10 +16,12 @@ class VariableStruct:
     StartValue: str
     Attributes: dict
 
-@dataclass 
+
+@dataclass
 class VariableSection:
     Name: str
-    Variables: list[VariableStruct]
+    Structs: list[VariableStruct]
+
 
 @dataclass
 class ProgramBlock:
@@ -27,11 +30,13 @@ class ProgramBlock:
     ProgrammingLanguage: str
     Variables: list[VariableSection]
 
+
 @dataclass
 class NetworkSource:
     Title: str
     Comment: str
     Instances: list
+
 
 @dataclass
 class WireParameter:
@@ -41,20 +46,25 @@ class WireParameter:
     Value: str | list[str]
     Negated: bool
 
+
 class PlcEnum(Enum):
     PlcStruct = "SW.Types.PlcStruct"
     OB = "SW.Blocks.OB"
     FB = "SW.Blocks.FB"
     FC = "SW.Blocks.FC"
-    WatchTable = "SW.WatchAndForceTables.PlcWatchTable"
-    ForceTable = "SW.WatchAndForceTables.PlcForceTable"
-    WatchTableEntry = "SW.WatchAndForceTables.PlcWatchTableEntry"
-    ForceTableEntry = "SW.WatchAndForceTables.PlcForceTableEntry"
+    GlobalDB = "SW.Blocks.GlobalDB"
+    # WatchTable = "SW.WatchAndForceTables.PlcWatchTable"
+    # ForceTable = "SW.WatchAndForceTables.PlcForceTable"
+    # WatchTableEntry = "SW.WatchAndForceTables.PlcWatchTableEntry"
+    # ForceTableEntry = "SW.WatchAndForceTables.PlcForceTableEntry"
 
+
+@dataclass
 class Database:
     Name: str
     Number: int
     BlockGroupPath: str
+
 
 @dataclass
 class InstanceContainer:
@@ -71,40 +81,48 @@ class Base(Document):
         self.variables: list[VariableSection] = variables
 
         ET.SubElement(self.AttributeList, "Number").text = str(number)
-        ET.SubElement(self.AttributeList, "ProgrammingLanguage").text = programming_language
+        ET.SubElement(self.AttributeList,
+                      "ProgrammingLanguage").text = programming_language
         self.ObjectList = ET.SubElement(self.SWDoc, "ObjectList")
 
         self.sections_enabled: list[str] = []
 
     def _create_input_section(self):
-        self.InputSection = ET.SubElement(self.Sections, "Section", attrib={"Name": "Input"})
+        self.InputSection = ET.SubElement(
+            self.Sections, "Section", attrib={"Name": "Input"})
         self.sections_enabled.append("Input")
 
     def _create_output_section(self):
-        self.OutputSection = ET.SubElement(self.Sections, "Section", attrib={"Name": "Output"})
+        self.OutputSection = ET.SubElement(
+            self.Sections, "Section", attrib={"Name": "Output"})
         self.sections_enabled.append("Output")
 
     def _create_temp_section(self):
-        self.TempSection = ET.SubElement(self.Sections, "Section", attrib={"Name": "Temp"})
+        self.TempSection = ET.SubElement(
+            self.Sections, "Section", attrib={"Name": "Temp"})
         self.sections_enabled.append("Temp")
 
     def _create_constant_section(self):
-        self.ConstantSection = ET.SubElement(self.Sections, "Section", attrib={"Name": "Constant"})
+        self.ConstantSection = ET.SubElement(
+            self.Sections, "Section", attrib={"Name": "Constant"})
         self.sections_enabled.append("Constant")
 
     def _create_inout_section(self):
-        self.InOutSection = ET.SubElement(self.Sections, "Section", attrib={"Name": "InOut"})
+        self.InOutSection = ET.SubElement(
+            self.Sections, "Section", attrib={"Name": "InOut"})
         self.sections_enabled.append("InOut")
 
     def _create_static_section(self):
-        self.StaticSection = ET.SubElement(self.Sections, "Section", attrib={"Name": "Static"})
+        self.StaticSection = ET.SubElement(
+            self.Sections, "Section", attrib={"Name": "Static"})
         self.sections_enabled.append("Static")
 
     def _create_return_section(self):
-        self.ReturnSection = ET.SubElement(self.Sections, "Section", attrib={"Name": "Return"})
+        self.ReturnSection = ET.SubElement(
+            self.Sections, "Section", attrib={"Name": "Return"})
         self.sections_enabled.append("Return")
         ET.SubElement(self.ReturnSection, "Member", attrib={
-            'Name': "Ret_Val", 
+            'Name': "Ret_Val",
             'Datatype': "Void",
         })
 
@@ -114,19 +132,19 @@ class Base(Document):
                 continue
 
             if section.Name == "Input":
-                self._create_member(section.Variables, self.InputSection)
+                self._create_member(section.Structs, self.InputSection)
             if section.Name == "Output":
-                self._create_member(section.Variables, self.OutputSection)
+                self._create_member(section.Structs, self.OutputSection)
             if section.Name == "Temp":
-                self._create_member(section.Variables, self.TempSection)
+                self._create_member(section.Structs, self.TempSection)
             if section.Name == "Constant":
-                self._create_member(section.Variables, self.ConstantSection)
+                self._create_member(section.Structs, self.ConstantSection)
             if section.Name == "InOut":
-                self._create_member(section.Variables, self.InOutSection)
+                self._create_member(section.Structs, self.InOutSection)
             if section.Name == "Return":
-                self._create_member(section.Variables, self.ReturnSection)
+                self._create_member(section.Structs, self.ReturnSection)
             if section.Name == "Static":
-                self._create_member(section.Variables, self.StaticSection)
+                self._create_member(section.Structs, self.StaticSection)
 
         return
 
@@ -149,6 +167,7 @@ class Base(Document):
 
         return
 
+
 class BlockCompileUnit:
     def __init__(self, programming_language: str, network_source: NetworkSource, id) -> None:
         self.root: ET.Element = ET.Element("SW.Blocks.CompileUnit", attrib={
@@ -158,9 +177,11 @@ class BlockCompileUnit:
         self.AttributeList = ET.SubElement(self.root, "AttributeList")
         self.ObjectList = ET.SubElement(self.root, "ObjectList")
         self.NetworkSource = ET.SubElement(self.AttributeList, "NetworkSource")
-        ET.SubElement(self.AttributeList, "ProgrammingLanguage").text = programming_language
+        ET.SubElement(self.AttributeList,
+                      "ProgrammingLanguage").text = programming_language
 
-        self._generate_texts(id+1, network_source.Title, network_source.Comment)
+        self._generate_texts(id+1, network_source.Title,
+                             network_source.Comment)
 
         self._create_instances(network_source.Instances)
 
@@ -190,7 +211,7 @@ class BlockCompileUnit:
                 self._insert_wires(instance, last_uid + 2)
 
         return
-    
+
     def _insert_parts(self, instance: InstanceContainer, uid: int) -> int:
         for parameter in instance.Parameters:
             if not parameter.Value:
@@ -204,13 +225,16 @@ class BlockCompileUnit:
             parameter.__dict__['call'] = uid
 
         Call = ET.SubElement(self.Parts, "Call", attrib={'UId': str(uid)})
-        CallInfo = ET.SubElement(Call, "CallInfo", attrib={'Name': instance.Name, 'BlockType': instance.Type.value.split('.')[-1]})
+        CallInfo = ET.SubElement(Call, "CallInfo", attrib={
+                                 'Name': instance.Name, 'BlockType': instance.Type.value.split('.')[-1]})
         if instance.Type != PlcEnum.FC:
             scope = "GlobalVariable"
             if instance.Database.Type == DatabaseType.MultiInstance:
                 scope = "LocalVariable"
-            InstanceTag = ET.SubElement(CallInfo, "Instance", attrib={'Scope': scope, 'UId': str(uid+1)})
-            db_name = instance.Database.Name if instance.Database.Name != "" else f"{instance.Name}_DB"
+            InstanceTag = ET.SubElement(CallInfo, "Instance", attrib={
+                                        'Scope': scope, 'UId': str(uid+1)})
+            db_name = instance.Database.Name if instance.Database.Name != "" else f"{
+                instance.Name}_DB"
             ET.SubElement(InstanceTag, "Component", attrib={'Name': db_name})
 
         for parameter in instance.Parameters:
@@ -230,10 +254,12 @@ class BlockCompileUnit:
         wire_values: list[tuple[ET.Element, ET.Element]] = []
         for param in instance.Parameters:
             p_call_uid = param.__dict__.get('call', 23)
-            NameCon = ET.Element("NameCon", attrib={'UId': str(p_call_uid), 'Name': param.Name})
+            NameCon = ET.Element("NameCon", attrib={
+                                 'UId': str(p_call_uid), 'Name': param.Name})
             if param.Value:
                 ident_uid = param.__dict__.get('UId', 23)
-                IdentCon = ET.Element("IdentCon", attrib={'UId': str(ident_uid)})
+                IdentCon = ET.Element("IdentCon", attrib={
+                                      'UId': str(ident_uid)})
                 wire_values.append((NameCon, IdentCon))
 
             else:
@@ -248,7 +274,8 @@ class BlockCompileUnit:
             last_uid += 1
 
         return
-    
+
+
 def generate_MultilingualTextItem(id: int, text: str) -> ET.Element:
     root = ET.Element("MultilingualTextItem", attrib={
         'ID': format(id, 'X'),
@@ -260,7 +287,7 @@ def generate_MultilingualTextItem(id: int, text: str) -> ET.Element:
     ET.SubElement(AttributeList, "Text").text = text
 
     return root
-    
+
 
 def generate_MultilingualText(id: int, composition_name: str, text: str) -> ET.Element:
     root = ET.Element("MultilingualText", attrib={
@@ -273,11 +300,14 @@ def generate_MultilingualText(id: int, composition_name: str, text: str) -> ET.E
 
     return root
 
+
 def wrap_wire_data(elements: tuple[ET.Element, ET.Element], uid: int) -> ET.Element:
     Wire = ET.Element("Wire", attrib={'UId': str(uid)})
     for el in elements:
         Wire.append(el)
     return Wire
+
+
 def generate_boolean_attributes(struct: VariableStruct) -> ET.Element:
     AttributeList = ET.Element("AttributeList")
     for attrib in struct.Attributes:
@@ -287,3 +317,25 @@ def generate_boolean_attributes(struct: VariableStruct) -> ET.Element:
         }).text = str(struct.Attributes[attrib]).lower()
 
     return AttributeList
+
+
+def locate_blockgroup(plc_software: Siemens.Engineering.HW.Software,
+                      blockgroup_folder: PurePosixPath,
+                      mkdir: bool = False) -> Siemens.Engineering.SW.Blocks.BlockGroup | None:
+    if not blockgroup_folder.is_absolute():
+        blockgroup_folder = PurePosixPath('/') / blockgroup_folder
+
+    current_blockgroup: Siemens.Engineering.SW.Blocks.PlcBlockGroup | None = plc_software.BlockGroup
+    previous_blockgroup: Siemens.Engineering.SW.Blocks.PlcBlockGroup | None = plc_software.BlockGroup
+    for part in blockgroup_folder.parts:
+        if part == '/':
+            continue
+        current_blockgroup = current_blockgroup.Groups.Find(part)
+        if not current_blockgroup:
+            if mkdir:
+                current_blockgroup = previous_blockgroup.Groups.Create(part)
+            else:
+                return
+        previous_blockgroup = current_blockgroup
+
+    return current_blockgroup

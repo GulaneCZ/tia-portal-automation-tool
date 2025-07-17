@@ -1,11 +1,10 @@
 from __future__ import annotations
-from pathlib import Path
-from schema import Schema, And, Or, Use, Optional, SchemaError
+from schema import Schema, And, Or, Optional
 
 from src.schemas.BlocksDBInstances import SingleInstance, MultiInstance
+from src.schemas.BlocksData import GlobalDB
 from src.schemas.BlocksFB import FunctionBlock
 from src.schemas.BlocksFC import Function
-from src.schemas.BlocksGlobalDB import GlobalDB
 from src.schemas.BlocksOB import OrganizationBlock
 from src.schemas.DeviceItems import DeviceItem
 from src.schemas.Devices import PLC
@@ -29,8 +28,13 @@ root = Schema(
             GlobalDB
         )]),
         Optional("Network sources", default=[]): And(list, [NetworkSource]),
-        Optional("Variable sections", default=[]): And(list, [VariableSection]),
-        Optional("Instances", default=[]): And(list, [Or(SingleInstance, MultiInstance)]),
+        Optional("Variable sections", default=[]): And(list, [
+            VariableSection
+        ]),
+        Optional("Instances", default=[]): And(list, [Or(
+            SingleInstance,
+            MultiInstance
+        )]),
         Optional("Wire parameters", default=[]): And(list, [Parameter]),
     },
     ignore_extra_keys=True
