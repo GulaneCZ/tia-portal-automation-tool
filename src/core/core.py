@@ -5,9 +5,8 @@ from typing import Any
 import base64
 
 from src.resources import dlls
-from src.modules.XML.ProgramBlocks import VariableSection
-from src.modules.XML.ProgramBlocks import VariableStruct
 import src.modules.BlocksData as BlocksData
+import src.modules.BlocksOB as BlocksOB
 import src.modules.DeviceItems as DeviceItems
 import src.modules.Devices as Devices
 import src.modules.Libraries as Libraries
@@ -16,7 +15,6 @@ import src.modules.PlcDataTypes as PlcDataTypes
 import src.modules.PlcTags as PlcTags
 import src.modules.Portals as Portals
 import src.modules.Projects as Projects
-import src.modules.XML.Documents as Documents
 import src.modules.XML.ProgramBlocks as ProgramBlocks
 
 
@@ -49,15 +47,6 @@ def generate_dlls() -> dict[str, Path]:
 
 
 def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, Any]) -> Siemens.Engineering.TiaPortal:
-    SE: Siemens.Engineering = imports.DLL
-
-    TIA: Siemens.Engineering.TiaPortal = Portals.connect(
-        imports, config, settings)
-
-    project_data = Projects.Project(
-        config['name'], config['directory'], config['overwrite'])
-    se_project: Siemens.Engineering.Project = Projects.create(
-        imports, project_data, TIA)
 
     devices_data = [Devices.Device(
         dev.get('p_typeIdentifier', 'PLC_1'),
@@ -110,7 +99,7 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
     ]
     plc_data_types_data = [PlcDataTypes.PlcDataType(
         Name=datatype.get("Name"),
-        Types=[Documents.PlcStruct(
+        Types=[PlcDataTypes.PlcStruct(
             Name=struct.get('Name'),
             Datatype=struct.get('Datatype'),
             attributes=struct.get('attributes'),
@@ -131,10 +120,42 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         for db in config.get('Program blocks', [])
         if db.get('type') == ProgramBlocks.PlcEnum.GlobalDB.value
     ]
+    data_plcblocks = [BlocksOB.OrganizationBlock(
+        DeviceID=plc.get('DeviceID'),
+        PlcType=plc.get('type'),
+        Name=plc.get('name'),
+        Number=plc.get('number'),
+        ProgrammingLanguage=plc.get('programming_language'),
+        BlockGroupPath=plc.get('blockgroup_folder'),
+        EventClass=BlocksOB.EventClassEnum.ProgramCycle,
+        NetworkSources=helper_clean_network_sources(
+            config.get('Network sources'),
+            config.get('Program blocks'),
+            config.get('Variable sections'),
+            plc.get('id')
+        ),
+        Variables=helper_clean_variable_sections(
+            config.get('Variable sections'), plc.get('id'))
+    )
+        for plc in config.get('Program blocks', [])
+        if plc.get('type') in [ProgramBlocks.PlcEnum.OrganizationBlock,
+                               ProgramBlocks.PlcEnum.FunctionBlock,
+                               ProgramBlocks.PlcEnum.Function,
+                               ]
+    ]
 
     for library in libraries_data:
         Libraries.import_library(imports, library, TIA)
 
+    SE: Siemens.Engineering = imports.DLL
+
+    TIA: Siemens.Engineering.TiaPortal = Portals.connect(
+        imports, config, settings)
+
+    project_data = Projects.Project(
+        config['name'], config['directory'], config['overwrite'])
+    se_project: Siemens.Engineering.Project = Projects.create(
+        imports, project_data, TIA)
     se_devices: list[Siemens.Engineering.HW.Device] = Devices.create(
         devices_data, se_project)
     se_interfaces: list[Siemens.Engineering.HW.Features.NetworkInterface] = []
@@ -192,26 +213,84 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
                 continue
             BlocksData.create(imports, se_plc_software, data_block)
 
+        # ProgramBlocks
+        for plc in data_plcblocks:
+            if plc.DeviceID != device_data.ID:
+                continue
+            if plc.PlcType == ProgramBlocks.PlcEnum.OrganizationBlock:
+                BlocksOB.create(imports, se_plc_software, plc)
+
     return TIA
 
 
 def helper_clean_variable_sections(variable_sections: list[dict],
-                                   plc_block_id: int) -> list[VariableSection]:
-    sections: list[VariableSection] = []
+                                   plc_block_id: int) -> list[ProgramBlocks.VariableSection]:
+    sections: list[ProgramBlocks.VariableSection] = []
 
     for section in variable_sections:
         if section.get('plc_block_id') != plc_block_id:
             continue
         name = section.get('name')
-        structs: list[VariableStruct] = []
+        structs: list[ProgramBlocks.VariableStruct] = []
         for struct in section.get('data'):
-            structs.append(VariableStruct(
+            structs.append(ProgramBlocks.VariableStruct(
                 Name=struct.get('name'),
                 Datatype=struct.get('datatype'),
                 Retain=struct.get('retain'),
                 StartValue=struct.get('start_value'),
                 Attributes=struct.get('attributes'),
             ))
-        sections.append(VariableSection(Name=name, Structs=structs))
+        sections.append(ProgramBlocks.VariableSection(
+            Name=name, Structs=structs))
 
     return sections
+
+
+def helper_clean_network_sources(network_sources: list[dict],
+                                 plcblocks: list[dict],
+                                 variable_sections: list[dict],
+                                 plc_block_id: int) -> list[ProgramBlocks.NetworkSource]:
+    networks: list[ProgramBlocks.NetworkSource] = []
+
+    for network in network_sources:
+        if network.get('plc_block_id') != plc_block_id:
+            continue
+        title = network.get('title')
+        comment = network.get('comment')
+        c_plcblocks: list[ProgramBlocks.ProgramBlock] = []
+
+        for block in plcblocks:
+            if block.get('network_source_id') != network.get('id'):
+                continue
+
+            # Organization Block
+            if block.get('type') == ProgramBlocks.PlcEnum.OrganizationBlock.value:
+                plcblocks.append(
+                    BlocksOB.OB(
+                        Name=block.get('name'),
+                        Number=block.get('number'),
+                        ProgrammingLanguage=block.get(
+                            'programming_language'),
+                        Variables=helper_clean_variable_sections(
+                            variable_sections, block.get('id')),
+                        NetworkSources=helper_clean_network_sources(
+                            network_sources,
+                            plcblocks,
+                            variable_sections,
+                            block.get('id')
+                        ),
+                        EventClass=BlocksOB.EventClassEnum.ProgramCycle
+                    )
+                )
+
+            # Function Block
+
+            # Functions
+
+        networks.append(ProgramBlocks.NetworkSource(Title=title,
+                                                    Comment=comment,
+                                                    PlcBlocks=c_plcblocks,
+                                                    )
+                        )
+
+    return networks

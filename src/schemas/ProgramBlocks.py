@@ -18,8 +18,8 @@ VariableSection = Schema({
 })
 
 PlcBlock = Schema({
-    "DeviceID": int,
     "id": int,
+    "DeviceID": int,
     Optional("network_source_id"): int,
     "type": And(str, Use(PlcEnum)),
     "name": str,
@@ -40,10 +40,6 @@ PlcBlock = Schema({
     }),
 })
 
-Parameter = Schema({
-    "plc_block_id": int,
-    "parameters": dict,
-})
 
 Database = Schema({
     "id": int,

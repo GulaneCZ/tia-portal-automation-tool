@@ -16,6 +16,7 @@ multiple_devices_with_plc_data_types = BASE_DIR / \
     "configs" / "multiple_devices_with_plc_data_types.json"
 plc_tags = BASE_DIR / "configs" / "plc_tags.json"
 global_dbs = BASE_DIR / "configs" / "global_dbs.json"
+organization_blocks = BASE_DIR / "configs" / "organization_blocks.json"
 
 
 dlls = core.generate_dlls()
@@ -84,5 +85,15 @@ def test_core_globaldb():
         config = configuration.validate(json.load(file))
     config['directory'] = BASE_DIR.parent.parent.parent
     config['name'] = f"test_core.{global_dbs.stem}"
+
+    core.execute(imports, config, {"enable_ui": True, })
+
+
+def test_core_organization_block():
+    config = None
+    with open(organization_blocks) as file:
+        config = configuration.validate(json.load(file))
+    config['directory'] = BASE_DIR.parent.parent.parent
+    config['name'] = f"test_core.{organization_blocks.stem}"
 
     core.execute(imports, config, {"enable_ui": True, })

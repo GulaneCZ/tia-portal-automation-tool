@@ -3,6 +3,7 @@ from enum import Enum
 
 from src.modules.XML.ProgramBlocks import Database
 
+
 class CallOptionEnum(Enum):
     Single = "Single"
     Multi = "Multi"
@@ -10,13 +11,20 @@ class CallOptionEnum(Enum):
 
 
 @dataclass
-class SingleInstance(Database):
+class Instance(Database):
     CallOption: CallOptionEnum
 
-@dataclass
-class MultiInstance(Database):
-    CallOption: CallOptionEnum
 
-@dataclass
-class ParameterInstance(Database):
-    CallOption: CallOptionEnum
+# @dataclass
+# class SingleInstance(Database):
+#     CallOption: CallOptionEnum
+#
+#
+# @dataclass
+# class MultiInstance(Database):
+#     CallOption: CallOptionEnum
+#
+#
+# @dataclass
+# class ParameterInstance(Database):
+#     CallOption: CallOptionEnum

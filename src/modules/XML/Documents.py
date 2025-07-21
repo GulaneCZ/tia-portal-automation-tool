@@ -1,23 +1,14 @@
 from __future__ import annotations
-from dataclasses import dataclass
 from enum import Enum
-from pathlib import Path, PurePosixPath
+from pathlib import Path
 import logging
 import tempfile
 import xml.etree.ElementTree as ET
 
-import src.modules.XML.ProgramBlocks as ProgramBlocks
 from src.core import logs
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)
-
-
-@dataclass
-class PlcStruct:
-    Name: str
-    Datatype: str
-    attributes: dict
 
 
 class XMLNS(Enum):
@@ -62,43 +53,3 @@ class Document(Base):
         self.Sections = ET.SubElement(self.Interface, "Sections")
         self.Sections.set('xmlns', XMLNS.INTERFACE.value)
         ET.SubElement(self.AttributeList, "Namespace")
-
-
-def import_xml(imports: Imports, plc_software: Siemens.Engineering.HW.Software, xml_location: Path):
-    SE: Siemens.Engineering = imports.DLL
-    FileInfo: FileInfo = imports.FileInfo
-
-    logging.info(f"Import of XML {xml_location.absolute()} started")
-
-    xml_dotnet_path: FileInfo = FileInfo(xml_location.absolute().as_posix())
-
-    types: Siemens.Engineering.SW.Types.PlcTypeComposition = plc_software.TypeGroup.Types
-    types.Import(xml_dotnet_path, SE.ImportOptions.Override)
-
-    logging.info(f"Finished: Import of XML {xml_dotnet_path}")
-
-    return
-
-
-def import_xml_to_block_group(imports: Imports,
-                              plc_software: Siemens.Engineering.HW.Software,
-                              xml_location: Path,
-                              blockgroup_folder: PurePosixPath,
-                              mkdir: bool = False
-                              ) -> Siemens.Engineering.SW.Blocks.PlcBlock:
-    SE: Siemens.Engineering = imports.DLL
-    FileInfo: FileInfo = imports.FileInfo
-
-    logging.info(f"Import of XML {xml_location.absolute()} started")
-
-    xml_dotnet_path: FileInfo = FileInfo(xml_location.absolute().as_posix())
-
-    blockgroup = ProgramBlocks.locate_blockgroup(
-        plc_software, blockgroup_folder, mkdir)
-
-    plcblock: Siemens.Engineering.SW.Blocks.PlcBlock = blockgroup.Blocks.Import(
-        xml_dotnet_path, SE.ImportOptions.Override)
-
-    logging.info(f"Finished: Import of XML {xml_dotnet_path}")
-
-    return plcblock

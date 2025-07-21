@@ -5,11 +5,18 @@ import xml.etree.ElementTree as ET
 import logging
 
 from src.core import logs
-from src.modules.XML.Documents import PlcStruct, import_xml
 from src.modules.XML.Softwares import Software
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)
+
+
+@dataclass
+class PlcStruct:
+    Name: str
+    Datatype: str
+    attributes: dict
+
 
 @dataclass
 class PlcDataType:
@@ -19,12 +26,12 @@ class PlcDataType:
 
 class XML(Software):
     DOCUMENT = "SW.Types.PlcStruct"
+
     def __init__(self, data: PlcDataType):
         super().__init__(data.Name)
 
         for udt in data.Types:
             self._add_member(udt.Name, udt.Datatype, udt.attributes)
-
 
     def _add_member(self, name: str, datatype: str, attributes: dict):
         Member: ET.Element = ET.SubElement(self.Section, "Member", attrib={
@@ -32,7 +39,8 @@ class XML(Software):
             "Datatype": datatype
         })
 
-        if not attributes: return
+        if not attributes:
+            return
 
         AttributeList = ET.SubElement(Member, "AttributeList")
         for attrib in attributes:
@@ -52,7 +60,7 @@ def create(imports: Imports, plc_software: Siemens.Engineering.HW.Software, data
 
     xml = XML(data)
     filename: Path = xml.write()
-    
+
     logger.info(f"Written User Data Type {data.Name} XML to: {filename}")
 
     import_xml(imports, plc_software, filename)
@@ -61,3 +69,19 @@ def create(imports: Imports, plc_software: Siemens.Engineering.HW.Software, data
 
     if filename.exists():
         filename.unlink()
+
+
+def import_xml(imports: Imports, plc_software: Siemens.Engineering.HW.Software, xml_location: Path):
+    SE: Siemens.Engineering = imports.DLL
+    FileInfo: FileInfo = imports.FileInfo
+
+    logging.info(f"Import of XML {xml_location.absolute()} started")
+
+    xml_dotnet_path: FileInfo = FileInfo(xml_location.absolute().as_posix())
+
+    types: Siemens.Engineering.SW.Types.PlcTypeComposition = plc_software.TypeGroup.Types
+    types.Import(xml_dotnet_path, SE.ImportOptions.Override)
+
+    logging.info(f"Finished: Import of XML {xml_dotnet_path}")
+
+    return

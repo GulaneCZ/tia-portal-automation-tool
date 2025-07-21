@@ -1,11 +1,9 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
-from pathlib import PurePosixPath
-from typing import Optional
 import xml.etree.ElementTree as ET
 
-from src.modules.XML.Documents import Document
+from src.modules.XML.Documents import Document, XMLNS
 
 
 @dataclass
@@ -25,6 +23,7 @@ class VariableSection:
 
 @dataclass
 class ProgramBlock:
+    PlcType: PlcEnum
     Name: str
     Number: int
     ProgrammingLanguage: str
@@ -35,7 +34,7 @@ class ProgramBlock:
 class NetworkSource:
     Title: str
     Comment: str
-    Instances: list
+    PlcBlocks: list[ProgramBlock]
 
 
 @dataclass
@@ -49,9 +48,9 @@ class WireParameter:
 
 class PlcEnum(Enum):
     PlcStruct = "SW.Types.PlcStruct"
-    OB = "SW.Blocks.OB"
-    FB = "SW.Blocks.FB"
-    FC = "SW.Blocks.FC"
+    OrganizationBlock = "SW.Blocks.OB"
+    FunctionBlock = "SW.Blocks.FB"
+    Function = "SW.Blocks.FC"
     GlobalDB = "SW.Blocks.GlobalDB"
     # WatchTable = "SW.WatchAndForceTables.PlcWatchTable"
     # ForceTable = "SW.WatchAndForceTables.PlcForceTable"
@@ -128,7 +127,7 @@ class Base(Document):
 
     def _add_variables(self):
         for section in self.variables:
-            if not section.Name in self.sections_enabled:
+            if section.Name not in self.sections_enabled:
                 continue
 
             if section.Name == "Input":
@@ -150,14 +149,17 @@ class Base(Document):
 
     def _create_member(self, structs: list[VariableStruct], section: ET.Element):
         for struct in structs:
-            Member = ET.SubElement(section,
-                                   "Member",
-                                   attrib={'Name': struct.Name,
-                                           'Datatype': struct.Datatype,
-                                           'Remanence': "Retain" if struct.Retain else "NonRetain",
-                                           'Accessibility': "Public"
-                                           }
-                                   )
+            Member = ET.SubElement(
+                section,
+                "Member",
+                attrib={
+                    'Name': struct.Name,
+                    'Datatype': struct.Datatype,
+                    'Remanence': "Retain" if struct.Retain else "NonRetain",
+                    'Accessibility': "Public"
+                }
+            )
+
             if struct.StartValue != '':
                 ET.SubElement(Member, "StartValue").text = struct.StartValue
 
@@ -168,10 +170,12 @@ class Base(Document):
         return
 
 
+# might clean below
+
 class BlockCompileUnit:
-    def __init__(self, programming_language: str, network_source: NetworkSource, id) -> None:
+    def __init__(self, programming_language: str, network_source: NetworkSource, block_id):
         self.root: ET.Element = ET.Element("SW.Blocks.CompileUnit", attrib={
-            'ID': format(id, 'X'),
+            'ID': format(block_id, 'X'),
             'CompositionName': "CompileUnits",
         })
         self.AttributeList = ET.SubElement(self.root, "AttributeList")
@@ -180,10 +184,10 @@ class BlockCompileUnit:
         ET.SubElement(self.AttributeList,
                       "ProgrammingLanguage").text = programming_language
 
-        self._generate_texts(id+1, network_source.Title,
+        self._generate_texts(block_id+1, network_source.Title,
                              network_source.Comment)
 
-        self._create_instances(network_source.Instances)
+        self._create_instances(network_source.PlcBlocks)
 
         return
 
@@ -195,8 +199,8 @@ class BlockCompileUnit:
 
         return
 
-    def _create_instances(self, instances: list):
-        if not instances:
+    def _create_instances(self, plcblocks: list):
+        if not plcblocks:
             return
 
         self.FlgNet = ET.SubElement(self.NetworkSource, "FlgNet")
@@ -204,9 +208,9 @@ class BlockCompileUnit:
         self.Parts = ET.SubElement(self.FlgNet, "Parts")
         self.Wires = ET.SubElement(self.FlgNet, "Wires")
 
-        for instance in instances:
+        for instance in plcblocks:
             # for now, we only do 1 instance per network source
-            if len(instances) == 1:
+            if len(plcblocks) == 1:
                 last_uid = self._insert_parts(instance, 21)
                 self._insert_wires(instance, last_uid + 2)
 
@@ -225,9 +229,15 @@ class BlockCompileUnit:
             parameter.__dict__['call'] = uid
 
         Call = ET.SubElement(self.Parts, "Call", attrib={'UId': str(uid)})
-        CallInfo = ET.SubElement(Call, "CallInfo", attrib={
-                                 'Name': instance.Name, 'BlockType': instance.Type.value.split('.')[-1]})
-        if instance.Type != PlcEnum.FC:
+        CallInfo = ET.SubElement(
+            Call,
+            "CallInfo",
+            attrib={
+                'Name': instance.Name,
+                'BlockType': instance.Type.value.split('.')[-1]
+            }
+        )
+        if instance.Type != PlcEnum.Function:
             scope = "GlobalVariable"
             if instance.Database.Type == DatabaseType.MultiInstance:
                 scope = "LocalVariable"
@@ -317,25 +327,3 @@ def generate_boolean_attributes(struct: VariableStruct) -> ET.Element:
         }).text = str(struct.Attributes[attrib]).lower()
 
     return AttributeList
-
-
-def locate_blockgroup(plc_software: Siemens.Engineering.HW.Software,
-                      blockgroup_folder: PurePosixPath,
-                      mkdir: bool = False) -> Siemens.Engineering.SW.Blocks.BlockGroup | None:
-    if not blockgroup_folder.is_absolute():
-        blockgroup_folder = PurePosixPath('/') / blockgroup_folder
-
-    current_blockgroup: Siemens.Engineering.SW.Blocks.PlcBlockGroup | None = plc_software.BlockGroup
-    previous_blockgroup: Siemens.Engineering.SW.Blocks.PlcBlockGroup | None = plc_software.BlockGroup
-    for part in blockgroup_folder.parts:
-        if part == '/':
-            continue
-        current_blockgroup = current_blockgroup.Groups.Find(part)
-        if not current_blockgroup:
-            if mkdir:
-                current_blockgroup = previous_blockgroup.Groups.Create(part)
-            else:
-                return
-        previous_blockgroup = current_blockgroup
-
-    return current_blockgroup

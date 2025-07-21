@@ -1,9 +1,9 @@
-from schema import Schema, And, Or, Use, Optional, SchemaError
+from schema import Schema, Optional
 
 
 NetworkSource = Schema({
-    "plc_block_id": int,
     "id": int,
+    "plc_block_id": int,
     Optional("title", default=""): str,
     Optional("comment", default=""): str,
 })
