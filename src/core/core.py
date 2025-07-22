@@ -6,6 +6,7 @@ import base64
 
 from src.resources import dlls
 import src.modules.BlocksData as BlocksData
+import src.modules.BlocksFB as BlocksFB
 import src.modules.BlocksOB as BlocksOB
 import src.modules.DeviceItems as DeviceItems
 import src.modules.Devices as Devices
@@ -135,20 +136,45 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
             plc.get('id')
         ),
         Variables=helper_clean_variable_sections(
-            config.get('Variable sections'), plc.get('id'))
+            config.get('Variable sections'), plc.get('id')),
+        IsInstance=plc.get('is_instance'),
+        LibraryData=ProgramBlocks.LibraryData(
+            Name=(plc.get('library_source') or {}).get('name'),
+            MasterCopyFolderPath=(plc.get('library_source') or {}
+                                  ).get('mastercopyfolder_path')
+        ),
     )
         for plc in config.get('Program blocks', [])
-        if plc.get('type') in [ProgramBlocks.PlcEnum.OrganizationBlock,
-                               ProgramBlocks.PlcEnum.FunctionBlock,
-                               ProgramBlocks.PlcEnum.Function,
-                               ]
+        if plc.get('type') == ProgramBlocks.PlcEnum.OrganizationBlock
     ]
 
-    for library in libraries_data:
-        Libraries.import_library(imports, library, TIA)
+    data_plcblocks += [BlocksFB.FunctionBlock(
+        DeviceID=plc.get('DeviceID'),
+        PlcType=plc.get('type'),
+        Name=plc.get('name'),
+        Number=plc.get('number'),
+        ProgrammingLanguage=plc.get('programming_language'),
+        BlockGroupPath=plc.get('blockgroup_folder'),
+        NetworkSources=helper_clean_network_sources(
+            config.get('Network sources'),
+            config.get('Program blocks'),
+            config.get('Variable sections'),
+            plc.get('id')
+        ),
+        Variables=helper_clean_variable_sections(
+            config.get('Variable sections'), plc.get('id')),
+        IsInstance=plc.get('is_instance'),
+        LibraryData=ProgramBlocks.LibraryData(
+            Name=(plc.get('library_source') or {}).get('name'),
+            MasterCopyFolderPath=(plc.get('library_source') or {}
+                                  ).get('mastercopyfolder_path')
+        ),
+    )
+        for plc in config.get('Program blocks', [])
+        if plc.get('type') == ProgramBlocks.PlcEnum.FunctionBlock
+    ]
 
     SE: Siemens.Engineering = imports.DLL
-
     TIA: Siemens.Engineering.TiaPortal = Portals.connect(
         imports, config, settings)
 
@@ -156,6 +182,9 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         config['name'], config['directory'], config['overwrite'])
     se_project: Siemens.Engineering.Project = Projects.create(
         imports, project_data, TIA)
+
+    for library in libraries_data:
+        Libraries.import_library(imports, library, TIA)
     se_devices: list[Siemens.Engineering.HW.Device] = Devices.create(
         devices_data, se_project)
     se_interfaces: list[Siemens.Engineering.HW.Features.NetworkInterface] = []
@@ -217,8 +246,19 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         for plc in data_plcblocks:
             if plc.DeviceID != device_data.ID:
                 continue
-            if plc.PlcType == ProgramBlocks.PlcEnum.OrganizationBlock:
-                BlocksOB.create(imports, se_plc_software, plc)
+            match plc.PlcType:
+                case ProgramBlocks.PlcEnum.OrganizationBlock:
+                    BlocksOB.create(
+                        imports=imports,
+                        TIA=TIA,
+                        plc_software=se_plc_software,
+                        data=plc)
+                case ProgramBlocks.PlcEnum.FunctionBlock:
+                    BlocksFB.create(
+                        imports=imports,
+                        TIA=TIA,
+                        plc_software=se_plc_software,
+                        data=plc)
 
     return TIA
 

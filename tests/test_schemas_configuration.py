@@ -1,6 +1,5 @@
 from pathlib import Path
 import json
-import pytest
 
 from src.schemas import configuration
 

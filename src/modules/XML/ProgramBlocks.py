@@ -1,6 +1,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
+from pathlib import PurePosixPath
 import xml.etree.ElementTree as ET
 
 from src.modules.XML.Documents import Document, XMLNS
@@ -19,6 +20,12 @@ class VariableStruct:
 class VariableSection:
     Name: str
     Structs: list[VariableStruct]
+
+
+@dataclass
+class LibraryData:
+    Name: str
+    MasterCopyFolderPath: PurePosixPath
 
 
 @dataclass

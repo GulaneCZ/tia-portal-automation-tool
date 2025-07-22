@@ -1,13 +1,13 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
-from pathlib import Path, PurePosixPath
+from pathlib import PurePosixPath
 import xml.etree.ElementTree as ET
 import logging
 
 from src.core import logs
-from src.modules.PlcBlocks import import_xml_to_block_group
-from src.modules.XML.ProgramBlocks import Base, PlcEnum, ProgramBlock, NetworkSource, BlockCompileUnit
+from src.modules.PlcBlocks import generate
+from src.modules.XML.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, NetworkSource, BlockCompileUnit
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -24,6 +24,8 @@ class OrganizationBlock(ProgramBlock):
     BlockGroupPath: PurePosixPath
     NetworkSources: list[NetworkSource]
     EventClass: EventClassEnum
+    IsInstance: bool
+    LibraryData: LibraryData
 
 
 class XML(Base):
@@ -60,19 +62,19 @@ class XML(Base):
             block_id += 5
 
 
-def create(imports: Imports, plc_software: Siemens.Engineering.HW.Software, data: DataBlock):
+def create(imports: Imports,
+           TIA: Siemens.Engineering.TiaPortal,
+           plc_software: Siemens.Engineering.HW.Software,
+           data: DataBlock
+           ):
     logger.info(f"Generation of Organization Block {data.Name} started")
 
     if not data.Name:
         return
 
     xml = XML(data)
-    filename: Path = xml.write()
-
-    logger.info(f"Written Organization Block {data.Name} XML to: {filename}")
-
-    import_xml_to_block_group(imports, plc_software, xml_location=filename,
-                              blockgroup_folder=data.BlockGroupPath,
-                              mkdir=True)
-    if filename.exists():
-        filename.unlink()
+    generate(imports=imports,
+             TIA=TIA,
+             plc_software=plc_software,
+             data=data,
+             xml=xml)

@@ -32,7 +32,7 @@ PlcBlock = Schema({
     Optional("is_instance", default=False): bool,
     Optional("library_source"): Schema({
         "name": str,
-        Optional("blockgroup_folder", default=PurePosixPath("/")): And(
+        Optional("mastercopyfolder_path", default=PurePosixPath("/")): And(
             str,
             Use(PurePosixPath),
             lambda p: PurePosixPath(p)
