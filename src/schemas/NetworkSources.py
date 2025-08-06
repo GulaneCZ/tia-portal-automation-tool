@@ -1,4 +1,4 @@
-from schema import Schema, Optional
+from schema import Schema, Optional, And
 
 
 NetworkSource = Schema({
@@ -8,7 +8,20 @@ NetworkSource = Schema({
     Optional("comment", default=""): str,
 })
 
-Parameter = Schema({
+WireParameter = Schema({
     "plc_block_id": int,
     "parameters": {str: str},
+})
+
+Parameter = Schema({
+    "name": str,
+    "section": str,
+    "datatype": str,
+    Optional("value", default=""): str,
+    Optional("negated", default=False): bool,
+})
+
+WireTemplate = Schema({
+    "block_name": str,
+    "parameters": And(list, [Parameter]),
 })

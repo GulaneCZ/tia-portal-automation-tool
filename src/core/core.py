@@ -6,6 +6,7 @@ import base64
 
 from src.resources import dlls
 import src.modules.BlocksData as BlocksData
+import src.modules.BlocksDBInstances as BlocksDBInstances
 import src.modules.BlocksFB as BlocksFB
 import src.modules.BlocksOB as BlocksOB
 import src.modules.DeviceItems as DeviceItems
@@ -19,29 +20,49 @@ import src.modules.Projects as Projects
 import src.modules.XML.ProgramBlocks as ProgramBlocks
 
 
-def generate_dlls() -> dict[str, Path]:
+def generate_dlls(use_contract: bool = False) -> dict[str, Path]:
     dll_paths: dict[str, Path] = {}
     for key in dlls.b64_dlls:
         if key == "Siemens.Engineering.Contract":
+            if not use_contract:
+                continue
+            # This key has no .Hmi pair
+            data = base64.b64decode(dlls.b64_dlls[key])
+            dlls_dir = Path("./DLLs")
+            dlls_dir.mkdir(exist_ok=True)
+
+            save_path = dlls_dir / key
+            save_path.mkdir(exist_ok=True)
+            version_dll_path = save_path / "Siemens.Engineering.dll"
+            with version_dll_path.open('wb') as version_dll_file:
+                version_dll_file.write(data)
+
+            dll_paths[key] = version_dll_path.absolute()
             continue
+
         if "Hmi" in key:
             continue
+
         data = base64.b64decode(dlls.b64_dlls[key])
-        hmi_data = base64.b64decode(dlls.b64_dlls[f"{key}.Hmi"])
+        hmi_key = f"{key}.Hmi"
+        if hmi_key not in dlls.b64_dlls:
+            continue  # Skip if the HMI pair is missing
+
+        hmi_data = base64.b64decode(dlls.b64_dlls[hmi_key])
         dlls_dir = Path("./DLLs")
         dlls_dir.mkdir(exist_ok=True)
 
-        save_path = Path(dlls_dir) / key
+        save_path = dlls_dir / key
         save_path.mkdir(exist_ok=True)
+
         version_dll_path = save_path / "Siemens.Engineering.dll"
         with version_dll_path.open('wb') as version_dll_file:
             version_dll_file.write(data)
-            # logger.logging.debug(f"Written data of {key}")
 
         version_hmi_dll_path = save_path / "Siemens.Engineering.Hmi.dll"
         with version_hmi_dll_path.open('wb') as version_hmi_dll_file:
             version_hmi_dll_file.write(hmi_data)
-            # logger.logging.debug(f"Written data of {key}")
+
         dll_paths[key] = version_dll_path.absolute()
 
     return dll_paths
@@ -129,11 +150,20 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         ProgrammingLanguage=plc.get('programming_language'),
         BlockGroupPath=plc.get('blockgroup_folder'),
         EventClass=BlocksOB.EventClassEnum.ProgramCycle,
+        Parameters=helper_clean_wires(
+            plc.get('name'),
+            plc.get('id'),
+            config.get('Wire parameters'),
+            config.get('Wire template')
+        ),
         NetworkSources=helper_clean_network_sources(
             config.get('Network sources'),
             config.get('Program blocks'),
             config.get('Variable sections'),
-            plc.get('id')
+            plc.get('id'),
+            config.get('Wire template'),
+            config.get('Wire parameters'),
+            config.get('Instances'),
         ),
         Variables=helper_clean_variable_sections(
             config.get('Variable sections'), plc.get('id')),
@@ -155,14 +185,25 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         Number=plc.get('number'),
         ProgrammingLanguage=plc.get('programming_language'),
         BlockGroupPath=plc.get('blockgroup_folder'),
+        Parameters=helper_clean_wires(
+            plc.get('name'),
+            plc.get('id'),
+            config.get('Wire parameters'),
+            config.get('Wire template')
+        ),
         NetworkSources=helper_clean_network_sources(
             config.get('Network sources'),
             config.get('Program blocks'),
             config.get('Variable sections'),
-            plc.get('id')
+            plc.get('id'),
+            config.get('Wire template'),
+            config.get('Wire parameters'),
+            config.get('Instances'),
         ),
         Variables=helper_clean_variable_sections(
             config.get('Variable sections'), plc.get('id')),
+        Database=helper_clean_database_instance(
+            plc.get('id'), config.get('Instances')),
         IsInstance=plc.get('is_instance'),
         LibraryData=ProgramBlocks.LibraryData(
             Name=(plc.get('library_source') or {}).get('name'),
@@ -289,7 +330,10 @@ def helper_clean_variable_sections(variable_sections: list[dict],
 def helper_clean_network_sources(network_sources: list[dict],
                                  plcblocks: list[dict],
                                  variable_sections: list[dict],
-                                 plc_block_id: int) -> list[ProgramBlocks.NetworkSource]:
+                                 plc_block_id: int,
+                                 wire_template: list[dict],
+                                 wire_parameters: list[dict],
+                                 instances: list[dict]) -> list[ProgramBlocks.NetworkSource]:
     networks: list[ProgramBlocks.NetworkSource] = []
 
     for network in network_sources:
@@ -304,28 +348,73 @@ def helper_clean_network_sources(network_sources: list[dict],
                 continue
 
             # Organization Block
-            if block.get('type') == ProgramBlocks.PlcEnum.OrganizationBlock.value:
-                plcblocks.append(
-                    BlocksOB.OB(
+            if block.get('type') == ProgramBlocks.PlcEnum.OrganizationBlock:
+                c_plcblocks.append(
+                    BlocksOB.OrganizationBlock(
+                        DeviceID=block.get('DeviceID'),
+                        PlcType=block.get('type'),
                         Name=block.get('name'),
                         Number=block.get('number'),
                         ProgrammingLanguage=block.get(
                             'programming_language'),
+                        BlockGroupPath=block.get('blockgroup_folder'),
                         Variables=helper_clean_variable_sections(
                             variable_sections, block.get('id')),
                         NetworkSources=helper_clean_network_sources(
                             network_sources,
                             plcblocks,
                             variable_sections,
-                            block.get('id')
-                        ),
-                        EventClass=BlocksOB.EventClassEnum.ProgramCycle
+                            block.get('id')),
+                        EventClass=BlocksOB.EventClassEnum.ProgramCycle,
+                        IsInstance=block.get('is_instance'),
+                        LibraryData=ProgramBlocks.LibraryData(
+                            Name=(block.get('library_source')
+                                  or {}).get('name'),
+                            MasterCopyFolderPath=(block.get('library_source') or {}
+                                                  ).get('mastercopyfolder_path'))
                     )
                 )
 
             # Function Block
+            if block.get('type') == ProgramBlocks.PlcEnum.FunctionBlock:
+                c_plcblocks.append(
+                    BlocksFB.FunctionBlock(
+                        DeviceID=block.get('DeviceID'),
+                        PlcType=block.get('type'),
+                        Name=block.get('name'),
+                        Number=block.get('number'),
+                        ProgrammingLanguage=block.get(
+                            'programming_language'),
+                        BlockGroupPath=block.get('blockgroup_folder'),
+                        Variables=helper_clean_variable_sections(
+                            variable_sections, block.get('id')),
+                        NetworkSources=helper_clean_network_sources(
+                            network_sources,
+                            plcblocks,
+                            variable_sections,
+                            block.get('id'),
+                            wire_template,
+                            wire_parameters,
+                            instances),
+                        Parameters=helper_clean_wires(
+                            block.get('name'),
+                            block.get('id'),
+                            wire_template,
+                            wire_parameters),
+                        Database=helper_clean_database_instance(
+                            block.get('id'), instances),
+                        IsInstance=block.get('is_instance'),
+                        LibraryData=ProgramBlocks.LibraryData(
+                            Name=(block.get('library_source')
+                                  or {}).get('name'),
+                            MasterCopyFolderPath=(block.get('library_source')
+                                                  or {}).get(
+                                'mastercopyfolder_path'))
+                    )
 
-            # Functions
+                )
+
+                # Functions
 
         networks.append(ProgramBlocks.NetworkSource(Title=title,
                                                     Comment=comment,
@@ -334,3 +423,58 @@ def helper_clean_network_sources(network_sources: list[dict],
                         )
 
     return networks
+
+
+def helper_clean_wires(block_name: str,
+                       plc_block_id: int,
+                       wire_parameters: list[dict],
+                       template: list[dict]
+                       ) -> list[ProgramBlocks.WireParameter]:
+    wires: list[ProgramBlocks.WireParameter] = []
+
+    wire_parameters_template: list[dict[str, str]] = []
+    parameters: dict[str, str] = {}
+    for wire_block in template:
+        if wire_block.get('block_name') == block_name:
+            wire_parameters_template = wire_block.get('parameters')
+            break
+
+    for wire in wire_parameters:
+        if wire.get('plc_block_id') == plc_block_id:
+            parameters = wire.get('parameters')
+
+    if 'en' in parameters:
+        en = ProgramBlocks.WireParameter(
+            Name="en",
+            Section="",
+            Datatype="Bool",
+            Value=wire.get("en", ''),
+            Negated=False
+        )
+        wires.append(en)
+
+    for param in wire_parameters_template:
+        wire = ProgramBlocks.WireParameter(
+            Name=param.get('name'),
+            Section=param.get('section'),
+            Datatype=param.get('datatype'),
+            Value=parameters.get(param.get('name')),
+            Negated=param.get('negated')
+        )
+        wires.append(wire)
+
+    return wires
+
+
+def helper_clean_database_instance(plc_block_id: int,
+                                   instances: list[dict]
+                                   ) -> list[BlocksDBInstances.Instance]:
+
+    for instancedb in instances:
+        if instancedb.get('plc_block_id') == plc_block_id:
+            return BlocksDBInstances.Instance(
+                CallOption=instancedb.get('call_option'),
+                Name=instancedb.get('name'),
+                Number=instancedb.get('number'),
+                BlockGroupPath=instancedb.get('blockgroup_folder')
+            )

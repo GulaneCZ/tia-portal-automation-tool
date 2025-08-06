@@ -2290,6 +2290,757 @@
       ]
     }
   ],
+  "Wire template": [
+  {
+    "block_name": "Bin_Obj_Type_2",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "HI_Level",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Lo_Level",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Bin_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Des_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Destination_Att",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "AdjacentBin1",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "CenterValve",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "sideValve1",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "sideValve2",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "sideValve3",
+        "datatype": "Int"
+      }
+    ]
+  },
+  {
+    "block_name": "Bin_Obj_Type_6",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "HI_Level",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Lo_Level",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Bin_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Conv_ID",
+        "datatype": "Int"
+      }
+    ]
+  },
+  {
+    "block_name": "Des_Obj_Type_1",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Bin_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Destination_Att",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Dust_Fan_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Des_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Dust_Fan_Timer_to_Fault",
+        "datatype": "Time"
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_ControlMonitor_1",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Slot_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "InOut",
+        "name": "Slots",
+        "datatype": "\"Slots\""
+      }
+    ]
+  },
+  {
+    "block_name": "CN_EL_Type_0",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Offset",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Auto",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Hand",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Running",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_1_Fault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_1_Warning",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_2_Fault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_2_Warning",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_3_Fault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_3_Warning",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_4_Fault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_4_Warning",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Power",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "Status1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Status2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Status3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Status4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Warning1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Warning2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Warning3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Warning4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "NFatal1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "NFatal2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "NFatal3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "NFatal4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "EStop",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "Fatal4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_Run",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "UptoSpeed",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_US_Run",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "T_Hooter_Period_On",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Hooter_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "T_Hooter_Period_Off",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "T_UptoSpeed",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Ext_Product",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Inhibit_Hooter",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Inhibit_Start",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "HeadBlockedChute",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "TailBlockedChute",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_BlockedChute",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Ext_Gob",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Sec_Pls_Roff",
+        "datatype": "UInt"
+      },
+      {
+        "section": "Input",
+        "name": "Total_Kg_Capacity",
+        "datatype": "DInt"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Count_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Continous_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Pulsing",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_Count_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_Continous_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Output",
+        "name": "Start",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Hooter",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Purging",
+        "datatype": "Bool"
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_TripperSilo_1",
+    "parameters": [
+      {
+        "section": "InOut",
+        "name": "Conveyor_1",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Valve_1",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Conveyor_2",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Valve_2",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Valve_3",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Diverter",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "A_Path_Drive",
+        "datatype": "\"A_Drives\""
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_Tripper4V",
+    "parameters": [
+      {
+        "section": "InOut",
+        "name": "U_PosDrv_1_A",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "U_PosDrv_2_A",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "U_PosDrv_3_A",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "U_PosDrv_4_A",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "A_Path_Drive",
+        "datatype": "\"A_Drives\""
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_ConveyorType2",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Offset",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Auto",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Hand",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Running",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Power",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "Fatal1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "EStop",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "T_Run",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "UptoSpeed",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Pulsing",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_US_Run",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "T_Hooter_Period_On",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Hooter_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "T_Hooter_Period_Off",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "T_UptoSpeed",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Ext_Product",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Inhibit_Hooter",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Inhibit_Start",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "HeadBlockedChute",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "TailBlockedChute",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_BlockedChute",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Ext_Gob",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Sec_Pls_Roff",
+        "datatype": "UInt"
+      },
+      {
+        "section": "Input",
+        "name": "Total_Kg_Capacity",
+        "datatype": "DInt"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Count_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Continous_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "WarningBit2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Start",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Hooter",
+        "datatype": "Bool"
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_ValveType1",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Auto",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Hand",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "CrashStop",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "Power",
+        "datatype": "Bool",
+        "negated": true
+
+      },
+      {
+        "section": "Input",
+        "name": "Isolated",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "ThermistorFault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fully_Open",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fully_Closed",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "EN_Cont_Pos",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_Pos",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "remain_close",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "EN_InManual",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "WarningBit1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Open",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Close",
+        "datatype": "Bool"
+      },
+      {
+        "section": "InOut",
+        "name": "Pos_Drive",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Pos_Stat",
+        "datatype": "\"Drive_Stat\""
+      }
+    ]
+  }
+],
   "libraries": [
     {
       "path": "C:/Users/USER/Documents/Automation/TGTLibrary/TGTLibrary.al18"

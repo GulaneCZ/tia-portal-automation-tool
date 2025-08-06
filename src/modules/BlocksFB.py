@@ -7,6 +7,7 @@ import logging
 from src.core import logs
 
 from src.modules.PlcBlocks import generate
+from src.modules.BlocksDBInstances import Instance
 from src.modules.XML.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, BlockCompileUnit, VariableStruct, generate_boolean_attributes
 
 logs.setup(logging.DEBUG)
@@ -20,6 +21,7 @@ class FunctionBlock(ProgramBlock):
     NetworkSources: list[NetworkSource]
     IsInstance: bool
     LibraryData: LibraryData
+    Database: Instance
 
 
 class XML(Base):
@@ -70,7 +72,7 @@ class XML(Base):
 def create(TIA: Siemens.Engineering.TiaPortal,
            imports: Imports,
            plc_software: Siemens.Engineering.HW.Software,
-           data: DataBlock
+           data: FunctionBlock
            ):
     logger.info(f"Generation of Function Block {data.Name} started")
 

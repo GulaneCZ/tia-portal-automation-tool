@@ -1,12 +1,37 @@
 from __future__ import annotations
 import logging
 from pathlib import Path, PurePosixPath
+import tempfile
 
 from src.core import logs
 import src.modules.Libraries as Libraries
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)
+
+
+def export_xml(imports: Imports,
+               plcblock: Siemens.Engineering.SW.Blocks.PlcBlock
+               ) -> str:
+    SE: Siemens.Engineering = imports.DLL
+    FileInfo: FileInfo = imports.FileInfo
+
+    logging.info(f"Started export of PlcBlock {plcblock.Name} XML")
+
+    filename = tempfile.mktemp()
+    filepath = Path(filename)
+    plcblock.Export(FileInfo(filepath.absolute().as_posix()),
+                    getattr(SE.ExportOptions, "None"))
+
+    with open(filepath) as file:
+        file.seek(3)  # get rid of the random weird bytes
+        xml_data = file.read()
+
+    filepath.unlink()
+
+    logging.debug(f"Extracted XML: {xml_data}")
+
+    return xml_data
 
 
 def import_xml_to_block_group(imports: Imports,
@@ -77,7 +102,7 @@ def find(plc_software: Siemens.Engineering.HW.Software,
 def generate(imports: Imports,
              TIA: Siemens.Engineering.TiaPortal,
              plc_software: Siemens.Engineering.HW.Software,
-             data: DataBlock,
+             data: ProgramBlock,
              xml: Base
              ):
 

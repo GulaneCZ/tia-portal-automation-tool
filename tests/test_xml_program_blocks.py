@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 import xml.etree.ElementTree as ET
 
-from src.core.core import helper_clean_variable_sections, helper_clean_network_sources
+from src.core.core import helper_clean_variable_sections, helper_clean_network_sources, helper_clean_wires, helper_clean_database_instance
 from src.modules.XML.ProgramBlocks import PlcEnum, LibraryData
 from src.schemas import configuration
 import src.modules.BlocksData as BlocksData
@@ -29,7 +29,16 @@ def test_organization_block():
             CONFIG.get('Network sources'),
             CONFIG.get('Program blocks'),
             CONFIG.get('Variable sections'),
-            ob.get('id')
+            ob.get('id'),
+            CONFIG.get('Wire template'),
+            CONFIG.get('Wire parameters'),
+            CONFIG.get('Instances')
+        )
+        parameters = helper_clean_wires(
+            ob.get('name'),
+            ob.get('id'),
+            CONFIG.get('Wire parameters'),
+            CONFIG.get('Wire template')
         )
         data = BlocksOB.OrganizationBlock(
             Name=ob.get('name'),
@@ -41,6 +50,7 @@ def test_organization_block():
             EventClass=BlocksOB.EventClassEnum.ProgramCycle,
             NetworkSources=network_sources,
             Variables=variable_sections,
+            Parameters=parameters,
             IsInstance=ob.get('is_instance'),
             LibraryData=LibraryData(
                 Name=(ob.get('library_source') or {}).get('name'),
@@ -96,12 +106,22 @@ def test_function_block():
 
         variable_sections = helper_clean_variable_sections(
             CONFIG.get('Variable sections'), fb.get('id'))
+        instances = helper_clean_database_instance(
+            fb.get('id'), CONFIG.get('Instances'))
         network_sources = helper_clean_network_sources(
             CONFIG.get('Network sources'),
             CONFIG.get('Program blocks'),
             CONFIG.get('Variable sections'),
-            fb.get('id')
+            fb.get('id'),
+            CONFIG.get('Wire template'),
+            CONFIG.get('Wire parameters'),
+            CONFIG.get('Instances')
         )
+        parameters = helper_clean_wires(fb.get('name'),
+                                        fb.get('id'),
+                                        CONFIG.get('Wire parameters'),
+                                        CONFIG.get('Wire template')
+                                        )
         data = BlocksFB.FunctionBlock(
             Name=fb.get('name'),
             DeviceID=fb.get('DeviceID'),
@@ -112,6 +132,8 @@ def test_function_block():
             ProgrammingLanguage=fb.get('programming_language'),
             NetworkSources=network_sources,
             Variables=variable_sections,
+            Parameters=parameters,
+            Database=instances,
             IsInstance=fb.get('is_instance'),
             LibraryData=LibraryData(
                 Name=(fb.get('library_source') or {}).get('name'),

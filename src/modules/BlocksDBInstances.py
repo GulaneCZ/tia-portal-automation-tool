@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum
 
-from src.modules.XML.ProgramBlocks import Database
+from src.modules.BlocksDatabase import Database
 
 
 class CallOptionEnum(Enum):

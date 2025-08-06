@@ -65,7 +65,7 @@ class XML(Base):
 def create(imports: Imports,
            TIA: Siemens.Engineering.TiaPortal,
            plc_software: Siemens.Engineering.HW.Software,
-           data: DataBlock
+           data: OrganizationBlock
            ):
     logger.info(f"Generation of Organization Block {data.Name} started")
 

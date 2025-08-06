@@ -5,6 +5,7 @@ from pathlib import PurePosixPath
 import xml.etree.ElementTree as ET
 
 from src.modules.XML.Documents import Document, XMLNS
+import src.modules.BlocksDBInstances as BlocksDBInstances
 
 
 @dataclass
@@ -35,6 +36,7 @@ class ProgramBlock:
     Number: int
     ProgrammingLanguage: str
     Variables: list[VariableSection]
+    Parameters: list[WireParameter]
 
 
 @dataclass
@@ -49,7 +51,7 @@ class WireParameter:
     Name: str
     Section: str
     Datatype: str
-    Value: str | list[str]
+    Value: str
     Negated: bool
 
 
@@ -63,21 +65,6 @@ class PlcEnum(Enum):
     # ForceTable = "SW.WatchAndForceTables.PlcForceTable"
     # WatchTableEntry = "SW.WatchAndForceTables.PlcWatchTableEntry"
     # ForceTableEntry = "SW.WatchAndForceTables.PlcForceTableEntry"
-
-
-@dataclass
-class Database:
-    Name: str
-    Number: int
-    BlockGroupPath: str
-
-
-@dataclass
-class InstanceContainer:
-    Name: str
-    Type: PlcEnum
-    Database: Database
-    Parameters: list[WireParameter]
 
 
 class Base(Document):
@@ -215,16 +202,16 @@ class BlockCompileUnit:
         self.Parts = ET.SubElement(self.FlgNet, "Parts")
         self.Wires = ET.SubElement(self.FlgNet, "Wires")
 
-        for instance in plcblocks:
+        for plcblock in plcblocks:
             # for now, we only do 1 instance per network source
             if len(plcblocks) == 1:
-                last_uid = self._insert_parts(instance, 21)
-                self._insert_wires(instance, last_uid + 2)
+                last_uid = self._insert_parts(plcblock, 21)
+                self._insert_wires(plcblock, last_uid + 2)
 
         return
 
-    def _insert_parts(self, instance: InstanceContainer, uid: int) -> int:
-        for parameter in instance.Parameters:
+    def _insert_parts(self, plcblock: ProgramBlock, uid: int) -> int:
+        for parameter in plcblock.Parameters:
             if not parameter.Value:
                 continue
 
@@ -232,7 +219,7 @@ class BlockCompileUnit:
             access = generate_access(parameter, uid)
             self.Parts.append(access)
             uid += 1
-        for parameter in instance.Parameters:
+        for parameter in plcblock.Parameters:
             parameter.__dict__['call'] = uid
 
         Call = ET.SubElement(self.Parts, "Call", attrib={'UId': str(uid)})
@@ -240,21 +227,22 @@ class BlockCompileUnit:
             Call,
             "CallInfo",
             attrib={
-                'Name': instance.Name,
-                'BlockType': instance.Type.value.split('.')[-1]
+                'Name': plcblock.Name,
+                'BlockType': plcblock.PlcType.value.split('.')[-1]
             }
         )
-        if instance.Type != PlcEnum.Function:
+
+        if plcblock.PlcType != PlcEnum.Function:
             scope = "GlobalVariable"
-            if instance.Database.Type == DatabaseType.MultiInstance:
+            if plcblock.Database.CallOption == BlocksDBInstances.CallOptionEnum.Multi:
                 scope = "LocalVariable"
             InstanceTag = ET.SubElement(CallInfo, "Instance", attrib={
                                         'Scope': scope, 'UId': str(uid+1)})
-            db_name = instance.Database.Name if instance.Database.Name != "" else f"{
-                instance.Name}_DB"
+            db_name = plcblock.Database.Name if plcblock.Database.Name != "" else f"{
+                plcblock.Name}_DB"
             ET.SubElement(InstanceTag, "Component", attrib={'Name': db_name})
 
-        for parameter in instance.Parameters:
+        for parameter in plcblock.Parameters:
             if parameter.Negated:
                 ET.SubElement(Call, "Negated", attrib={'Name': parameter.Name})
             if parameter.Name == "en":
@@ -267,7 +255,7 @@ class BlockCompileUnit:
 
         return uid
 
-    def _insert_wires(self, instance: InstanceContainer, last_uid: int):
+    def _insert_wires(self, instance: ProgramBlock, last_uid: int):
         wire_values: list[tuple[ET.Element, ET.Element]] = []
         for param in instance.Parameters:
             p_call_uid = param.__dict__.get('call', 23)
@@ -289,6 +277,76 @@ class BlockCompileUnit:
             Wire = wrap_wire_data(data, last_uid)
             self.Wires.append(Wire)
             last_uid += 1
+
+        return
+
+
+class Access:
+    def __init__(self, uid: int, scope: str) -> None:
+        if uid == -1:
+            self.Access = ET.Element(
+                "Access", attrib={
+                    "Scope": scope
+                })
+        else:
+            self.Access = ET.Element(
+                "Access", attrib={
+                    "Scope": scope,
+                    "UId": str(uid),
+                })
+
+        return
+
+    def _create_symbol_constant(self, name: str):
+        self.Value = ET.SubElement(self.Access, name)
+
+        return
+
+
+class AccessGlobalVariable(Access):
+    def __init__(self, value: list, uid: int) -> None:
+        super().__init__(uid, "GlobalVariable")
+
+        self._create_symbol_constant("Symbol")
+        is_array: bool = any(isinstance(item, list) for item in value)
+        if is_array:
+            for v in value:
+                if isinstance(v, str):
+                    ET.SubElement(self.Value, "Component", attrib={'Name': v})
+                if isinstance(v, list):
+                    name = v[0]
+                    index = v[1]
+                    Component = ET.SubElement(
+                        self.Value,
+                        "Component",
+                        attrib={
+                            'Name': name, 'AccessModifier': "Array"})
+                    Component.append(
+                        AccessLiteralConstant(index, "DInt", -1).Access)
+        else:
+            for v in value:
+                ET.SubElement(self.Value, "Component", attrib={'Name': v})
+
+        return
+
+
+class AccessLiteralConstant(Access):
+    def __init__(self, value: str, const_type: str, uid: int) -> None:
+        super().__init__(uid, "LiteralConstant")
+
+        self._create_symbol_constant("Constant")
+        ET.SubElement(self.Value, "ConstantType").text = const_type
+        ET.SubElement(self.Value, "ConstantValue").text = value
+
+        return
+
+
+class AccessTypedConstant(Access):
+    def __init__(self, value: str, uid: int) -> None:
+        super().__init__(uid, "TypedConstant")
+
+        self._create_symbol_constant("Constant")
+        ET.SubElement(self.Value, "ConstantValue").text = value
 
         return
 
@@ -334,3 +392,17 @@ def generate_boolean_attributes(struct: VariableStruct) -> ET.Element:
         }).text = str(struct.Attributes[attrib]).lower()
 
     return AttributeList
+
+
+def generate_access(parameter: WireParameter, uid: int) -> ET.Element:
+    if isinstance(parameter.Value, list):
+        Access = AccessGlobalVariable(parameter.Value, uid)
+        return Access.Access
+
+    if parameter.Datatype in ["Int", "Bool", "UInt", "DInt"]:
+        Access = AccessLiteralConstant(
+            parameter.Value, parameter.Datatype, uid)
+        return Access.Access
+
+    Access = AccessTypedConstant(parameter.Value, uid)
+    return Access.Access
