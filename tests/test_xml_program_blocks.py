@@ -7,6 +7,7 @@ from src.modules.XML.ProgramBlocks import PlcEnum, LibraryData
 from src.schemas import configuration
 import src.modules.BlocksData as BlocksData
 import src.modules.BlocksFB as BlocksFB
+import src.modules.BlocksFC as BlocksFC
 import src.modules.BlocksOB as BlocksOB
 
 BASE_DIR = Path(__file__).parent
@@ -238,3 +239,34 @@ def test_globaldb():
         #     'Datatype') == 'Array[0..999] of "Event_Pool"'
         # assert member.attrib.get('Remanence') == "Retain"
         # assert member.attrib.get('Accessibility') == "Public"
+
+
+def test_function():
+    for fc in CONFIG.get('Program blocks'):
+        if fc.get('type') != PlcEnum.Function:
+            continue
+
+        variable_sections = helper_clean_variable_sections(
+            CONFIG.get('Variable sections'), fc.get('id'))
+        instances = helper_clean_database_instance(
+            fc.get('id'), CONFIG.get('Instances'))
+
+        data = BlocksFC.Function(
+            Name=fc.get('name'),
+            DeviceID=fc.get('DeviceID'),
+            PlcType=fc.get('type'),
+            BlockGroupPath=fc.get(
+                'blockgroup_folder'),
+            Number=fc.get('number'),
+            ProgrammingLanguage=fc.get('programming_language'),
+            Variables=variable_sections,
+            IsInstance=fc.get('is_instance'),
+            LibraryData=LibraryData(
+                Name=(fc.get('library_source') or {}).get('name'),
+                MasterCopyFolderPath=(fc.get('library_source') or {}
+                                      ).get('mastercopyfolder_path')
+            ),
+        )
+        xml = BlocksFC.XML(data).xml()
+        root = ET.fromstring(xml)
+        print(xml)

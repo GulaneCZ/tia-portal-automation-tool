@@ -7,7 +7,7 @@ import logging
 
 from src.core import logs
 from src.modules.PlcBlocks import generate
-from src.modules.XML.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, NetworkSource, BlockCompileUnit
+from src.modules.XML.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, NetworkSource, BlockCompileUnit, WireParameter
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -26,6 +26,7 @@ class OrganizationBlock(ProgramBlock):
     EventClass: EventClassEnum
     IsInstance: bool
     LibraryData: LibraryData
+    Parameters: list[WireParameter]
 
 
 class XML(Base):

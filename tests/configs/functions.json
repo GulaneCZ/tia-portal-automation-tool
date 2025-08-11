@@ -1,0 +1,77 @@
+{
+  "devices": [
+    {
+      "id": 1,
+      "p_typeIdentifier": "OrderNumber:6ES7 512-1DK01-0AB0/V2.6",
+      "slots_required": 1,
+      "network_interface": {
+        "Address": "192.168.88.211",
+        "RouterAddress": "192.168.88.1",
+        "UseRouter": true,
+        "io_controller": "PNIO",
+        "subnet_name": "PN/IE_1"
+      },
+      "p_deviceName": "PLC_12",
+      "p_name": "PLC_12"
+    }
+  ],
+
+  "libraries": [
+    {
+      "path": "C:/Users/john/Documents/Automation/TGTLibrary/TGTLibrary.al18"
+    }
+  ],
+  "Program blocks": [
+    {
+      "id": 1,
+      "DeviceID": 1,
+      "type": "SW.Blocks.OB",
+      "name": "Main",
+      "programming_language": "FBD",
+      "number": 69
+    },
+    {
+      "id": 12,
+      "DeviceID": 1,
+      "network_source_id": 11,
+      "type": "SW.Blocks.FC",
+      "name": "outputMapping",
+      "programming_language": "SCL",
+      "blockgroup_folder": "/FB",
+      "is_instance": true,
+      "number": 6,
+      "library_source": {
+        "name": "TGTLibrary",
+        "mastercopyfolder_path": "__"
+      }
+    },
+    {
+      "id": 13,
+      "DeviceID": 1,
+      "network_source_id": 3,
+      "type": "SW.Blocks.FC",
+      "name": "inputMapping",
+      "programming_language": "SCL",
+      "number": 4,
+      "blockgroup_folder": "/FB",
+      "is_instance": true,
+      "library_source": {
+        "name": "TGTLibrary",
+        "mastercopyfolder_path": "__"
+      }
+    }
+  ],
+  "Network sources": [
+     {
+      "id": 11,
+      "plc_block_id": 1,
+      "title": "Output Mapping"
+    },
+    {
+      "id": 12,
+      "plc_block_id": 1,
+      "title": "Last Scan",
+      "comment": "usually empty"
+    }
+  ]
+}

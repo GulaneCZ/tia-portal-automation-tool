@@ -36,7 +36,6 @@ class ProgramBlock:
     Number: int
     ProgrammingLanguage: str
     Variables: list[VariableSection]
-    Parameters: list[WireParameter]
 
 
 @dataclass

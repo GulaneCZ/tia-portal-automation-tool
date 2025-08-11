@@ -18,6 +18,7 @@ plc_tags = BASE_DIR / "configs" / "plc_tags.json"
 global_dbs = BASE_DIR / "configs" / "global_dbs.json"
 organization_blocks = BASE_DIR / "configs" / "organization_blocks.json"
 function_blocks = BASE_DIR / "configs" / "function_blocks.json"
+functions = BASE_DIR / "configs" / "functions.json"
 
 
 dlls = core.generate_dlls()
@@ -106,5 +107,15 @@ def test_core_function_block():
         config = configuration.validate(json.load(file))
     config['directory'] = BASE_DIR.parent.parent.parent
     config['name'] = f"test_core.{function_blocks.stem}"
+
+    core.execute(imports, config, {"enable_ui": True, })
+
+
+def test_core_function():
+    config = None
+    with open(functions) as file:
+        config = configuration.validate(json.load(file))
+    config['directory'] = BASE_DIR.parent.parent.parent
+    config['name'] = f"test_core.{functions.stem}"
 
     core.execute(imports, config, {"enable_ui": True, })

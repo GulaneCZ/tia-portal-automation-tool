@@ -8,7 +8,7 @@ from src.core import logs
 
 from src.modules.PlcBlocks import generate
 from src.modules.BlocksDBInstances import Instance
-from src.modules.XML.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, BlockCompileUnit, VariableStruct, generate_boolean_attributes
+from src.modules.XML.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, BlockCompileUnit, VariableStruct, generate_boolean_attributes, WireParameter
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -22,6 +22,7 @@ class FunctionBlock(ProgramBlock):
     IsInstance: bool
     LibraryData: LibraryData
     Database: Instance
+    Parameters: list[WireParameter]
 
 
 class XML(Base):

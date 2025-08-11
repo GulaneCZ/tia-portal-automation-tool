@@ -8,6 +8,7 @@ from src.resources import dlls
 import src.modules.BlocksData as BlocksData
 import src.modules.BlocksDBInstances as BlocksDBInstances
 import src.modules.BlocksFB as BlocksFB
+import src.modules.BlocksFC as BlocksFC
 import src.modules.BlocksOB as BlocksOB
 import src.modules.DeviceItems as DeviceItems
 import src.modules.Devices as Devices
@@ -178,6 +179,26 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         if plc.get('type') == ProgramBlocks.PlcEnum.OrganizationBlock
     ]
 
+    data_plcblocks += [BlocksFC.Function(
+        DeviceID=plc.get('DeviceID'),
+        PlcType=plc.get('type'),
+        Name=plc.get('name'),
+        Number=plc.get('number'),
+        ProgrammingLanguage=plc.get('programming_language'),
+        BlockGroupPath=plc.get('blockgroup_folder'),
+        Variables=helper_clean_variable_sections(
+            config.get('Variable sections'), plc.get('id')),
+        IsInstance=plc.get('is_instance'),
+        LibraryData=ProgramBlocks.LibraryData(
+            Name=(plc.get('library_source') or {}).get('name'),
+            MasterCopyFolderPath=(plc.get('library_source') or {}
+                                  ).get('mastercopyfolder_path')
+        ),
+    )
+        for plc in config.get('Program blocks', [])
+        if plc.get('type') == ProgramBlocks.PlcEnum.Function
+    ]
+
     data_plcblocks += [BlocksFB.FunctionBlock(
         DeviceID=plc.get('DeviceID'),
         PlcType=plc.get('type'),
@@ -296,6 +317,12 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
                         data=plc)
                 case ProgramBlocks.PlcEnum.FunctionBlock:
                     BlocksFB.create(
+                        imports=imports,
+                        TIA=TIA,
+                        plc_software=se_plc_software,
+                        data=plc)
+                case ProgramBlocks.PlcEnum.Function:
+                    BlocksFC.create(
                         imports=imports,
                         TIA=TIA,
                         plc_software=se_plc_software,
