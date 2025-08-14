@@ -185,6 +185,12 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         Name=plc.get('name'),
         Number=plc.get('number'),
         ProgrammingLanguage=plc.get('programming_language'),
+        Parameters=helper_clean_wires(
+            plc.get('name'),
+            plc.get('id'),
+            config.get('Wire parameters'),
+            config.get('Wire template')
+        ),
         BlockGroupPath=plc.get('blockgroup_folder'),
         Variables=helper_clean_variable_sections(
             config.get('Variable sections'), plc.get('id')),
@@ -441,7 +447,34 @@ def helper_clean_network_sources(network_sources: list[dict],
 
                 )
 
-                # Functions
+            # Functions
+            if block.get('type') == ProgramBlocks.PlcEnum.Function:
+                c_plcblocks.append(
+                    BlocksFC.Function(
+                        PlcType=block.get('type'),
+                        Name=block.get('name'),
+                        Number=block.get('number'),
+                        ProgrammingLanguage=block.get(
+                            'programming_language'),
+                        Variables=helper_clean_variable_sections(
+                            variable_sections, block.get('id')),
+                        DeviceID=block.get('DeviceID'),
+                        BlockGroupPath=block.get('blockgroup_folder'),
+                        Parameters=helper_clean_wires(
+                            block.get('name'),
+                            block.get('id'),
+                            wire_parameters,
+                            wire_template
+                        ),
+                        IsInstance=block.get('is_instance'),
+                        LibraryData=ProgramBlocks.LibraryData(
+                            Name=(block.get('library_source')
+                                  or {}).get('name'),
+                            MasterCopyFolderPath=(block.get('library_source')
+                                                  or {}).get(
+                                'mastercopyfolder_path'))
+                    )
+                )
 
         networks.append(ProgramBlocks.NetworkSource(Title=title,
                                                     Comment=comment,

@@ -61,6 +61,3425 @@
       }
     }
   ],
+    "Wire template": [
+  {
+    "block_name": "Bin_Obj_Type_2",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "HI_Level",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Lo_Level",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Bin_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Des_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Destination_Att",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "AdjacentBin1",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "CenterValve",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "sideValve1",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "sideValve2",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "sideValve3",
+        "datatype": "Int"
+      }
+    ]
+  },
+  {
+    "block_name": "Bin_Obj_Type_6",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "HI_Level",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Lo_Level",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Bin_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Conv_ID",
+        "datatype": "Int"
+      }
+    ]
+  },
+  {
+    "block_name": "Des_Obj_Type_1",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Bin_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Destination_Att",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Dust_Fan_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Des_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Dust_Fan_Timer_to_Fault",
+        "datatype": "Time"
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_ControlMonitor_1",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Slot_ID",
+        "datatype": "Int"
+      },
+      {
+        "section": "InOut",
+        "name": "Slots",
+        "datatype": "\"Slots\""
+      }
+    ]
+  },
+  {
+    "block_name": "CN_EL_Type_0",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Offset",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Auto",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Hand",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Running",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_1_Fault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_1_Warning",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_2_Fault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_2_Warning",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_3_Fault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_3_Warning",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_4_Fault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_4_Warning",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Power",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "Status1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Status2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Status3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Status4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Warning1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Warning2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Warning3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Warning4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "NFatal1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "NFatal2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "NFatal3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "NFatal4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "EStop",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "Fatal4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_Run",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "UptoSpeed",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_US_Run",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "T_Hooter_Period_On",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Hooter_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "T_Hooter_Period_Off",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "T_UptoSpeed",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Ext_Product",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Inhibit_Hooter",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Inhibit_Start",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "HeadBlockedChute",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "TailBlockedChute",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_BlockedChute",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Ext_Gob",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Sec_Pls_Roff",
+        "datatype": "UInt"
+      },
+      {
+        "section": "Input",
+        "name": "Total_Kg_Capacity",
+        "datatype": "DInt"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Count_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Continous_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Pulsing",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_Count_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "BeltDrift_Continous_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Output",
+        "name": "Start",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Hooter",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Purging",
+        "datatype": "Bool"
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_TripperSilo_1",
+    "parameters": [
+      {
+        "section": "InOut",
+        "name": "Conveyor_1",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Valve_1",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Conveyor_2",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Valve_2",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Valve_3",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Diverter",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "A_Path_Drive",
+        "datatype": "\"A_Drives\""
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_Tripper4V",
+    "parameters": [
+      {
+        "section": "InOut",
+        "name": "U_PosDrv_1_A",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "U_PosDrv_2_A",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "U_PosDrv_3_A",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "U_PosDrv_4_A",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "A_Path_Drive",
+        "datatype": "\"A_Drives\""
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_ConveyorType2",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Offset",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "Auto",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Hand",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Running",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Power",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "Fatal1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal3",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fatal4",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "EStop",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "T_Run",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "UptoSpeed",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Pulsing",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_US_Run",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "T_Hooter_Period_On",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Hooter_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "T_Hooter_Period_Off",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "T_UptoSpeed",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Ext_Product",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Inhibit_Hooter",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Inhibit_Start",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "HeadBlockedChute",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "TailBlockedChute",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_BlockedChute",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "Ext_Gob",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Sec_Pls_Roff",
+        "datatype": "UInt"
+      },
+      {
+        "section": "Input",
+        "name": "Total_Kg_Capacity",
+        "datatype": "DInt"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Count",
+        "datatype": "Int"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Count_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "BlockedChute_Continous_Time",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "WarningBit2",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Start",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Hooter",
+        "datatype": "Bool"
+      }
+    ]
+  },
+  {
+    "block_name": "TGT_LD_ValveType1",
+    "parameters": [
+      {
+        "section": "Input",
+        "name": "Auto",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Hand",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "CrashStop",
+        "datatype": "Bool",
+        "negated": true
+      },
+      {
+        "section": "Input",
+        "name": "Power",
+        "datatype": "Bool",
+        "negated": true
+
+      },
+      {
+        "section": "Input",
+        "name": "Isolated",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "ThermistorFault",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fully_Open",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "Fully_Closed",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "EN_Cont_Pos",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "T_Pos",
+        "datatype": "Time"
+      },
+      {
+        "section": "Input",
+        "name": "remain_close",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "EN_InManual",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Input",
+        "name": "WarningBit1",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Open",
+        "datatype": "Bool"
+      },
+      {
+        "section": "Output",
+        "name": "Close",
+        "datatype": "Bool"
+      },
+      {
+        "section": "InOut",
+        "name": "Pos_Drive",
+        "datatype": "\"A_Drives\""
+      },
+      {
+        "section": "InOut",
+        "name": "Pos_Stat",
+        "datatype": "\"Drive_Stat\""
+      }
+    ]
+  }
+],
+  "Variable sections": [
+    {
+      "plc_block_id": 2,
+      "name": "Static",
+      "data": [
+        {
+          "datatype": "Array[0..999] of \"Event_Pool\"",
+          "name": "Event_Pool"
+        }
+      ]
+    },
+    {
+      "plc_block_id": 3,
+      "name": "Static",
+      "data": [
+          {
+              "datatype": "Bool",
+              "start_value": "true",
+              "name": "Third_Scan"
+          },
+          {
+              "datatype": "Bool",
+              "start_value": "true",
+              "name": "First_Scan"
+          },
+          {
+              "datatype": "\"Network\"",
+              "name": "Network_Status"
+          }
+      ]
+    },
+    {
+      "plc_block_id": 4,
+      "name": "Static",
+      "data": [
+          {
+              "datatype": "Time",
+              "start_value": "T#5s",
+              "name": "T_Run"
+          },
+          {
+              "datatype": "Bool",
+              "start_value": "true",
+              "name": "Inhibit_Hooter"
+          },
+          {
+              "datatype": "Bool",
+              "start_value": "true",
+              "name": "Water_Tank_HL"
+          },
+          {
+              "datatype": "Bool",
+              "start_value": "true",
+              "name": "Water_Tank_LL"
+          },
+          {
+              "datatype": "Bool",
+              "name": "Screening_Running"
+          },
+          {
+              "datatype": "Bool",
+              "name": "Estop"
+          },
+          {
+              "datatype": "Bool",
+              "name": "First_CL_Pump_Fault"
+          },
+          {
+              "datatype": "Bool",
+              "name": "Second_Damp_Pump_Fault"
+          }
+      ]
+    },
+    {
+      "plc_block_id": 5,
+      "name": "Static",
+      "data": [
+          {
+              "datatype": "Array[0..30] of \"Slots\"",
+              "name": "All_Slots"
+          },
+          {
+              "datatype": "Array[0..910] of \"A_Drives\"",
+              "name": "All_Drives"
+          },
+          {
+              "datatype": "Array[0..65] of \"Bins\"",
+              "name": "All_Bins"
+          }
+      ]
+    },
+    {
+      "plc_block_id": 6,
+      "name": "Static",
+      "data": [
+          {
+              "datatype": "Array[0..910] of \"Drive_Stat\"",
+              "name": "Drive_ID"
+          }
+      ]
+    },
+    {
+      "plc_block_id": 7,
+      "name": "Static",
+      "data": [
+          {
+              "datatype": "Bool",
+              "name": "CC1_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC1_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC1_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC1_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC1_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC1_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC1_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC1_SLACK_CHAIN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC1_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_SLACK_CHAIN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_SLACK_CHAIN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_SLACK_CHAIN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_SLACK_CHAIN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_BELT_DRIFT_BOTTOM_LEFT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_BELT_DRIFT_BOTTOM_RIGHT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_BELT_DRIFT_TOP_LEFT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_BELT_DRIFT_TOP_RIGHT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "FV1_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "FV1_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "FV1_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "FV1_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "FV1_POSITION_1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "FV1_POSITION_2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "FV1_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2A_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2A_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2A_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2A_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2A_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2A_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2A_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2B_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2B_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2B_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2B_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2B_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2B_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2B_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG3A_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG3A_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG3A_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG3A_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG3A_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG3A_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG3A_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG4A_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG4A_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG4A_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG4A_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG4A_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG4A_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG4A_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG5A_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG5A_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG5A_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG5A_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG5A_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG5A_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG5A_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1A_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1A_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1A_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1A_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1A_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1A_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1A_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1B_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1B_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1B_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1B_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1B_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1B_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1B_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1C_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1C_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1C_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1C_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1C_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1C_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1C_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1D_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1D_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1D_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1D_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1D_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1D_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1D_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2A_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2A_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2A_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2A_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2A_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2A_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2A_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2B_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2B_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2B_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2B_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2B_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2B_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2B_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2C_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2C_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2C_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2C_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2C_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2C_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2C_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2D_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2D_FULLY_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2D_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2D_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2D_FULLY_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2D_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2D_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1A_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1A_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1A_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1A_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1A_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1A_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1A_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1A_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1B_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1B_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1B_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1B_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1B_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1B_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1B_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1B_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2A_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2A_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2A_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2A_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2A_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2A_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2A_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2A_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2B_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2B_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2B_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2B_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2B_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2B_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2B_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2B_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA1_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA1_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA1_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA1_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA1_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA1_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA1_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA1_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA2_AUTO"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA2_BLOCKED_CHUTE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA2_EMERGENCY_STOP"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA2_HAND"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA2_OVERLOAD_FAULT"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA2_POWER_OK"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA2_RUNNING"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA2_UNDERSPEED"
+          },
+          {
+              "datatype": "Bool",
+              "name": "HL_S1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "HL_S2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I25.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I25.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I25.7"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I26.0"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I26.1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I26.2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I26.3"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I26.4"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I26.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I26.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I26.7"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I27.0"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I27.1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I27.2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I27.3"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I27.4"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I27.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I27.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I27.7"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I28.0"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I28.1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I28.2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I28.3"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I28.4"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I28.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I28.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I28.7"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I29.0"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I29.1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I29.2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I29.3"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I29.4"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I29.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I29.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I29.7"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I30.0"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I30.1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I30.2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I30.3"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I30.4"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I30.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I30.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I30.7"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I31.0"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I31.1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I31.2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I31.3"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I31.4"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I31.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I31.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DI_%I31.7"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC1_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC2_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC3_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC4_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "CC5_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "BE1_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "FV1_START_POSITION_1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "FV1_START_POSITION_2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2A_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2A_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2B_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG2B_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG3A_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG3A_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG4A_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG4A_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG5A_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "IG5A_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1A_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1A_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1B_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1B_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1C_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1C_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1D_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS1D_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2A_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2A_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2B_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2B_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2C_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2C_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2D_START_OPEN"
+          },
+          {
+              "datatype": "Bool",
+              "name": "EGS2D_START_CLOSE"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1A_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS1B_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2A_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "AFS2B_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA1_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SA2_START"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q5.0"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q5.1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q5.2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q5.3"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q5.4"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q5.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q5.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q5.7"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q6.0"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q6.1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q6.2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q6.3"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q6.4"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q6.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q6.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q6.7"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q7.0"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q7.1"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q7.2"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q7.3"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q7.4"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q7.5"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q7.6"
+          },
+          {
+              "datatype": "Bool",
+              "name": "SPARE_DO_%Q7.7"
+          }
+      ]
+    },
+    {
+      "plc_block_id": 8,
+      "name": "Static",
+      "data": [
+        {
+          "datatype": "Array[0..910] of \"Grain_Bits\"",
+          "name": "Grain_Bits"
+        }
+      ]
+    },
+    {
+      "plc_block_id": 9,
+      "name": "Static",
+      "data": [
+        {
+          "name": "Slot 11",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot 12",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot 10",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_DB",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance",
+          "datatype": "\"TGT_LD_ControlMonitor_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_1",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_2",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_3",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_4",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_5",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_6",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_7",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_8",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_9",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_13",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_14",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_15",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_16",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_17",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_18",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_19",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_20",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot21",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 16,
+      "name": "Static",
+      "data": [
+         {
+           "name": "BE1",
+           "datatype": "\"CN_EL_Type_0\"",
+           "attributes": {
+             "SetPoint": true
+           }
+         }
+      ]
+    },
+    {
+      "plc_block_id": 18,
+      "name": "Static",
+      "data": [
+        {
+          "name": "SA1",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "SA2",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 21,
+      "name": "Static",
+      "data": [
+        {
+          "name": "AFS1A",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "AFS1B",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "AFS2A",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "AFS2B",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 26,
+      "name": "Static",
+      "data": [
+        {
+          "name": "Silo_1",
+          "datatype": "\"Bin_Obj_Type_2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Silo_2",
+          "datatype": "\"Bin_Obj_Type_2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Truck",
+          "datatype": "\"Bin_Obj_Type_6\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Des_Truck",
+          "datatype": "\"Des_Obj_Type_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Des_S1",
+          "datatype": "\"Des_Obj_Type_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Des_S2",
+          "datatype": "\"Des_Obj_Type_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 27,
+      "name": "Static",
+      "data": [
+        {
+          "name": "Slot 11",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot 12",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot 10",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_DB",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance",
+          "datatype": "\"TGT_LD_ControlMonitor_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_1",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_2",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_3",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_4",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_5",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_6",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_7",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_8",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Control_Monitor_1_Instance_9",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_13",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_14",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_15",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_16",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_17",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_18",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_19",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot_20",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "Slot21",
+          "datatype": "\"TGT_LD_ControlMonitor\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 28,
+      "name": "Static",
+      "data": [
+        {
+          "name": "CC1",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "CC2",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "CC3",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "CC4",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "CC5",
+          "datatype": "\"TGT_LD_ConveyorType2\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "TGT_LD_TripperSilo_Silo",
+          "datatype": "\"TGT_LD_TripperSilo_1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "SRC_S1",
+          "datatype": "\"TGT_LD_Tripper4V\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "SRC_S2",
+          "datatype": "\"TGT_LD_Tripper4V\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    },
+    {
+      "plc_block_id": 42,
+      "name": "Static",
+      "data": [
+        {
+          "name": "IG2-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "IG2-B",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "IG3-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "IG4-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "IG5-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "FV1",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS2-C",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS1-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS1-B",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS1-C",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS1-D",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS2-A",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS2-B",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        },
+        {
+          "name": "EGS2-D",
+          "datatype": "\"TGT_LD_ValveType1\"",
+          "attributes": {
+            "SetPoint": true
+          }
+        }
+      ]
+    }
+  ],
+    "Wire parameters": [
+    {
+      "plc_block_id": 10,
+      "parameters": {
+        "Slot_ID": "0",
+        "Slots": "DB_Master.All_Slots[0]"
+      }
+    },
+    {
+      "plc_block_id": 12,
+      "parameters": {
+        "en": "true"
+      }
+    },
+    {
+      "plc_block_id": 13,
+      "parameters": {
+        "en": "true"
+      }
+    },
+    {
+      "plc_block_id": 17,
+      "parameters": {
+        "Offset": "2",
+        "Auto": "IO.BE1_AUTO",
+        "Hand": "IO.BE1_HAND",
+        "Running": "IO.BE1_RUNNING",
+        "BeltDrift_1_Fault": "IO.BE1_BELT_DRIFT_TOP_LEFT",
+        "BeltDrift_1_Warning": "false",
+        "BeltDrift_2_Fault": "IO.BE1_BELT_DRIFT_TOP_RIGHT",
+        "BeltDrift_2_Warning": "false",
+        "BeltDrift_3_Fault": "IO.BE1_BELT_DRIFT_BOTTOM_LEFT",
+        "BeltDrift_3_Warning": "false",
+        "BeltDrift_4_Fault": "IO.BE1_BELT_DRIFT_BOTTOM_RIGHT",
+        "BeltDrift_4_Warning": "false",
+        "Power": "IO.BE1_POWER_OK",
+        "Status1": "false",
+        "Status2": "false",
+        "Status3": "false",
+        "Status4": "false",
+        "Warning1": "false",
+        "Warning2": "false",
+        "Warning3": "false",
+        "Warning4": "false",
+        "NFatal1": "false",
+        "NFatal2": "false",
+        "NFatal3": "false",
+        "NFatal4": "false",
+        "Fatal1": "IO.BE1_OVERLOAD_FAULT",
+        "Fatal2": "false",
+        "Fatal3": "false",
+        "EStop": "IO.BE1_EMERGENCY_STOP",
+        "Fatal4": "false",
+        "T_Run": "T#10S",
+        "UptoSpeed": "IO.BE1_UNDERSPEED",
+        "T_US_Run": "T#1S",
+        "T_Hooter_Period_On": "T#2S",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "T#1S",
+        "T_UptoSpeed": "T#5s",
+        "Ext_Product": "false",
+        "Inhibit_Hooter": "false",
+        "Inhibit_Start": "false",
+        "HeadBlockedChute": "IO.BE1_BLOCKED_CHUTE",
+        "TailBlockedChute": "false",
+        "T_BlockedChute": "T#5S",
+        "Ext_Gob": "false",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "0",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "Pulsing": "false",
+        "BeltDrift_Count": "3",
+        "BeltDrift_Count_Time": "T#5s",
+        "BeltDrift_Continous_Time": "T#5s",
+        "Start": "IO.BE1_START",
+        "Hooter": "",
+        "Purging": ""
+      }
+    },
+    {
+      "plc_block_id": 19,
+      "parameters": {
+        "Offset": "30",
+        "Auto": "IO.SA1_AUTO",
+        "Hand": "IO.SA1_HAND",
+        "Running": "IO.SA1_RUNNING",
+        "Power": "IO.SA1_POWER_OK", 
+        "Fatal1": "IO.SA1_OVERLOAD_FAULT",
+        "EStop": "IO.SA1_EMERGENCY_STOP",
+        "UptoSpeed": "IO.SA1_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.SA1_BLOCKED_CHUTE",
+        "Start": "IO.SA1_START" 
+      }
+    },
+    {
+      "plc_block_id": 20,
+      "parameters": {
+        "Offset": "31",
+        "Auto": "IO.SA2_AUTO",
+        "Hand": "IO.SA2_HAND",
+        "Running": "IO.SA2_RUNNING",
+        "Power": "IO.SA2_POWER_OK", 
+        "Fatal1": "IO.SA2_OVERLOAD_FAULT",
+        "EStop": "IO.SA2_EMERGENCY_STOP",
+        "UptoSpeed": "IO.SA2_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.SA2_BLOCKED_CHUTE",
+        "Start": "IO.SA2_START"       
+      }
+    },
+    {
+      "plc_block_id": 22,
+      "parameters": {
+        "Offset": "26",
+        "Auto": "IO.AFS1A_AUTO",
+        "Hand": "IO.AFS1A_HAND",
+        "Running": "IO.AFS1A_RUNNING",
+        "Power": "IO.AFS1A_POWER_OK", 
+        "Fatal1": "IO.AFS1A_OVERLOAD_FAULT",
+        "EStop": "IO.AFS1A_EMERGENCY_STOP",
+        "UptoSpeed": "IO.AFS1A_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.AFS1A_BLOCKED_CHUTE",
+        "Start": "IO.AFS1A_START" 
+      }
+    },
+    {
+      "plc_block_id": 23,
+      "parameters": {
+        "Offset": "27",
+        "Auto": "IO.AFS1B_AUTO",
+        "Hand": "IO.AFS1B_HAND",
+        "Running": "IO.AFS1B_RUNNING",
+        "Power": "IO.AFS1B_POWER_OK",
+        "Fatal1": "IO.AFS1B_OVERLOAD_FAULT",
+        "EStop": "IO.AFS1B_EMERGENCY_STOP",
+        "UptoSpeed": "IO.AFS1B_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.AFS1B_BLOCKED_CHUTE",
+        "Start": "IO.AFS1B_START"       
+      }
+    },
+    {
+      "plc_block_id": 24,
+      "parameters": {
+        "Offset": "28",
+        "Auto": "IO.AFS2A_AUTO",
+        "Hand": "IO.AFS2A_HAND",
+        "Running": "IO.AFS2A_RUNNING",
+        "Power": "IO.AFS2A_POWER_OK",
+        "Fatal1": "IO.AFS2A_OVERLOAD_FAULT",
+        "EStop": "IO.AFS2A_EMERGENCY_STOP",
+        "UptoSpeed": "IO.AFS2A_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.AFS2A_BLOCKED_CHUTE",
+        "Start": "IO.AFS2A_START" 
+      }
+    },
+    {
+      "plc_block_id": 25,
+      "parameters": {
+        "Offset": "28",
+        "Auto": "IO.AFS2B_AUTO",
+        "Hand": "IO.AFS2B_HAND",
+        "Running": "IO.AFS2B_RUNNING",
+        "Power": "IO.AFS2B_POWER_OK",
+        "Fatal1": "IO.AFS2B_OVERLOAD_FAULT",
+        "EStop": "IO.AFS2B_EMERGENCY_STOP",
+        "UptoSpeed": "IO.AFS2B_UNDERSPEED",
+        "Pulsing": "false",
+        "HeadBlockedChute": "IO.AFS2B_BLOCKED_CHUTE",
+        "Start": "IO.AFS2B_START"       
+      }
+    },
+    {
+      "plc_block_id": 27,
+      "parameters": {
+        "HI_Level": "IO.HL_S1" ,
+        "Lo_Level": "false",
+        "Bin_ID": "2",
+        "Des_ID": "24",
+        "Destination_Att": "2",
+        "AdjacentBin1": "3",
+        "CenterValve": "11",
+        "sideValve1": "12",
+        "sideValve2": "13",
+        "sideValve3": "14"
+      }
+    },
+    {
+      "plc_block_id": 28,
+      "parameters": {
+        "HI_Level": "IO.HL_S2" ,
+        "Lo_Level": "false",
+        "Bin_ID": "3",
+        "Des_ID": "24",
+        "Destination_Att": "3",
+        "AdjacentBin1": "3",
+        "CenterValve": "15",
+        "sideValve1": "16",
+        "sideValve2": "10",
+        "sideValve3": "18"
+      }
+    },
+    {
+      "plc_block_id": 29,
+      "parameters": {
+        "HI_Level": "false",
+        "Lo_Level": "false",
+        "Bin_ID": "1",
+        "Conv_ID": "1"
+      }
+    },
+    {
+      "plc_block_id": 30,
+      "parameters": {
+        "Bin_ID": "1",
+        "Destination_Att": "1",
+        "Dust_Fan_ID": "0",
+        "Des_ID": "24",
+        "Dust_Fan_Timer_to_Fault": "T#5M"
+      }
+    },
+    {
+      "plc_block_id": 32,
+      "parameters": {
+        "Slot_ID": "0",
+        "Slots": "DB_Master.All_Slots[0]"
+      }
+    },
+    {
+      "plc_block_id": 34,
+      "parameters": {
+        "Conveyor_1":  "DB_Master.All_Drives.[4]"  ,
+        "Valve_1":  "DB_Master.All_Drives[6]"  ,
+        "Conveyor_2":  "DB_Master.All_Drives[5]"  ,
+        "Valve_2":  "DB_Master.All_Drives[7]"  ,
+        "Valve_3":  "DB_Master.All_Drives[8]"  ,
+        "Diverter":  "DB_Master.All_Drives[3]"  ,
+        "A_Path_Drive":  "DB_Master.All_Drives[25]"  
+      }
+    },
+    {
+      "plc_block_id": 35,
+      "parameters": {
+        "en": "FALSE",
+        "U_PosDrv_1_A":  "DB_Master.All_Drives[11]"  ,
+        "U_PosDrv_2_A":  "DB_Master.All_Drives[12]"  ,
+        "U_PosDrv_3_A":  "DB_Master.All_Drives[13]"  ,
+        "U_PosDrv_4_A":  "DB_Master.All_Drives[14]"  ,
+        "A_Path_Drive":  "DB_Master.All_Drives[21]"  
+      }
+    },
+    {
+      "plc_block_id": 36,
+      "parameters": {
+        "en": "FALSE",
+        "U_PosDrv_1_A":  "DB_Master.All_Drives[15]"  ,
+        "U_PosDrv_2_A":  "DB_Master.All_Drives[16]"  ,
+        "U_PosDrv_3_A":  "DB_Master.All_Drives[10]"  ,
+        "U_PosDrv_4_A":  "DB_Master.All_Drives[18]"  ,
+        "A_Path_Drive":  "DB_Master.All_Drives[22]"  
+      }
+    },
+    {
+      "plc_block_id": 37,
+      "parameters": {
+        "Offset": "1",
+        "Auto":  "IO.CC1_AUTO" ,
+        "Hand":  "IO.CC1_HAND" ,
+        "Running":  "IO.CC1_RUNNING" ,
+        "Power":  "IO.CC1_POWER_OK" ,
+        "Fatal1":  "IO.CC1_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC1_SLACK_CHAIN" ,
+        "Fatal3": "false",
+        "Fatal4": "false",
+        "EStop":  "IO.CC1_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC1_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#3s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "t#5s",
+        "Ext_Product": "false",
+        "Inhibit_Hooter": "false",
+        "Inhibit_Start": "false",
+        "HeadBlockedChute":  "IO.CC1_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "false",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "false",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "300000",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#2s",
+        "WarningBit2": "false",
+        "Start":  "IO.CC1_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 38,
+      "parameters": {
+        "Offset": "4",
+        "Auto":  "IO.CC2_AUTO" ,
+        "Hand":  "IO.CC2_HAND" ,
+        "Running":  "IO.CC2_RUNNING" ,
+        "Power":  "IO.CC2_POWER_OK" ,
+        "Fatal1":  "IO.CC2_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC2_SLACK_CHAIN" ,
+        "Fatal3": "",
+        "Fatal4": "",
+        "EStop":  "IO.CC2_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC2_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#1s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "t#5s",
+        "Ext_Product": "",
+        "Inhibit_Hooter": "",
+        "Inhibit_Start": "",
+        "HeadBlockedChute":  "IO.CC2_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "WarningBit2": "",
+        "Start":  "IO.CC2_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 39,
+      "parameters": {
+        "Offset": "5",
+        "Auto":  "IO.CC3_AUTO" ,
+        "Hand":  "IO.CC3_HAND" ,
+        "Running":  "IO.CC3_RUNNING" ,
+        "Power":  "IO.CC3_POWER_OK" ,
+        "Fatal1":  "IO.CC3_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC3_SLACK_CHAIN" ,
+        "Fatal3": "",
+        "Fatal4": "",
+        "EStop":  "IO.CC3_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC3_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#1s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "T#5s",
+        "Ext_Product": "",
+        "Inhibit_Hooter": "",
+        "Inhibit_Start": "",
+        "HeadBlockedChute":  "IO.CC3_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "WarningBit2": "",
+        "Start":  "IO.CC3_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 40,
+      "parameters": {
+        "Offset": "17",
+        "Auto":  "IO.CC4_AUTO" ,
+        "Hand":  "IO.CC4_HAND" ,
+        "Running":  "IO.CC4_RUNNING" ,
+        "Power":  "IO.CC4_POWER_OK" ,
+        "Fatal1":  "IO.CC4_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC4_SLACK_CHAIN" ,
+        "Fatal3": "",
+        "Fatal4": "",
+        "EStop":  "IO.CC4_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC4_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#1s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "T#5s",
+        "Ext_Product": "false",
+        "Inhibit_Hooter": "",
+        "Inhibit_Start": "",
+        "HeadBlockedChute":  "IO.CC4_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "WarningBit2": "",
+        "Start":  "IO.CC4_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 41,
+      "parameters": {
+        "Offset": "9",
+        "Auto":  "IO.CC5_AUTO" ,
+        "Hand":  "IO.CC5_HAND" ,
+        "Running":  "IO.CC5_RUNNING" ,
+        "Power":  "IO.CC5_POWER_OK" ,
+        "Fatal1":  "IO.CC5_OVERLOAD_FAULT" ,
+        "Fatal2":  "IO.CC5_SLACK_CHAIN" ,
+        "Fatal3": "",
+        "Fatal4": "",
+        "EStop":  "IO.CC5_EMERGENCY_STOP" ,
+        "T_Run": "t#5s",
+        "UptoSpeed":  "IO.CC5_UNDERSPEED" ,
+        "Pulsing": "false",
+        "T_US_Run": "t#1s",
+        "T_Hooter_Period_On": "t#2s",
+        "Hooter_Count": "3",
+        "T_Hooter_Period_Off": "t#1s",
+        "T_UptoSpeed": "T#5s",
+        "Ext_Product": "",
+        "Inhibit_Hooter": "",
+        "Inhibit_Start": "",
+        "HeadBlockedChute":  "IO.CC5_BLOCKED_CHUTE" ,
+        "TailBlockedChute": "",
+        "T_BlockedChute": "t#5s",
+        "Ext_Gob": "",
+        "Sec_Pls_Roff": "15",
+        "Total_Kg_Capacity": "",
+        "BlockedChute_Count": "3",
+        "BlockedChute_Count_Time": "T#5s",
+        "BlockedChute_Continous_Time": "T#5s",
+        "WarningBit2": "",
+        "Start":  "IO.CC5_START" ,
+        "Hooter": ""
+      }
+    },
+    {
+      "plc_block_id": 43,
+      "parameters": {
+        "CrashStop":  "IO.IG2A_EMERGENCY_STOP" ,
+        "Power":  "IO.IG2A_POWER_OK" ,
+        "ThermistorFault":  "IO.IG2A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG2A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG2A_FULLY_CLOSE" ,
+        "Open":  "IO.IG2A_START_OPEN" ,
+        "Close":  "IO.IG2A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[6]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[6]"  
+      }
+    },
+    {
+      "plc_block_id": 44,
+      "parameters": {
+        "CrashStop":  "IO.IG2B_EMERGENCY_STOP" ,
+        "Power":  "IO.IG2B_POWER_OK" ,
+        "ThermistorFault":  "IO.IG2B_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG2B_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG2B_FULLY_CLOSE" ,
+        "Open":  "IO.IG2B_START_OPEN" ,
+        "Close":  "IO.IG2B_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[7]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[7]"  
+      }
+    },
+    {
+      "plc_block_id": 45,
+      "parameters": {
+        "CrashStop":  "IO.IG3A_EMERGENCY_STOP" ,
+        "Power":  "IO.IG3A_POWER_OK" ,
+        "ThermistorFault":  "IO.IG3A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG3A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG3A_FULLY_CLOSE" ,
+        "Open":  "IO.IG3A_START_OPEN" ,
+        "Close":  "IO.IG3A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[8]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[8]"  
+      }
+    },
+    {
+      "plc_block_id": 46,
+      "parameters": {
+        "CrashStop":  "IO.IG4A_EMERGENCY_STOP" ,
+        "Power":  "IO.IG4A_POWER_OK" ,
+        "ThermistorFault":  "IO.IG4A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG4A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG4A_FULLY_CLOSE" ,
+        "Open":  "IO.IG4A_START_OPEN" ,
+        "Close":  "IO.IG4A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[19]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[19]"  
+      }
+    },
+    {
+      "plc_block_id": 47,
+      "parameters": {
+        "CrashStop":  "IO.IG5A_EMERGENCY_STOP" ,
+        "Power":  "IO.IG5A_POWER_OK" ,
+        "ThermistorFault":  "IO.IG5A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.IG5A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.IG5A_FULLY_CLOSE" ,
+        "Open":  "IO.IG5A_START_OPEN" ,
+        "Close":  "IO.IG5A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[20]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[20]"  
+      }
+    },
+    {
+      "plc_block_id": 48,
+      "parameters": {
+        "CrashStop":  "IO.FV1_EMERGENCY_STOP" ,
+        "Power":  "IO.FV1_POWER_OK" ,
+        "ThermistorFault": "false",
+        "Fully_Open":  "IO.FV1_POSITION_1" ,
+        "Fully_Closed":  "IO.FV1_POSITION_2" ,
+        "Open":  "IO.FV1_START_POSITION_1" ,
+        "Close":  "IO.FV1_START_POSITION_2" ,
+        "Pos_Drive":  "DB_Master.All_Drives[3]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[3]"  
+      }
+    },
+    {
+      "plc_block_id": 49,
+      "parameters": {
+        "CrashStop":  "IO.EGS1A_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS1A_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS1A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS1A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS1A_FULLY_CLOSE" ,
+        "Open":  "IO.EGS1A_START_OPEN" ,
+        "Close":  "IO.EGS1A_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[11]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[11]"  
+      }
+    },
+    {
+      "plc_block_id": 50,
+      "parameters": {
+        "CrashStop":  "IO.EGS1B_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS1B_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS1B_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS1B_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS1B_FULLY_CLOSE" ,
+        "Open":  "IO.EGS1B_START_OPEN" ,
+        "Close":  "IO.EGS1B_START_CLOSE" ,
+        "Pos_Drive":  "DB_Master.All_Drives[12]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[12]"  
+      }
+    },
+    {
+      "plc_block_id": 51,
+      "parameters": {
+        "CrashStop":  "IO.EGS1C_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS1C_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS1C_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS1C_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS1C_FULLY_CLOSE" ,
+        "Open":  "IO.EGS1C_START_OPEN" ,
+        "Close":  "IO.EGS1C_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[13]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[13]"  
+      }
+    },
+    {
+      "plc_block_id": 52,
+      "parameters": {
+        "CrashStop":  "IO.EGS1D_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS1D_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS1D_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS1D_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS1D_FULLY_CLOSE" ,
+        "Open":  "IO.EGS1D_START_OPEN" ,
+        "Close":  "IO.EGS1D_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[14]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[14]"  
+      }
+    },
+    {
+      "plc_block_id": 53,
+      "parameters": {
+        "CrashStop":  "IO.EGS2A_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS2A_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS2A_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS2A_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS2A_FULLY_CLOSE" ,
+        "Open":  "IO.EGS2A_START_OPEN" ,
+        "Close":  "IO.EGS2A_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[15]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[15]"  
+      }
+    },
+    {
+      "plc_block_id": 54,
+      "parameters": {
+        "CrashStop":  "IO.EGS2B_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS2B_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS2B_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS2B_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS2B_FULLY_CLOSE" ,
+        "Open":  "IO.EGS2B_START_OPEN" ,
+        "Close":  "IO.EGS2B_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[16]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[16]"  
+      }
+    },
+    {
+      "plc_block_id": 55,
+      "parameters": {
+        "CrashStop":  "IO.EGS2C_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS2C_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS2C_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS2C_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS2C_FULLY_CLOSE" ,
+        "Open":  "IO.EGS2C_START_OPEN" ,
+        "Close":  "IO.EGS2C_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[10]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[10]"  
+      }
+    },
+    {
+      "plc_block_id": 56,
+      "parameters": {
+        "CrashStop":  "IO.EGS2D_EMERGENCY_STOP" ,
+        "Power":  "IO.EGS2D_POWER_OK" ,
+        "ThermistorFault":  "IO.EGS2D_OVERLOAD_FAULT" ,
+        "Fully_Open":  "IO.EGS2D_FULLY_OPEN" ,
+        "Fully_Closed":  "IO.EGS2D_FULLY_CLOSE" ,
+        "EN_Cont_Pos": "false",
+        "Open":  "IO.EGS2D_START_OPEN" ,
+        "Close":  "IO.EGS2D_START_CLOSE" ,
+        "Pos_Drive":  "DB_MASTER.All_Drives[18]"  ,
+        "Pos_Stat":  "DB_Stat.Drive_ID[18]"  
+      }
+    }
+  ],
   "Network sources": [
      {
       "id": 11,
