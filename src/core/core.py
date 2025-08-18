@@ -503,15 +503,14 @@ def helper_clean_wires(block_name: str,
         if wire.get('plc_block_id') == plc_block_id:
             parameters = wire.get('parameters')
 
-    if 'en' in parameters:
-        en = ProgramBlocks.WireParameter(
-            Name="en",
-            Section="",
-            Datatype="Bool",
-            Value=wire.get("en", ''),
-            Negated=False
-        )
-        wires.append(en)
+    en = ProgramBlocks.WireParameter(
+        Name="en",
+        Section="",
+        Datatype="Bool",
+        Value=parameters.get('en', ''),
+        Negated=False
+    )
+    wires.append(en)
 
     for param in wire_parameters_template:
         wire = ProgramBlocks.WireParameter(
