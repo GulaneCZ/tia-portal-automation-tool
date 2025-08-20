@@ -1,7 +1,7 @@
 from pathlib import PurePosixPath
 from schema import Schema, And, Or, Use, Optional, SchemaError
 
-from src.modules.XML.ProgramBlocks import PlcEnum
+from src.modules.ProgramBlocks import PlcEnum
 
 VariableStruct = Schema({
     "name": str,

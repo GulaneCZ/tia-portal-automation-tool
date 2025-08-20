@@ -17,8 +17,8 @@ import src.modules.Networks as Networks
 import src.modules.PlcDataTypes as PlcDataTypes
 import src.modules.PlcTags as PlcTags
 import src.modules.Portals as Portals
+import src.modules.ProgramBlocks as ProgramBlocks
 import src.modules.Projects as Projects
-import src.modules.XML.ProgramBlocks as ProgramBlocks
 
 
 def generate_dlls(use_contract: bool = False) -> dict[str, Path]:
@@ -432,8 +432,9 @@ def helper_clean_network_sources(network_sources: list[dict],
                         Parameters=helper_clean_wires(
                             block.get('name'),
                             block.get('id'),
+                            wire_parameters,
                             wire_template,
-                            wire_parameters),
+                        ),
                         Database=helper_clean_database_instance(
                             block.get('id'), instances),
                         IsInstance=block.get('is_instance'),
@@ -507,7 +508,7 @@ def helper_clean_wires(block_name: str,
         Name="en",
         Section="",
         Datatype="Bool",
-        Value=parameters.get('en', ''),
+        Value=ProgramBlocks.AccessValue(parameters.get('en', '')),
         Negated=False
     )
     wires.append(en)
@@ -517,7 +518,7 @@ def helper_clean_wires(block_name: str,
             Name=param.get('name'),
             Section=param.get('section'),
             Datatype=param.get('datatype'),
-            Value=parameters.get(param.get('name')),
+            Value=ProgramBlocks.AccessValue(parameters.get(param.get('name'))),
             Negated=param.get('negated')
         )
         wires.append(wire)

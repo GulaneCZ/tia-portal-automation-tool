@@ -6,8 +6,8 @@ import xml.etree.ElementTree as ET
 import logging
 
 from src.core import logs
-from src.modules.PlcBlocks import generate
-from src.modules.XML.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, NetworkSource, BlockCompileUnit, WireParameter
+from src.modules.ProgramBlocks import generate
+from src.modules.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, NetworkSource, BlockCompileUnit, WireParameter
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)

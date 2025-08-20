@@ -53,3 +53,11 @@ class Document(Base):
         self.Sections = ET.SubElement(self.Interface, "Sections")
         self.Sections.set('xmlns', XMLNS.INTERFACE.value)
         ET.SubElement(self.AttributeList, "Namespace")
+
+
+class Software(Document):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+
+        self.Section = ET.SubElement(
+            self.Sections, "Section", attrib={'Name': "None"})

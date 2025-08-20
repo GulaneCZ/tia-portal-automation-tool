@@ -1,6 +1,6 @@
 from schema import Schema, Use, And, Optional
 
-from src.modules.XML.ProgramBlocks import PlcEnum
+from src.modules.ProgramBlocks import PlcEnum
 from src.schemas.ProgramBlocks import Database
 
 GlobalDB = Schema({

@@ -6,9 +6,9 @@ import logging
 
 from src.core import logs
 
-from src.modules.PlcBlocks import generate
 from src.modules.BlocksDBInstances import Instance
-from src.modules.XML.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, BlockCompileUnit, VariableStruct, generate_boolean_attributes, WireParameter
+from src.modules.ProgramBlocks import generate
+from src.modules.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, BlockCompileUnit, VariableStruct, generate_boolean_attributes, WireParameter
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)

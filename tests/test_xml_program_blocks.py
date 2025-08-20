@@ -3,7 +3,7 @@ import json
 import xml.etree.ElementTree as ET
 
 from src.core.core import helper_clean_variable_sections, helper_clean_network_sources, helper_clean_wires, helper_clean_database_instance
-from src.modules.XML.ProgramBlocks import PlcEnum, LibraryData
+from src.modules.ProgramBlocks import PlcEnum, LibraryData
 from src.schemas import configuration
 import src.modules.BlocksData as BlocksData
 import src.modules.BlocksFB as BlocksFB

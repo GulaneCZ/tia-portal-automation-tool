@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 import logging
 
 from src.core import logs
-from src.modules.XML.Softwares import Software
+from src.modules.XML import Software
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)

@@ -1,11 +1,19 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
-from pathlib import PurePosixPath
+from pathlib import Path, PurePosixPath
+from typing import Optional
+import logging
+import tempfile
 import xml.etree.ElementTree as ET
 
-from src.modules.XML.Documents import Document, XMLNS
+from src.core import logs
+from src.modules.XML import Document, XMLNS
 import src.modules.BlocksDBInstances as BlocksDBInstances
+import src.modules.Libraries as Libraries
+
+logs.setup(logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -50,8 +58,36 @@ class WireParameter:
     Name: str
     Section: str
     Datatype: str
-    Value: str
+    Value: AccessValue
     Negated: bool
+
+
+@dataclass
+class AccessValue:
+    Root: str
+    Variable: Optional[str]
+    Index: Optional[int]
+
+    def __init__(self, raw: str):
+        if not raw:
+            self.Root = ''
+            self.Variable = None
+            self.Index = None
+            return
+        parts = raw.split('.')
+
+        self.Root = parts[0]
+        self.Variable = None
+        self.Index = None
+
+        if len(parts) == 2:
+            var_part = parts[1]
+            self.Variable = var_part
+
+            if '[' in var_part and var_part.endswith(']'):
+                bracket_start = var_part.find('[')
+                self.Variable = var_part[:bracket_start]
+                self.Index = var_part[bracket_start + 1: -1]
 
 
 class PlcEnum(Enum):
@@ -211,7 +247,7 @@ class BlockCompileUnit:
 
     def _insert_parts(self, plcblock: ProgramBlock, uid: int) -> int:
         for parameter in plcblock.Parameters:
-            if not parameter.Value:
+            if not parameter.Value.Root:
                 continue
 
             parameter.__dict__['UId'] = uid
@@ -260,7 +296,7 @@ class BlockCompileUnit:
             p_call_uid = param.__dict__.get('call', 23)
             NameCon = ET.Element("NameCon", attrib={
                                  'UId': str(p_call_uid), 'Name': param.Name})
-            if param.Value:
+            if param.Value.Root:
                 ident_uid = param.__dict__.get('UId', 23)
                 IdentCon = ET.Element("IdentCon", attrib={
                                       'UId': str(ident_uid)})
@@ -307,25 +343,17 @@ class AccessGlobalVariable(Access):
         super().__init__(uid, "GlobalVariable")
 
         self._create_symbol_constant("Symbol")
-        is_array: bool = any(isinstance(item, list) for item in value)
-        if is_array:
-            for v in value:
-                if isinstance(v, str):
-                    ET.SubElement(self.Value, "Component", attrib={'Name': v})
-                if isinstance(v, list):
-                    name = v[0]
-                    index = v[1]
-                    Component = ET.SubElement(
-                        self.Value,
-                        "Component",
-                        attrib={
-                            'Name': name, 'AccessModifier': "Array"})
-                    Component.append(
-                        AccessLiteralConstant(index, "DInt", -1).Access)
-        else:
-            for v in value:
-                ET.SubElement(self.Value, "Component", attrib={'Name': v})
+        ET.SubElement(self.Value, "Component", attrib={'Name': value.Root})
+        
 
+        if value.Index:
+            Component = ET.SubElement(self.Value, "Component", attrib={
+                'Name': value.Variable, 'AccessModifier': "Array"})
+            Component.append(AccessLiteralConstant(
+                value.Index, "DInt", -1).Access)
+        else:
+            ET.SubElement(self.Value, "Component", attrib={'Name': value.Variable})
+            
         return
 
 
@@ -394,14 +422,156 @@ def generate_boolean_attributes(struct: VariableStruct) -> ET.Element:
 
 
 def generate_access(parameter: WireParameter, uid: int) -> ET.Element:
-    if isinstance(parameter.Value, list):
+    if parameter.Value.Variable:
         Access = AccessGlobalVariable(parameter.Value, uid)
         return Access.Access
 
     if parameter.Datatype in ["Int", "Bool", "UInt", "DInt"]:
         Access = AccessLiteralConstant(
-            parameter.Value, parameter.Datatype, uid)
+            parameter.Value.Root, parameter.Datatype, uid)
         return Access.Access
 
-    Access = AccessTypedConstant(parameter.Value, uid)
+    Access = AccessTypedConstant(parameter.Value.Root, uid)
     return Access.Access
+
+
+def export_xml(imports: Imports,
+               plcblock: Siemens.Engineering.SW.Blocks.PlcBlock
+               ) -> str:
+    SE: Siemens.Engineering = imports.DLL
+    FileInfo: FileInfo = imports.FileInfo
+
+    logging.info(f"Started export of PlcBlock {plcblock.Name} XML")
+
+    filename = tempfile.mktemp()
+    filepath = Path(filename)
+    plcblock.Export(FileInfo(filepath.absolute().as_posix()),
+                    getattr(SE.ExportOptions, "None"))
+
+    with open(filepath) as file:
+        file.seek(3)  # get rid of the random weird bytes
+        xml_data = file.read()
+
+    filepath.unlink()
+
+    logging.debug(f"Extracted XML: {xml_data}")
+
+    return xml_data
+
+
+def import_xml_to_block_group(imports: Imports,
+                              plc_software: Siemens.Engineering.HW.Software,
+                              xml_location: Path,
+                              blockgroup_folder: PurePosixPath,
+                              mkdir: bool = False
+                              ) -> Siemens.Engineering.SW.Blocks.PlcBlock:
+    SE: Siemens.Engineering = imports.DLL
+    FileInfo: FileInfo = imports.FileInfo
+
+    logging.info(f"Import of XML {xml_location.absolute()} started")
+
+    xml_dotnet_path: FileInfo = FileInfo(xml_location.absolute().as_posix())
+
+    blockgroup = locate_blockgroup(
+        plc_software, blockgroup_folder, mkdir)
+
+    plcblock: Siemens.Engineering.SW.Blocks.PlcBlock = blockgroup.Blocks.Import(
+        xml_dotnet_path, SE.ImportOptions.Override)
+
+    logging.info(f"Finished: Import of XML {xml_dotnet_path}")
+
+    return plcblock
+
+
+def locate_blockgroup(plc_software: Siemens.Engineering.HW.Software,
+                      blockgroup_folder: PurePosixPath,
+                      mkdir: bool = False) -> Siemens.Engineering.SW.Blocks.BlockGroup | None:
+    if not blockgroup_folder.is_absolute():
+        blockgroup_folder = PurePosixPath('/') / blockgroup_folder
+
+    current_blockgroup: Siemens.Engineering.SW.Blocks.PlcBlockGroup | None = plc_software.BlockGroup
+    previous_blockgroup: Siemens.Engineering.SW.Blocks.PlcBlockGroup | None = plc_software.BlockGroup
+    for part in blockgroup_folder.parts:
+        if part == '/':
+            continue
+        current_blockgroup = current_blockgroup.Groups.Find(part)
+        if not current_blockgroup:
+            if mkdir:
+                current_blockgroup = previous_blockgroup.Groups.Create(part)
+            else:
+                return
+        previous_blockgroup = current_blockgroup
+
+    return current_blockgroup
+
+
+def find(plc_software: Siemens.Engineering.HW.Software,
+         blockgroup_folder: PurePosixPath,
+         name: str
+         ) -> Siemens.Engineering.SW.Blocks.PlcBlock:
+    if not name:
+        return
+
+    blockgroup: Siemens.Engineering.SW.Blocks.PlcBlockGroup = locate_blockgroup(
+        plc_software, blockgroup_folder)
+
+    if not blockgroup:
+        return
+
+    plcblock: Siemens.Engineering.SW.Blocks.PlcBlock = blockgroup.Blocks.Find(
+        name)
+
+    return plcblock
+
+
+def generate(imports: Imports,
+             TIA: Siemens.Engineering.TiaPortal,
+             plc_software: Siemens.Engineering.HW.Software,
+             data: ProgramBlock,
+             xml: Base
+             ):
+
+    if data.IsInstance:
+        # if we want to copy from GLOBAL LIBRARY
+        if not isinstance(data.LibraryData, dict):
+            library_name = data.LibraryData.Name
+            mastercopyfolder_path = data.LibraryData.MasterCopyFolderPath
+
+            library = Libraries.find(TIA=TIA, name=library_name)
+
+            logging.debug(f"Library: {library_name}")
+            logging.debug(f"MasterCopyFolder Path: {mastercopyfolder_path}")
+
+            mastercopy = Libraries.find_mastercopy(
+                library=library,
+                mastercopyfolder_path=mastercopyfolder_path,
+                name=data.Name)
+
+            if not mastercopy:
+                logging.debug("MasterCopy is (null)")
+                return
+
+            blockgroup = locate_blockgroup(
+                plc_software=plc_software,
+                blockgroup_folder=data.BlockGroupPath,
+                mkdir=True)
+
+            if not blockgroup:
+                return
+
+            blockgroup.Blocks.CreateFrom(mastercopy)
+
+    else:
+        filename: Path = xml.write()
+
+        logger.info(f"Written Program Block ({
+                    data.Name}) XML data to: {filename}")
+        import_xml_to_block_group(
+            imports=imports,
+            plc_software=plc_software,
+            xml_location=filename,
+            blockgroup_folder=data.BlockGroupPath,
+            mkdir=True)
+
+        if filename.exists():
+            filename.unlink()

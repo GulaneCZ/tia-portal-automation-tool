@@ -3136,8 +3136,10 @@
       "id": 9,
       "DeviceID": 1,
       "network_source_id": 4,
+      "is_instance": false,
       "type": "SW.Blocks.FB",
       "name": "Common_Control Monitor",
+      "number": 65,
       "programming_language": "FBD",
       "blockgroup_folder": "/FB"
     },
@@ -3365,17 +3367,7 @@
       "name": "Bin_Obj_Type_6",
       "blockgroup_folder": "/TGTLibrary/Drives/Bins"
     },
-    {
-      "id": 31,
-      "DeviceID": 1,
-      "network_source_id": 4,
-      "is_instance": false,
-      "type": "SW.Blocks.FB",
-      "name": "Common_Control Monitor",
-      "number": 65,
-      "programming_language": "FBD",
-      "blockgroup_folder": "/FB"
-    },
+    
     {
       "id": 32,
       "DeviceID": 1,
@@ -6404,7 +6396,7 @@
     {
       "plc_block_id": 34,
       "parameters": {
-        "Conveyor_1":  "DB_Master.All_Drives.[4]"  ,
+        "Conveyor_1":  "DB_Master.All_Drives[4]"  ,
         "Valve_1":  "DB_Master.All_Drives[6]"  ,
         "Conveyor_2":  "DB_Master.All_Drives[5]"  ,
         "Valve_2":  "DB_Master.All_Drives[7]"  ,

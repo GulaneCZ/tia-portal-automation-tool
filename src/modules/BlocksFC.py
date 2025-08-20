@@ -5,8 +5,8 @@ import logging
 
 from src.core import logs
 
-from src.modules.PlcBlocks import generate
-from src.modules.XML.ProgramBlocks import Base, ProgramBlock, WireParameter
+from src.modules.ProgramBlocks import generate
+from src.modules.ProgramBlocks import Base, ProgramBlock, WireParameter
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)
