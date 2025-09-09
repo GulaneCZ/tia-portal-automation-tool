@@ -141,7 +141,7 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
             config.get('Variable sections'), db.get('id')),
         Attributes=db.get('attributes', {}))
         for db in config.get('Program blocks', [])
-        if db.get('type') == ProgramBlocks.PlcEnum.GlobalDB.value
+        if db.get('type') == ProgramBlocks.PlcEnum.GlobalDB
     ]
     data_plcblocks = [BlocksOB.OrganizationBlock(
         DeviceID=plc.get('DeviceID'),
@@ -308,7 +308,7 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         for data_block in data_blocks:
             if data_block.DeviceID != device_data.ID:
                 continue
-            BlocksData.create(imports, se_plc_software, data_block)
+            BlocksData.create(TIA, imports, se_plc_software, data_block)
 
         # ProgramBlocks
         for plc in data_plcblocks:

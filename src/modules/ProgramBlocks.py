@@ -344,7 +344,6 @@ class AccessGlobalVariable(Access):
 
         self._create_symbol_constant("Symbol")
         ET.SubElement(self.Value, "Component", attrib={'Name': value.Root})
-        
 
         if value.Index:
             Component = ET.SubElement(self.Value, "Component", attrib={
@@ -352,8 +351,9 @@ class AccessGlobalVariable(Access):
             Component.append(AccessLiteralConstant(
                 value.Index, "DInt", -1).Access)
         else:
-            ET.SubElement(self.Value, "Component", attrib={'Name': value.Variable})
-            
+            ET.SubElement(self.Value, "Component",
+                          attrib={'Name': value.Variable})
+
         return
 
 
@@ -531,7 +531,7 @@ def generate(imports: Imports,
              xml: Base
              ):
 
-    if data.IsInstance:
+    if isinstance(data, ProgramBlock) and data.IsInstance:
         # if we want to copy from GLOBAL LIBRARY
         if not isinstance(data.LibraryData, dict):
             library_name = data.LibraryData.Name

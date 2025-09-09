@@ -1,6 +1,5 @@
 from __future__ import annotations
 from dataclasses import dataclass
-from pathlib import Path
 import logging
 import xml.etree.ElementTree as ET
 
@@ -8,7 +7,7 @@ from src.core import logs
 from src.modules.BlocksDatabase import Database
 from src.modules.ProgramBlocks import VariableSection
 from src.modules.ProgramBlocks import Base, PlcEnum
-from src.modules.ProgramBlocks import import_xml_to_block_group
+from src.modules.ProgramBlocks import import_xml_to_block_group, generate
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -48,19 +47,19 @@ class XML(Base):
         return
 
 
-def create(imports: Imports, plc_software: Siemens.Engineering.HW.Software, data: DataBlock):
+def create(TIA: Siemens.Engineering.TiaPortal,
+           imports: Imports,
+           plc_software: Siemens.Engineering.HW.Software,
+           data: DataBlock
+           ):
     logger.info(f"Generation of Data Block {data.Name} started")
 
     if not data.Name:
         return
 
     xml = XML(data)
-    filename: Path = xml.write()
-
-    logger.info(f"Written Data Block {data.Name} XML to: {filename}")
-
-    import_xml_to_block_group(imports, plc_software, xml_location=filename,
-                              blockgroup_folder=data.BlockGroupPath,
-                              mkdir=True)
-    if filename.exists():
-        filename.unlink()
+    generate(imports=imports,
+             TIA=TIA,
+             plc_software=plc_software,
+             data=data,
+             xml=xml)
