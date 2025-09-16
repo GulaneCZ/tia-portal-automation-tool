@@ -7,7 +7,7 @@ from src.core import logs
 from src.modules.BlocksDatabase import Database
 from src.modules.ProgramBlocks import VariableSection
 from src.modules.ProgramBlocks import Base, PlcEnum
-from src.modules.ProgramBlocks import import_xml_to_block_group, generate
+from src.modules.ProgramBlocks import generate
 
 logs.setup(logging.DEBUG)
 logger = logging.getLogger(__name__)

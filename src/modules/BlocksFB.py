@@ -6,7 +6,7 @@ import logging
 
 from src.core import logs
 
-from src.modules.BlocksDBInstances import Instance
+from src.modules.BlocksDBInstances import InstanceDB
 from src.modules.ProgramBlocks import generate
 from src.modules.ProgramBlocks import Base, PlcEnum, LibraryData, ProgramBlock, BlockCompileUnit, VariableStruct, generate_boolean_attributes, WireParameter
 
@@ -21,7 +21,7 @@ class FunctionBlock(ProgramBlock):
     NetworkSources: list[NetworkSource]
     IsInstance: bool
     LibraryData: LibraryData
-    Database: Instance
+    Database: InstanceDB
     Parameters: list[WireParameter]
 
 

@@ -1,7 +1,7 @@
 from __future__ import annotations
 from schema import Schema, And, Or, Optional
 
-from src.schemas.BlocksDBInstances import SingleInstance, MultiInstance
+from src.schemas.BlocksDBInstances import InstanceDB
 from src.schemas.BlocksData import GlobalDB
 from src.schemas.BlocksFB import FunctionBlock
 from src.schemas.BlocksFC import Function
@@ -32,10 +32,11 @@ root = Schema(
         Optional("Variable sections", default=[]): And(list, [
             VariableSection
         ]),
-        Optional("Instances", default=[]): And(list, [Or(
-            SingleInstance,
-            MultiInstance
-        )]),
+        # Optional("Instances", default=[]): And(list, [Or(
+        #     SingleInstance,
+        #     MultiInstance
+        # )]),
+        Optional("Instances", default=[]): And(list, [InstanceDB]),
         Optional("Wire parameters", default=[]): And(list, [WireParameter]),
     },
     ignore_extra_keys=True

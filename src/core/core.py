@@ -143,6 +143,21 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         for db in config.get('Program blocks', [])
         if db.get('type') == ProgramBlocks.PlcEnum.GlobalDB
     ]
+
+    instance_dbs = [BlocksDBInstances.InstanceDB(
+        Id=db.get('id'),
+        DeviceID=db.get('DeviceID'),
+        InstanceOfName=helper_get_plcblock_name(
+            db.get('plc_block_id'),
+            config.get('Program blocks')
+        ),
+        Name=db.get('name'),
+        CallOption=db.get('call_option'),
+        Number=db.get('number'),
+        BlockGroupPath=db.get('blockgroup_folder', '/'))
+        for db in config.get('Instances', [])
+    ]
+
     data_plcblocks = [BlocksOB.OrganizationBlock(
         DeviceID=plc.get('DeviceID'),
         PlcType=plc.get('type'),
@@ -230,7 +245,8 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
         Variables=helper_clean_variable_sections(
             config.get('Variable sections'), plc.get('id')),
         Database=helper_clean_database_instance(
-            plc.get('id'), config.get('Instances')),
+            plc.get('id'), config.get(
+                'Instances'), config.get('Program blocks')),
         IsInstance=plc.get('is_instance'),
         LibraryData=ProgramBlocks.LibraryData(
             Name=(plc.get('library_source') or {}).get('name'),
@@ -334,6 +350,13 @@ def execute(imports: api.Imports, config: dict[str, Any], settings: dict[str, An
                         plc_software=se_plc_software,
                         data=plc)
 
+        # DB Instances
+        for instancedb in instance_dbs:
+            if instancedb.DeviceID != device_data.ID:
+                continue
+            BlocksDBInstances.create(plc_software=se_plc_software,
+                                     data=instancedb)
+
     return TIA
 
 
@@ -436,7 +459,7 @@ def helper_clean_network_sources(network_sources: list[dict],
                             wire_template,
                         ),
                         Database=helper_clean_database_instance(
-                            block.get('id'), instances),
+                            block.get('id'), instances, plcblocks),
                         IsInstance=block.get('is_instance'),
                         LibraryData=ProgramBlocks.LibraryData(
                             Name=(block.get('library_source')
@@ -527,14 +550,28 @@ def helper_clean_wires(block_name: str,
 
 
 def helper_clean_database_instance(plc_block_id: int,
-                                   instances: list[dict]
+                                   instances: list[dict],
+                                   plcblocks: list[dict]
                                    ) -> list[BlocksDBInstances.Instance]:
 
     for instancedb in instances:
         if instancedb.get('plc_block_id') == plc_block_id:
-            return BlocksDBInstances.Instance(
+            return BlocksDBInstances.InstanceDB(
+                Id=instancedb.get('id'),
+                DeviceID=instancedb.get('DeviceID'),
+                InstanceOfName=helper_get_plcblock_name(
+                    instancedb.get('plc_block_id'),
+                    plcblocks
+                ),
                 CallOption=instancedb.get('call_option'),
                 Name=instancedb.get('name'),
                 Number=instancedb.get('number'),
                 BlockGroupPath=instancedb.get('blockgroup_folder')
             )
+
+
+def helper_get_plcblock_name(plc_block_id: int, program_blocks: list[dict]) -> str:
+    for block in program_blocks:
+        if block.get('id') == plc_block_id:
+            return block.get('name')
+    return ""
